@@ -281,6 +281,13 @@ a:focus {
 .gamesListItem > div {
   display: inline-block;
 }
+.gamesListItem img {
+  width: 36px;
+  height: 36px;
+  display: inline-block;
+  margin-right: 12px;
+  align-self: center;
+}
 .gamesListItemPosition {
   display: inline-block;
   margin-right: 24px;
@@ -290,10 +297,16 @@ a:focus {
   align-self: center;
 }
 .gamesListItemName {
-  margin-right: 12px;
   font-size: 20px;
   font-weight: bold;
-  display: inline-block;
+  display: flex;
+}
+.gamesListItemName span{
+  margin-right: 12px;
+}
+.gamesListItemName img{
+  width: 20px;
+  height: 20px
 }
 .gamesListItemDetails {
   font-size: 13px;
@@ -303,13 +316,6 @@ a:focus {
 .gamesListItemNew {
   font-size: 13px;
   color: #3ef576;
-}
-.gamesListItem img {
-  width: 36px;
-  height: 36px;
-  display: inline-block;
-  margin-right: 12px;
-  align-self: center;
 }
 
 

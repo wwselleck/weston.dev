@@ -7,6 +7,8 @@ interface GamesPageProps {
     platform: string;
     rating: number;
     added?: Date | null;
+    completionStatus: '100' | 'completed' | 'not-completed'
+    ownership: 'physical' | 'unowned';
   }[];
 }
 
@@ -54,17 +56,27 @@ interface GamesListItemProps {
   platform: string;
   num: number;
   added?: Date | null;
+  completionStatus: '100' | 'completed' | 'not-completed'
+  ownership: 'physical' | 'unowned';
 }
 const msInDay = 1000 * 60* 60 * 24;
-const GamesListItem = ({ name, platform, num, added }: GamesListItemProps) => {
+const GamesListItem = ({ name, platform, num, added, completionStatus, ownership }: GamesListItemProps) => {
   const img = PlatformImageMap[platform.toLowerCase()];
   const isNew = added && (new Date().getTime()) - added.getTime() < (msInDay * 7);
+
+  const gameCompleted = ['completed', '100'].includes(completionStatus);
+
   return (
     <div className="gamesListItem">
       <span className="gamesListItemPosition">{num}</span>
       {img && <img src={`public/${img}`} />}
       <div>
-        <div className="gamesListItemName">{name}</div>
+        <div className="gamesListItemName">
+          <span>{name}</span>
+          {gameCompleted && <img src="public/game-completed_128.png" title="Game completed"/>}
+          {completionStatus === '100' && <img src="public/game-100_128.png" title="Game completed to 100%"/>}
+          {ownership === 'physical' && <img src="public/game-owned_128.png" title="Physical copy owned"/>}
+        </div>
         {added && (
           <div className="gamesListItemDetails">
             Added{" "}

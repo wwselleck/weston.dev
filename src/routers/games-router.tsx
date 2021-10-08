@@ -13,6 +13,8 @@ interface Game {
   platform: string;
   rating: number;
   added?: Date | null;
+  completionStatus: '100' | 'completed' | 'not-completed';
+  ownership: 'physical' | 'unowned';
 }
 
 class GamesSheet {
@@ -28,6 +30,14 @@ class GamesSheet {
           platform: r.Platform,
           rating: Number(r.Rating),
           added: r.Added && new Date(r.Added),
+          completionStatus: r['100%'] === 'y'
+            ? '100'
+            : r['Completed'] === 'y'
+              ? 'completed'
+              : 'not-completed',
+          ownership: r.Ownership === 'physical'
+            ? 'physical'
+            : 'unowned'
         };
       });
   }
