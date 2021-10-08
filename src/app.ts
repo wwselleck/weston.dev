@@ -11,6 +11,8 @@ export async function start() {
   const data = await Data.load();
   const config = await Config.load();
 
+  console.log(config)
+
   const app = express();
   app.use(expressPino());
   app.use("/public", express.static(path.join(".", "public")));

@@ -46,6 +46,7 @@ const PlatformImageMap = {
   nes: "nes.png",
   flash: "flash.png",
   famicom: "famicom.png",
+  snes: "snes.jpg",
 };
 
 interface GamesListItemProps {
