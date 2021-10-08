@@ -55,8 +55,10 @@ interface GamesListItemProps {
   num: number;
   added?: Date | null;
 }
+const msInDay = 1000 * 60* 60 * 24;
 const GamesListItem = ({ name, platform, num, added }: GamesListItemProps) => {
   const img = PlatformImageMap[platform.toLowerCase()];
+  const isNew = added && (new Date().getTime()) - added.getTime() < (msInDay * 7);
   return (
     <div className="gamesListItem">
       <span className="gamesListItemPosition">{num}</span>
@@ -71,6 +73,7 @@ const GamesListItem = ({ name, platform, num, added }: GamesListItemProps) => {
               month: "long",
               day: "numeric",
             })}
+            <span className="gamesListItemNew">{isNew && " NEW!"}</span>
           </div>
         )}
       </div>

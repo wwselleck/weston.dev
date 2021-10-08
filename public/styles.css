@@ -276,6 +276,7 @@ a:focus {
 }
 .gamesListItem {
   margin-bottom: 12px;
+  display: flex;
 }
 .gamesListItem > div {
   display: inline-block;
@@ -283,9 +284,10 @@ a:focus {
 .gamesListItemPosition {
   display: inline-block;
   margin-right: 24px;
-  font-size: 44px;
+  font-size: 22px;
   width: 52px;
   text-align: right;
+  align-self: center;
 }
 .gamesListItemName {
   margin-right: 12px;
@@ -298,10 +300,16 @@ a:focus {
   margin-top: 8px;
   color: lightslategrey;
 }
+.gamesListItemNew {
+  font-size: 13px;
+  color: #3ef576;
+}
 .gamesListItem img {
   width: 36px;
+  height: 36px;
   display: inline-block;
   margin-right: 12px;
+  align-self: center;
 }
 
 
