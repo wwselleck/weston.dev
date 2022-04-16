@@ -50,15 +50,20 @@ interface GamesRouterArgs {
 export class GamesRouter {
   static async create({ config }: GamesRouterArgs) {
     const router = express.Router();
-    const doc = new GoogleSpreadsheet(config.games.sheetId);
-    await doc.useServiceAccountAuth({
-      client_email: config.google.serviceAccount.email,
-      private_key: config.google.serviceAccount.privateKey,
-    });
-    await doc.loadInfo();
-    const gamesSheet = new GamesSheet(doc.sheetsByIndex[0]);
+
+    let gamesSheet;
+    if(config.google.serviceAccount.email) {
+      const doc = new GoogleSpreadsheet(config.games.sheetId);
+      await doc.useServiceAccountAuth({
+        client_email: config.google.serviceAccount.email,
+        private_key: config.google.serviceAccount.privateKey,
+      });
+      await doc.loadInfo();
+      gamesSheet = new GamesSheet(doc.sheetsByIndex[0]);
+    }
+
     router.get("/", async (_, res) => {
-      const games = await gamesSheet.getGames();
+      const games = (await gamesSheet?.getGames()) ?? [];
 
       res.header("Content-Type", "text/html");
       res.send(renderSecondaryPage(<GamesPage games={games} />));

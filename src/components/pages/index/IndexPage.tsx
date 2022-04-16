@@ -80,11 +80,16 @@ export const MostRecentCommit = ({
 }: {
   commit: IndexProps["commit"];
 }) => {
+  if(!commit) {
+    return null;
+  }
+
   const possibleDateColors = ["#f2a100", "#db2500", "#ba02db", "#00cf87"];
   const dateColor =
     possibleDateColors[
       Math.floor(Math.random() * Math.floor(possibleDateColors.length))
     ];
+
 
   return (
     <div className="mostRecentCommit">
