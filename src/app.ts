@@ -23,5 +23,4 @@ export async function start() {
 
   app.listen(8080);
   console.log("Running on port 8080");
-  console.log(app._router.stack)
 }

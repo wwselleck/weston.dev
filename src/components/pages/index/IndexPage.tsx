@@ -25,7 +25,6 @@ interface IndexProps {
 }
 
 export const IndexPage = ({ projects, links, commit, lists }: IndexProps) => {
-console.log(lists)
   return (
     <div className="indexWrapper">
       <div className="mainColumn">

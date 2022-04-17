@@ -60,7 +60,6 @@ export class ListsRouter {
     }
 
     for(const list of config.lists) {
-    console.log(list)
       router.get(`/${list.id}`, async (_, res) => {
         const doc = new GoogleSpreadsheet(list.sheetId);
         await doc.useServiceAccountAuth({
