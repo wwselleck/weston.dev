@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import {Config} from '../../../config';
 import * as Dates from "../../../lib/date";
 import { Section } from './IndexSection';
 
@@ -20,9 +21,11 @@ interface IndexProps {
     message: string;
     date: Date;
   };
+  lists?: Config['lists'];
 }
 
-export const IndexPage = ({ projects, links, commit }: IndexProps) => {
+export const IndexPage = ({ projects, links, commit, lists }: IndexProps) => {
+console.log(lists)
   return (
     <div className="indexWrapper">
       <div className="mainColumn">
@@ -47,8 +50,10 @@ export const IndexPage = ({ projects, links, commit }: IndexProps) => {
         </div>
         <div className="smallColumn">
           <ProjectsSection projects={projects}/>
-          <Section color="blue" name="Other stuff">
-            <a href="./games">All of the games I've played</a>
+          <Section color="blue" name="Lists">
+            {lists.map(list => {
+              return <div className="indexSectionItem"><a href={`./lists/${list.id}`}>{list.display}</a></div>
+            })}
           </Section>
           <div className="indexFooter">
           <MostRecentCommit commit={commit}/>
@@ -64,7 +69,7 @@ interface ProjectsSectionProps {
 }
 const ProjectsSection: React.FC<ProjectsSectionProps> = ({projects}) => {
   return <Section color="pink" name="Projects">
-    {projects.map(project => <div className="indexProject">
+    {projects.map(project => <div className="indexProject indexSectionItem">
       <div>
         {project.emoji}
         <a href={project.link}>{project.title}</a>

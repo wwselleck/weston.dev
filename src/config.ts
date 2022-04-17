@@ -1,8 +1,3 @@
-import fs from "fs";
-import util from "util";
-
-const readFile = util.promisify(fs.readFile);
-
 export interface Config {
   github: {
     username: string;
@@ -14,9 +9,12 @@ export interface Config {
       privateKey: string;
     };
   };
-  games: {
+  lists: {
+    id: string;
+    display: string;
     sheetId: string;
-  };
+    sheetName: string;
+  }[]
 }
 
 export const load = async () => {
@@ -34,8 +32,19 @@ export const load = async () => {
         ),
       },
     },
-    games: {
-      sheetId: process.env.GAMES_SHEET_ID,
-    },
+    lists: [
+      {
+        id: 'games',
+        display: 'Video Games',
+        sheetId: process.env.LISTS_SHEET_ID,
+        sheetName: 'Games'
+      },
+      {
+        id: 'hint-flavors',
+        display: 'Hint Water Flavors',
+        sheetId: process.env.LISTS_SHEET_ID,
+        sheetName: 'Hint Flavors'
+      }
+    ]
   };
 };

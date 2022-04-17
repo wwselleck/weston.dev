@@ -22,7 +22,7 @@ export class IndexRouter {
       res.header("Content-Type", "text/html");
       res.send(
         renderHomePage(
-          <IndexPage projects={projects} links={links} commit={commit} />
+          <IndexPage projects={projects} links={links} commit={commit} lists={config.lists}/>
         )
       );
     });

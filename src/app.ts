@@ -5,7 +5,7 @@ import expressPino from "express-pino-logger";
 import * as Data from "./services/data";
 import * as Config from "./config";
 import { IndexRouter } from "./routers/index-router";
-import { GamesRouter } from "./routers/games-router";
+import { ListsRouter } from "./routers/lists-router";
 
 export async function start() {
   const data = await Data.load();
@@ -14,8 +14,14 @@ export async function start() {
   const app = express();
   app.use(expressPino());
   app.use("/public", express.static(path.join(".", "public")));
+
   app.use("", IndexRouter.create({ data, config }));
-  app.use("/games", await GamesRouter.create({ config }));
+
+  app.use('/lists', await ListsRouter.create({ config }))
+
+
+
   app.listen(8080);
   console.log("Running on port 8080");
+  console.log(app._router.stack)
 }

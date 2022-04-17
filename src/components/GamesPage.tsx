@@ -1,6 +1,15 @@
 import * as React from "react";
 import { PageWrapper } from "./PageWrapper";
 
+import {
+  List,
+  ListItem,
+  ListItemPosition,
+  ListItemIcon ,
+  ListItemHeader,
+  ListItemSecondaryText
+} from './list';
+
 interface GamesPageProps {
   games: {
     name: string;
@@ -22,15 +31,10 @@ export const GamesPage = ({ games }: GamesPageProps) => {
         All of the games I've ever (thoroughly) played in order from 1-
         {games.length}
       </p>
-      <ol className="gamesList">
-        {sortedGames.map((game, i) => {
-          return (
-            <li>
-              <GamesListItem {...game} num={i + 1} />
-            </li>
-          );
-        })}
-      </ol>
+      <List items={sortedGames}
+        renderItem={(item, i) => {
+              return <GamesListItem {...item} num={i + 1} />
+        }}/>
     </div>
   );
 };
@@ -51,6 +55,10 @@ const PlatformImageMap = {
   snes: "snes.jpg",
 };
 
+const Badge = ({image, title}) => {
+  return <img className="games-page-badge" title={title} src={`/public/${image}`}/>
+}
+
 interface GamesListItemProps {
   name: string;
   platform: string;
@@ -67,28 +75,28 @@ const GamesListItem = ({ name, platform, num, added, completionStatus, ownership
   const gameCompleted = ['completed', '100'].includes(completionStatus);
 
   return (
-    <div className="gamesListItem">
-      <span className="gamesListItemPosition">{num}</span>
-      {img && <img src={`public/${img}`} />}
+    <ListItem>
+      <ListItemPosition position={num}/>
+      {img && <ListItemIcon image={img}/>}
       <div>
-        <div className="gamesListItemName">
-          <span>{name}</span>
-          {gameCompleted && <img src="public/game-completed_128.png" title="Game completed"/>}
-          {completionStatus === '100' && <img src="public/game-100_128.png" title="Game completed to 100%"/>}
-          {ownership === 'physical' && <img src="public/game-owned_128.png" title="Physical copy owned"/>}
+        <div className="games-page-item-horizontal-wrapper">
+          <ListItemHeader text={name} />
+          {gameCompleted && <Badge image="game-completed_128.png" title="Game completed"/>}
+          {completionStatus === '100' && <Badge image="game-100_128.png" title="Game completed to 100%"/>}
+          {ownership === 'physical' && <Badge image="game-owned_128.png" title="Physical copy owned"/>}
         </div>
-        {added && (
-          <div className="gamesListItemDetails">
-            Added{" "}
-            {added.toLocaleDateString(undefined, {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-            <span className="gamesListItemNew">{isNew && " NEW!"}</span>
-          </div>
-        )}
+        <div className="games-page-item-horizontal-wrapper">
+          <ListItemSecondaryText text={`
+              Added ${added.toLocaleDateString(undefined, {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+          `}/>
+          { isNew && <span className="games-list-item-new"><ListItemSecondaryText text="NEW"/></span>
+          }
+        </div>
       </div>
-    </div>
+    </ListItem>
   );
 };

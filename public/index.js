@@ -54,8 +54,11 @@ document.addEventListener('mousemove', (e) => {
     e.preventDefault();
 
     const el  = getActiveElement()
-    el.style.top = e.pageY;
-    el.style.left = e.pageX;
+    window.requestAnimationFrame(() => {
+      el.style.top = e.pageY;
+      el.style.left = e.pageX;
+
+    })
   }
 }, false);
 
