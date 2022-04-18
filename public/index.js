@@ -21,6 +21,10 @@ const getActiveElement = () => {
   return getOriginalDragItem();
 }
 
+const toPx = (num) => {
+  return `${num}px`;
+}
+
 
 const createClonedDragItem = () => {
   const originalDragItem = getOriginalDragItem();
@@ -40,8 +44,8 @@ const onDragStart = (e) => {
     if(!dragged){
       dragged = true;
       const clone = createClonedDragItem();
-      clone.style.top = e.clientY;
-      clone.style.left = e.clientX;
+      clone.style.top = toPx(e.clientY);
+      clone.style.left = toPx(e.clientX);
     }
     dragActive = true;
   }
@@ -55,8 +59,8 @@ document.addEventListener('mousemove', (e) => {
 
     const el  = getActiveElement()
     window.requestAnimationFrame(() => {
-      el.style.top = e.pageY;
-      el.style.left = e.pageX;
+      el.style.top = toPx(e.pageY);
+      el.style.left = toPx(e.pageX);
 
     })
   }
