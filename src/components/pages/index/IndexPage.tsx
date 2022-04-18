@@ -40,7 +40,7 @@ export const IndexPage = ({ projects, links, commit, lists }: IndexProps) => {
             <div className="indexLinks">
               {links.map(link => {
                 return <span>
-                  {link.iconUrl && <img src={link.iconUrl} />}
+                  {link.iconUrl && <img src={link.iconUrl} alt=""/>}
                   <a href={link.href}>{link.text}</a>
                 </span>
               })}
@@ -97,7 +97,7 @@ export const MostRecentCommit = ({
 
   return (
     <div className="mostRecentCommit">
-      <img src="./public/Git-Icon-Black.png" />
+      <img src="./public/Git-Icon-Black.png" alt="Git logo" width="20px" height="20px"/>
       <p className="repo">
         <a target="_blank" href={commit.repo.link}>
           {commit.repo.name}
