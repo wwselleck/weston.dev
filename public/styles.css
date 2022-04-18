@@ -293,6 +293,7 @@ a:focus {
 .list-item-header {
   font-size: 20px;
   font-weight: bold;
+  padding-right: 4px;
 }
 
 .list-item-icon {
@@ -307,6 +308,7 @@ a:focus {
   font-size: 13px;
   margin-top: 8px;
   color: lightslategrey;
+  max-width: 270px;
 }
 /*
  *
@@ -334,19 +336,19 @@ a:focus {
 /*
  *
  *
- * HINT PAGE
+ * SCORED PAGE
  *
  *
  *
  */
-.hint-page-rating {
+.scored-list-page-rating {
     font-size: 30px;
     padding-right: 24px;
 }
-.hint-page-rating-scale {
+.scored-list-page-rating-scale {
     font-size: 16px;
 }
-.hint-page-item-image {
+.scored-list-page-item-image {
     height: 50px;
 }
 

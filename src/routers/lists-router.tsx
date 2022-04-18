@@ -7,14 +7,31 @@ import {
 import { Config } from "../config";
 import { GamesPage } from "../components/GamesPage";
 import { HintFlavorsPage } from "../components/HintFlavorsPage";
+import { ScoredListPage } from '../components/ScoredListPage';
 import { renderSecondaryPage } from "../templates/secondary-template";
 
-interface ListsRouterArgs {
-  config: Config;
+
+const GenericListPageRenderers = {
+  'scored': async (list, worksheet) => {
+    const rows = await worksheet.getRows();
+    const items = rows
+      .map(r => {
+        return {
+          name: r.Name,
+          score: r.Score,
+          comment: r.Comment,
+          image: r.Image
+        }
+      })
+      .sort((i1, i2) => {
+        return i2.score - i1.score
+      })
+    return <ScoredListPage items={items} scale={5} description={list.description}/>
+  }
 }
 
-const ListPageRenderers = {
-  games: async (worksheet) => {
+const CustomListPageRenderers = {
+  games: async (list, worksheet) => {
     const rows = await worksheet.getRows();
     const games = rows
       .filter((r) => r.Rating)
@@ -36,7 +53,7 @@ const ListPageRenderers = {
       });
       return <GamesPage games={games} />
   },
-  'hint-flavors': async (worksheet) => {
+  'hint-flavors': async (list, worksheet) => {
 
     const rows = await worksheet.getRows();
     const flavors = rows
@@ -50,6 +67,18 @@ const ListPageRenderers = {
       })
     return <HintFlavorsPage flavors={flavors} />
   }
+}
+
+const getListPageRenderer = (list) => {
+  if(list.listType === 'custom') {
+    return CustomListPageRenderers[list.id];
+  } else {
+    return GenericListPageRenderers[list.listType]
+  }
+}
+
+interface ListsRouterArgs {
+  config: Config;
 }
 
 export class ListsRouter {
@@ -68,7 +97,12 @@ export class ListsRouter {
         });
         await doc.loadInfo();
         const worksheet = doc.sheetsByTitle[list.sheetName];
-        const elem = await ListPageRenderers[list.id](worksheet)
+        const elem = await getListPageRenderer(list)(list, worksheet)
+        if(!elem) {
+          res.status(404);
+          res.send();
+          return;
+        }
         res.header("Content-Type", "text/html");
         res.send(renderSecondaryPage(elem));
       })

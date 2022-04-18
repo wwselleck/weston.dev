@@ -52,5 +52,5 @@ export const ListItemHeader = ({ text }) => {
 }
 
 export const ListItemSecondaryText = ({text}) => {
-  return <span className="list-item-secondary-text">{text}</span>;
+  return <div className="list-item-secondary-text">{text}</div>;
 }
