@@ -352,6 +352,26 @@ a:focus {
     height: 50px;
 }
 
+/*
+ *
+ *
+ * TIERED PAGE
+ *
+ *
+ *
+ */
+.tier-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    margin-bottom: 16px;
+    align-items: center;
+    justify-content: center;
+    font-size: 54px;
+    color: white;
+    animation: GradientAnimation 4s linear infinite;
+}
+
 
 /*
  *
@@ -368,6 +388,9 @@ a:focus {
 .secondaryPage .mainColumn {
     margin-top: 5vh;
     margin-bottom: 5vh;
+}
+.secondaryPageDescription {
+    margin-bottom: 32px;
 }
 .secondaryPageNav {
     margin-bottom: 32px;

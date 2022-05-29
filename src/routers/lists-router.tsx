@@ -8,6 +8,7 @@ import { Config } from "../config";
 import { GamesPage } from "../components/GamesPage";
 import { HintFlavorsPage } from "../components/HintFlavorsPage";
 import { ScoredListPage } from '../components/ScoredListPage';
+import { TieredListPage } from '../components/TieredListPage';
 import { renderSecondaryPage } from "../templates/secondary-template";
 
 
@@ -27,6 +28,34 @@ const GenericListPageRenderers = {
         return i2.score - i1.score
       })
     return <ScoredListPage items={items} scale={5} description={list.description}/>
+  },
+  'tiered': async (list, worksheet) => {
+    const rows = await worksheet.getRows();
+    const tiers = list.scale.map(({ tier, color, desc}) => {
+      return {
+        tier,
+        desc,
+        color,
+        items: []
+      }
+    })
+
+    for(const r of rows) {
+      let item = {
+          name: r.Name,
+          tier: r.Tier,
+          comment: r.Comment,
+          image: r.Image
+      }
+      for(const tier of tiers) {
+        if(tier.tier === item.tier) {
+          tier.items.push(item);
+          break;
+        }
+      }
+    }
+
+    return <TieredListPage tiers={tiers} description={list.description}/>
   }
 }
 
