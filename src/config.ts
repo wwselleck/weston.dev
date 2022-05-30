@@ -69,15 +69,47 @@ export const load = async () => {
             desc: "The best of the best. I want to be buried with a can of each of these.",
             color: {
               type: 'grad-anim',
-              gradient: ['#4400FF', '#FF00BB', '#00C8FF']
+              gradient: ['#9e56fc', '#56b7fc', '#fc5688']
             }
           },
           {
             tier: 'A',
-            desc: "If available, I'll purchase these regularly from the store.",
+            desc: "Purchased frequently from the grocery store. ",
             color: {
-              type: 'grad-anim',
-              gradient: ['blue', 'blue']
+              type: 'solid',
+              hue: '#fc5664'
+            }
+          },
+          {
+            tier: 'B',
+            desc: "Will buy from the grocery store every once in awhile.",
+            color: {
+              type: 'solid',
+              hue: '#5672fc'
+            }
+          },
+          {
+            tier: 'C',
+            desc: "Will buy at the gas station every once in awhile.",
+            color: {
+              type: 'solid',
+              hue: '#fce156'
+            }
+          },
+          {
+            tier: 'D',
+            desc: "Will never buy, but won't turn down if offered.",
+            color: {
+              type: 'solid',
+              hue: '#fc9656'
+            }
+          },
+          {
+            tier: 'F',
+            desc: "Bad, will never drink.",
+            color: {
+              type: 'solid',
+              hue: '#424242'
             }
           },
         ]

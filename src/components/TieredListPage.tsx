@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { Color, getColorStyle } from '../color';
+import { Table, TableRow, TableCell} from './table';
 import { List, ListItem, ListItemHeader, ListItemSecondaryText } from './list'
 
 
-const TierIcon = ({ children, color }) => {
-  return <div className="tier-icon" style={{
+const TierHeader = ({ children, color }) => {
+  return <div className="tier-header" style={{
     ...getColorStyle(color)
   }}>
     {children}
@@ -15,6 +16,7 @@ interface TieredListPageProps {
   description?: string;
   tiers: {
     tier: string;
+    desc: string;
     color: Color;
     items: {
       name: string;
@@ -32,8 +34,28 @@ console.log(tiers)
   return <div>
     {description && <p className="secondaryPageDescription">{description}</p>}
     {tiers.map(tier => {
-      return <div>
-        <TierIcon color={tier.color}>{tier.tier}</TierIcon>
+      return <div className="tier">
+        <TierHeader color={tier.color}>{tier.tier}</TierHeader>
+        <div className="tier-desc">{tier.desc}</div>
+        <Table>
+          {tier.items.map(item => {
+            return <TableRow color={tier.color}>
+            {item.image &&
+              <TableCell>
+                <img src={item.image} className="tier-item-image"/>
+              </TableCell>
+            }
+              <TableCell>
+              <b>{item.name}</b>
+              </TableCell>
+            </TableRow>
+          })}
+        </Table>
+      </div>
+    })}
+  </div>
+}
+/*
     <List
       items={tier.items}
       renderItem={(item) => {
@@ -45,9 +67,4 @@ console.log(tiers)
           {item.image && <img className="scored-list-page-item-image" src={item.image}/>}
         </ListItem>
       }} />
-      </div>
-    })}
-  </div>
-}
-/*
       */
