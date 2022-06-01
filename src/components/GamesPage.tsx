@@ -1,14 +1,5 @@
 import * as React from "react";
-import { PageWrapper } from "./PageWrapper";
-
-import {
-  List,
-  ListItem,
-  ListItemPosition,
-  ListItemIcon ,
-  ListItemHeader,
-  ListItemSecondaryText
-} from './list';
+import { Table, TableRow, TableCell} from './table';
 
 interface GamesPageProps {
   games: {
@@ -31,10 +22,39 @@ export const GamesPage = ({ games }: GamesPageProps) => {
         All of the games I've ever (thoroughly) played in order from 1-
         {games.length}
       </p>
-      <List items={sortedGames}
-        renderItem={(item, i) => {
-              return <GamesListItem {...item} num={i + 1} />
-        }}/>
+      <Table>
+        {sortedGames.map((game, i) => {
+          const gameCompleted = ['completed', '100'].includes(game.completionStatus);
+          return <TableRow>
+            <TableCell>
+              <div className="games-pos-cell">{i+1}</div>
+            </TableCell>
+            <TableCell>
+              <PlatformImage platform={game.platform} />
+            </TableCell>
+            <TableCell>
+              <div>
+                <div>
+                  <b>{game.name}</b>
+                </div>
+                <div className="subtle-text">
+                  {game.added.toLocaleDateString(undefined, {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                  })}
+                </div>
+              </div>
+            </TableCell>
+            <TableCell align="right">
+              {gameCompleted && <Badge image="game-completed_128.png" title="Game completed"/>}
+              {game.completionStatus === '100' && <Badge image="game-100_128.png" title="Game completed to 100%"/>}
+              {game.ownership === 'physical' && <Badge image="game-owned_128.png" title="Physical copy owned"/>}
+
+            </TableCell>
+          </TableRow>
+        })}
+      </Table>
     </div>
   );
 };
@@ -55,48 +75,18 @@ const PlatformImageMap = {
   snes: "snes.jpg",
 };
 
+const getPlatformImageUrl = (platform: string) => {
+  const file = PlatformImageMap[platform.toLowerCase()]
+    return  file
+      ? `/public/${file}`
+      : null;
+}
+
+const PlatformImage: React.FC<{ platform: string}> = ({ platform}) => {
+  return <img className="games-platform-image" src={getPlatformImageUrl(platform)}/>
+}
+
 const Badge = ({image, title}) => {
   return <img className="games-page-badge" title={title} src={`/public/${image}`}/>
 }
 
-interface GamesListItemProps {
-  name: string;
-  platform: string;
-  num: number;
-  added?: Date | null;
-  completionStatus: '100' | 'completed' | 'not-completed'
-  ownership: 'physical' | 'unowned';
-}
-const msInDay = 1000 * 60* 60 * 24;
-const GamesListItem = ({ name, platform, num, added, completionStatus, ownership }: GamesListItemProps) => {
-  const img = PlatformImageMap[platform.toLowerCase()];
-  const isNew = added && (new Date().getTime()) - added.getTime() < (msInDay * 7);
-
-  const gameCompleted = ['completed', '100'].includes(completionStatus);
-
-  return (
-    <ListItem>
-      <ListItemPosition position={num}/>
-      {img && <ListItemIcon image={img}/>}
-      <div>
-        <div className="games-page-item-horizontal-wrapper">
-          <ListItemHeader text={name} />
-          {gameCompleted && <Badge image="game-completed_128.png" title="Game completed"/>}
-          {completionStatus === '100' && <Badge image="game-100_128.png" title="Game completed to 100%"/>}
-          {ownership === 'physical' && <Badge image="game-owned_128.png" title="Physical copy owned"/>}
-        </div>
-        <div className="games-page-item-horizontal-wrapper">
-          <ListItemSecondaryText text={`
-              Added ${added.toLocaleDateString(undefined, {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-          `}/>
-          { isNew && <span className="games-list-item-new"><ListItemSecondaryText text="NEW"/></span>
-          }
-        </div>
-      </div>
-    </ListItem>
-  );
-};

@@ -82,20 +82,6 @@ const CustomListPageRenderers = {
       });
       return <GamesPage games={games} />
   },
-  'hint-flavors': async (list, worksheet) => {
-
-    const rows = await worksheet.getRows();
-    const flavors = rows
-      .map(r => {
-        return {
-          flavor: r.Flavor,
-          rating: r.Rating,
-          comment: r.Comment,
-          image: r.Image
-        }
-      })
-    return <HintFlavorsPage flavors={flavors} />
-  }
 }
 
 const getListPageRenderer = (list) => {

@@ -58,6 +58,11 @@ p {
  font-weight: 300;
 }
 
+.subtle-text {
+  color: var(--text-subtle);
+  font-size: 13px;
+}
+
 .mainColumn {
     width: 1000px;
     max-width: 80%;
@@ -333,6 +338,16 @@ a:focus {
 .games-list-item-new p{
   color: #3ef576;
 }
+.games-platform-image {
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
+}
+
+.games-pos-cell {
+    margin-left: 6px;
+    width: 16px;
+}
 
 /*
  *
@@ -378,6 +393,7 @@ a:focus {
 }
 .tier-desc {
     margin-bottom: 8px;
+    line-height: 1.5em;
 }
 .tier-item-image {
     width: 30px;
@@ -425,6 +441,7 @@ a:focus {
  */
 .table-row {
     display: flex;
+    align-items: center;
     border: 1px solid;
     border-radius: 8px;
     margin: 4px 0;
