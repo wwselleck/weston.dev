@@ -46,8 +46,13 @@ console.log(tiers)
               </TableCell>
             }
               <TableCell>
-              <b>{item.name}</b>
+                <b>{item.name}</b>
               </TableCell>
+              {item.comment && <TableCell align="right">
+                <div className="tier-item-comment">
+                  {item.comment}
+                </div>
+              </TableCell>}
             </TableRow>
           })}
         </Table>

@@ -9,6 +9,7 @@
 
 :root {
     --text-color: #161717;
+    --text-subtle: #898989;
 
     --pink: #f72585ff;
     --purple-1: #b5179eff;
@@ -378,9 +379,13 @@ a:focus {
 .tier-desc {
     margin-bottom: 8px;
 }
-
 .tier-item-image {
     width: 30px;
+}
+.tier-item-comment {
+    margin-left: auto;
+    max-width: 416px;
+    color: var(--text-subtle);
 }
 
 
@@ -431,4 +436,8 @@ a:focus {
     padding: 4px;
     display: flex;
     align-items: center;
+}
+
+.table-cell.align-right {
+    margin-left: auto;
 }

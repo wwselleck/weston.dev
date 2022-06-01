@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Color, getColorStyle} from '../../color';
+import { classnames} from '../../lib/classnames';
 
 export const Table: React.FC = ({children}) => {
   return <>{children}</>
@@ -21,6 +22,9 @@ export const TableRow: React.FC<TableRowProps> = ({ children, color }) => {
 
 }
 
-export const TableCell: React.FC = ({children}) => {
-  return <span className="table-cell">{children}</span>;
+interface TableCellProps {
+  align?: 'right';
+}
+export const TableCell: React.FC<TableCellProps> = ({children, align}) => {
+  return <span className={classnames('table-cell', align === 'right' && 'align-right')}>{children}</span>;
 }
