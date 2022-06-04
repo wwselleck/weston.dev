@@ -9,6 +9,9 @@ export interface Config {
       privateKey: string;
     };
   };
+  writing: {
+    repo: string
+  };
   lists: {
     id: string;
     display: string;
@@ -31,6 +34,9 @@ export const load = async () => {
           "\n"
         ),
       },
+    },
+    writing: {
+      repo: 'wwselleck/writing'
     },
     lists: [
       {

@@ -1,15 +1,9 @@
 import axios from "axios";
+import type { AxiosInstance } from 'axios'
 
-export async function getMostRecentCommit(username: string, token: string) {
-  const api = axios.create({
-    auth: {
-      username,
-      password: token,
-    },
-  });
-
+export async function getMostRecentCommit(api: AxiosInstance, username: string) {
   const result = await api.get(
-    `https://api.github.com/users/${username}/events`
+    `/users/${username}/events`
   );
   const { data: events } = result;
 

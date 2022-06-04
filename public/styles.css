@@ -28,7 +28,6 @@ body {
   color: var(--text-color) !important;
   text-shadow: none !important;
   background: white;
-  font-size: 16px;
 }
 a {
     color: var(--blue-4);
@@ -44,7 +43,7 @@ a:hover {
     -moz-text-fill-color: transparent;
 
 }
-b {
+b, strong{
     font-weight: 600;
 }
 em {
@@ -55,7 +54,6 @@ em {
 }
 p {
  color: var(--text-color);
- font-weight: 300;
 }
 
 .subtle-text {
@@ -414,7 +412,6 @@ a:focus {
  *
  */
 .secondaryPage p {
-    font-size: 20px;
     line-height: 1.5;
 }
 .secondaryPage .mainColumn {
@@ -457,4 +454,42 @@ a:focus {
 
 .table-cell.align-right {
     margin-left: auto;
+}
+
+/*
+ *
+ *
+ * Markdown
+ *
+ *
+ *
+ */
+.markdown {
+    line-height: 1.85;
+}
+.markdown h1 {
+    font-size: 2rem;
+}
+.markdown h2 {
+    font-size: 1.5rem;
+}
+.markdown h3 {
+    font-size: 1.17rem;
+}
+.markdown h4 {
+    font-size: 1rem;
+}
+.markdown h1,h2,h3 {
+    margin: 1rem 0;
+}
+.markdown p {
+    margin: 1rem 0;
+}
+.markdown pre {
+    background-color: #F5F5F5;
+    padding: 1rem;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 5px;
+    line-height: 1.2;
 }

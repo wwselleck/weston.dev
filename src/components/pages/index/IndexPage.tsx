@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import {Config} from '../../../config';
+import { Config } from '../../../config';
 import * as Dates from "../../../lib/date";
 import { Section } from './IndexSection';
 
@@ -40,7 +40,7 @@ export const IndexPage = ({ projects, links, commit, lists }: IndexProps) => {
             <div className="indexLinks">
               {links.map(link => {
                 return <span>
-                  {link.iconUrl && <img src={link.iconUrl} alt=""/>}
+                  {link.iconUrl && <img src={link.iconUrl} alt="" />}
                   <a href={link.href}>{link.text}</a>
                 </span>
               })}
@@ -48,14 +48,21 @@ export const IndexPage = ({ projects, links, commit, lists }: IndexProps) => {
           </div>
         </div>
         <div className="smallColumn">
-          <ProjectsSection projects={projects}/>
+          <ProjectsSection projects={projects} />
           <Section color="blue" name="Lists">
             {lists.map(list => {
               return <div className="indexSectionItem"><a href={`./lists/${list.id}`}>{list.display}</a></div>
             })}
           </Section>
+          <Section color="purple" name="Writing">
+            <div className="indexSectionItem">
+              <a href="/writing/every-pinball-game">
+                🚧 Every Pinball Game
+              </a>
+            </div>
+          </Section>
           <div className="indexFooter">
-          <MostRecentCommit commit={commit}/>
+            <MostRecentCommit commit={commit} />
           </div>
         </div>
       </div>
@@ -66,7 +73,7 @@ export const IndexPage = ({ projects, links, commit, lists }: IndexProps) => {
 interface ProjectsSectionProps {
   projects: IndexProps['projects'];
 }
-const ProjectsSection: React.FC<ProjectsSectionProps> = ({projects}) => {
+const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
   return <Section color="pink" name="Projects">
     {projects.map(project => <div className="indexProject indexSectionItem">
       <div>
@@ -84,20 +91,20 @@ export const MostRecentCommit = ({
 }: {
   commit: IndexProps["commit"];
 }) => {
-  if(!commit) {
+  if (!commit) {
     return null;
   }
 
   const possibleDateColors = ["#f2a100", "#db2500", "#ba02db", "#00cf87"];
   const dateColor =
     possibleDateColors[
-      Math.floor(Math.random() * Math.floor(possibleDateColors.length))
+    Math.floor(Math.random() * Math.floor(possibleDateColors.length))
     ];
 
 
   return (
     <div className="mostRecentCommit">
-      <img src="./public/Git-Icon-Black.png" alt="Git logo" width="20px" height="20px"/>
+      <img src="./public/Git-Icon-Black.png" alt="Git logo" width="20px" height="20px" />
       <p className="repo">
         <a target="_blank" href={commit.repo.link}>
           {commit.repo.name}
