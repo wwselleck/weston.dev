@@ -4,7 +4,7 @@ import expressPino from "express-pino-logger";
 
 import { createGithubApi } from './lib/github'
 import * as Data from "./services/data";
-import { WritingService } from "./services/writing";
+import { WritingRemoteService, WritingLocalService } from "./services/writing";
 import * as Config from "./config";
 import { IndexRouter } from "./routers/index-router";
 import { ListsRouter } from "./routers/lists-router";
@@ -29,7 +29,9 @@ export async function start() {
 
   app.use('/writing', await WritingRouter.create({
     config,
-    writingService: new WritingService({ config, githubApi })
+    writingService: process.env.ENV === 'local'
+      ? new WritingLocalService()
+      : new WritingRemoteService({ config, githubApi })
   }))
 
 
