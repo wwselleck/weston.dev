@@ -153,6 +153,64 @@ export const load = async () => {
             }
           },
         ]
+      },
+      {
+        id: 'beer',
+        display: 'Beer',
+        sheetId: process.env.LISTS_SHEET_ID,
+        sheetName: 'Beer',
+        listType: 'tiered',
+        description: "",
+        scale: [
+          {
+            tier: 'S',
+            desc: "Favorites",
+            color: {
+              type: 'grad-anim',
+              gradient: ['#9e56fc', '#56b7fc', '#fc5688']
+            }
+          },
+          {
+            tier: 'A',
+            desc: "Great",
+            color: {
+              type: 'solid',
+              hue: '#fc5664'
+            }
+          },
+          {
+            tier: 'B',
+            desc: "Good",
+            color: {
+              type: 'solid',
+              hue: '#5672fc'
+            }
+          },
+          {
+            tier: 'C',
+            desc: "Whatever",
+            color: {
+              type: 'solid',
+              hue: '#fce156'
+            }
+          },
+          {
+            tier: 'D',
+            desc: "Not Good",
+            color: {
+              type: 'solid',
+              hue: '#fcb85d'
+            }
+          },
+          {
+            tier: 'F',
+            desc: "Bad",
+            color: {
+              type: 'solid',
+              hue: '#424242'
+            }
+          },
+        ]
       }
     ]
   };
