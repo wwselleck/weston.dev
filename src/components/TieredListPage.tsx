@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { Color, getColorStyle } from '../color';
 import { Table, TableRow, TableCell} from './table';
-import { List, ListItem, ListItemHeader, ListItemSecondaryText } from './list'
 
 
 const TierHeader = ({ children, color }) => {
-  return <div className="tier-header" style={{
+  return <div className="w-full rounded-lg flex mb-4 justify-center text-3xl text-white" style={{
     ...getColorStyle(color)
   }}>
     {children}
@@ -32,24 +31,24 @@ export const TieredListPage  = ({
 }: TieredListPageProps) => {
 console.log(tiers)
   return <div>
-    {description && <p className="secondaryPageDescription">{description}</p>}
+    {description && <p className="leading-normal mb-8">{description}</p>}
     {tiers.map(tier => {
-      return <div className="tier">
+      return <div className="mb-14">
         <TierHeader color={tier.color}>{tier.tier}</TierHeader>
-        <div className="tier-desc">{tier.desc}</div>
+        <div className="mb-2">{tier.desc}</div>
         <Table>
           {tier.items.map(item => {
             return <TableRow color={tier.color}>
             {item.image &&
               <TableCell>
-                <img src={item.image} className="tier-item-image"/>
+                <img src={item.image} className="w-7"/>
               </TableCell>
             }
               <TableCell>
                 <b>{item.name}</b>
               </TableCell>
               {item.comment && <TableCell align="right">
-                <div className="tier-item-comment">
+                <div className="ml-auto max-w-md text-text-subtle">
                   {item.comment}
                 </div>
               </TableCell>}
@@ -60,16 +59,3 @@ console.log(tiers)
     })}
   </div>
 }
-/*
-    <List
-      items={tier.items}
-      renderItem={(item) => {
-        return <ListItem>
-          <div>
-            <ListItemHeader text ={item.name}/>
-            <ListItemSecondaryText text={item.comment} />
-          </div>
-          {item.image && <img className="scored-list-page-item-image" src={item.image}/>}
-        </ListItem>
-      }} />
-      */

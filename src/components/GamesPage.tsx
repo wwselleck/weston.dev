@@ -17,7 +17,7 @@ export const GamesPage = ({ games }: GamesPageProps) => {
     return g2.rating - g1.rating;
   });
   return (
-    <div className="gamesPage">
+    <div>
       <p>
         All of the games I've ever (thoroughly) played in order from 1-
         {games.length}
@@ -27,7 +27,7 @@ export const GamesPage = ({ games }: GamesPageProps) => {
           const gameCompleted = ['completed', '100'].includes(game.completionStatus);
           return <TableRow>
             <TableCell>
-              <div className="games-pos-cell">{i+1}</div>
+              <div className="ml-2 w-4">{i+1}</div>
             </TableCell>
             <TableCell>
               <PlatformImage platform={game.platform} />
@@ -83,10 +83,10 @@ const getPlatformImageUrl = (platform: string) => {
 }
 
 const PlatformImage: React.FC<{ platform: string}> = ({ platform}) => {
-  return <img className="games-platform-image" src={getPlatformImageUrl(platform)}/>
+  return <img className="w-9 h-9 mr-2" src={getPlatformImageUrl(platform)}/>
 }
 
 const Badge = ({image, title}) => {
-  return <img className="games-page-badge" title={title} src={`/public/${image}`}/>
+  return <img className="w-5 h-5 mr-2" title={title} src={`/public/${image}`}/>
 }
 

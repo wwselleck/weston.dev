@@ -11,8 +11,8 @@ interface TableRowProps {
 }
 
 export const TableRow: React.FC<TableRowProps> = ({ children, color }) => {
-  return <div className="table-row">
-    {color && <div className="table-cell" style={{
+  return <div className="flex p-1 items-center rounded-lg border border-solid my-1 border-[#D3D3D3] overflow-hidden">
+    {color && <div className="flex p-1 items-center" style={{
       ...getColorStyle(color),
       padding: '0',
       width: '8px'
@@ -26,5 +26,5 @@ interface TableCellProps {
   align?: 'right';
 }
 export const TableCell: React.FC<TableCellProps> = ({children, align}) => {
-  return <span className={classnames('table-cell', align === 'right' && 'align-right')}>{children}</span>;
+  return <div className={classnames('flex flex-shrink-0 p-1 items-center', align === 'right' && 'ml-auto')}>{children}</div>;
 }

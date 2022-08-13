@@ -1,4 +1,4 @@
-export function renderRoot (str: string, opts?: any) {
+export function renderRoot(str: string, opts?: any) {
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -10,7 +10,7 @@ export function renderRoot (str: string, opts?: any) {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700&display=swap">
 
         <link rel="stylesheet" href="/public/reset.css" type="text/css" />
-        <link rel="stylesheet" href="/public/styles.css" type="text/css" />
+        <link rel="stylesheet" href="/public/output.css" type="text/css" />
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-2Q48ECMC0R"></script>
         <script>

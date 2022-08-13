@@ -9,9 +9,9 @@ export function renderSecondaryPage(el: React.ReactNode) {
 }
 
 const SecondaryPageWrapper: React.FC = ({children}) => {
-  return <div className="secondaryPage">
-    <div className="mainColumn">
-      <div className="secondaryPageNav"><a href="/">&#60; Home</a></div>
+  return <div>
+    <div className="my-16 w-2/3 mx-auto">
+      <div className="mb-8"><a href="/">&#60; Home</a></div>
       {children}
     </div>
   </div>

@@ -6,29 +6,11 @@ import {
 } from "google-spreadsheet";
 import { Config } from "../config";
 import { GamesPage } from "../components/GamesPage";
-import { HintFlavorsPage } from "../components/HintFlavorsPage";
-import { ScoredListPage } from '../components/ScoredListPage';
 import { TieredListPage } from '../components/TieredListPage';
 import { renderSecondaryPage } from "../templates/secondary-template";
 
 
 const GenericListPageRenderers = {
-  'scored': async (list, worksheet) => {
-    const rows = await worksheet.getRows();
-    const items = rows
-      .map(r => {
-        return {
-          name: r.Name,
-          score: r.Score,
-          comment: r.Comment,
-          image: r.Image
-        }
-      })
-      .sort((i1, i2) => {
-        return i2.score - i1.score
-      })
-    return <ScoredListPage items={items} scale={5} description={list.description}/>
-  },
   'tiered': async (list, worksheet) => {
     const rows = await worksheet.getRows();
     const tiers = list.scale.map(({ tier, color, desc}) => {

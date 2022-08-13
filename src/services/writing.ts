@@ -50,7 +50,6 @@ export class WritingRemoteService implements WritingService {
 
   // A writingId is the path to the file w/o the extension
   async getWriting(writingId: string) {
-    console.log(writingId)
     try {
 
       const result = await this.options.githubApi.get(

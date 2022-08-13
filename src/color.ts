@@ -11,7 +11,6 @@ export interface AnimatedGradientColor {
 export type Color = SolidColor | AnimatedGradientColor;
 
 export const getColorStyle = (color: Color) => {
-  console.log(color)
   switch(color.type) {
     case 'grad-anim': {
       let gradColorStr = ''
