@@ -15,7 +15,7 @@
     "express-pino-logger": "^4.0.0",
     "glob": "^7.2.0",
     "google-spreadsheet": "^3.1.15",
-    "googleapis": "^39.2.0",
+    "googleapis": "^105.0.0",
     "gray-matter": "^4.0.3",
     "markdown-it": "^13.0.1",
     "marked": "^4.0.10",
