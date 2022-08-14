@@ -8,10 +8,11 @@ import { Config } from "../config";
 import { GamesPage } from "../components/GamesPage";
 import { TieredListPage } from '../components/TieredListPage';
 import { renderSecondaryPage } from "../templates/secondary-template";
+import { List } from '../services/lists';
 
 
 const GenericListPageRenderers = {
-  'tiered': async (list, worksheet) => {
+  'tiered': async (list: List, worksheet) => {
     const rows = await worksheet.getRows();
     const tiers = list.scale.map(({ tier, color, desc}) => {
       return {
@@ -66,6 +67,26 @@ const CustomListPageRenderers = {
   },
 }
 
+const getListsFromInfoSheet = async (sheet): Promise<List[]> => {
+  const rows = await sheet.getRows();
+  return rows.map(r => {
+    const tiers = r.tiers.split('\n').map(tierStr => {
+      const [tierName, tierRangeStart, tierRangeEnd, description] = tierStr.split('+')
+      return {
+      name: tierName,
+      ratingRange: [tierRangeStart, tierRangeEnd],
+      description
+      }
+    });
+    return {
+      id: r.id,
+      title: r.title,
+      sheetName: r['sheet-name'],
+      tiers
+    }
+  })
+}
+
 const getListPageRenderer = (list) => {
   if(list.listType === 'custom') {
     return CustomListPageRenderers[list.id];
@@ -85,13 +106,16 @@ export class ListsRouter {
       return router;
     }
 
-    for(const list of config.lists) {
+    const doc = new GoogleSpreadsheet(config.lists.sheetId);
+    await doc.useServiceAccountAuth({
+      client_email: config.google.serviceAccount.email,
+      private_key: config.google.serviceAccount.privateKey,
+    });
+    const infoSheet = doc.sheetsByTitle[config.lists.infoSheetName];
+    const lists = await getListsFromInfoSheet(infoSheet);
+
+    for(const list of lists) {
       router.get(`/${list.id}`, async (_, res) => {
-        const doc = new GoogleSpreadsheet(list.sheetId);
-        await doc.useServiceAccountAuth({
-          client_email: config.google.serviceAccount.email,
-          private_key: config.google.serviceAccount.privateKey,
-        });
         await doc.loadInfo();
         const worksheet = doc.sheetsByTitle[list.sheetName];
         const elem = await getListPageRenderer(list)(list, worksheet)

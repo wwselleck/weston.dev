@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Color, getColorStyle } from '../color';
 import { Table, TableRow, TableCell} from './table';
+import { List, ListItem, Tier } from '../services/lists';
 
 
 const TierHeader = ({ children, color }) => {
@@ -12,33 +13,40 @@ const TierHeader = ({ children, color }) => {
 }
 
 interface TieredListPageProps {
-  description?: string;
-  tiers: {
-    tier: string;
-    desc: string;
-    color: Color;
-    items: {
-      name: string;
-      comment: string;
-      image: string;
-    }[];
-  }[]
+  list: List;
+  items: ListItem[];
 }
 
 export const TieredListPage  = ({
-  description,
-  tiers
+  list,
+  items
 }: TieredListPageProps) => {
-console.log(tiers)
+  const { description, tiers} = list;
+
+  const sortedTiers = [...tiers].sort((tier1, tier2) => {
+    return tier2.ratingRange[0] - tier1.ratingRange[0]
+  });
+  const itemsByTier = items.reduce((acc, curr) => {
+    const tier = sortedTiers.find(tier => {
+      if(curr.rating <= tier.ratingRange[1] && curr.rating >= tier.ratingRange[0]) {
+        if(!acc[tier.name]) {
+          acc[tier.name] = [];
+        }
+        acc[tier.name].push(curr);
+      }
+    })
+  }, {})
+
   return <div>
     {description && <p className="leading-normal mb-8">{description}</p>}
     {tiers.map(tier => {
+      const items = itemsByTier[tier.name];
       return <div className="mb-14">
-        <TierHeader color={tier.color}>{tier.tier}</TierHeader>
-        <div className="mb-2">{tier.desc}</div>
+        <TierHeader color={'black'}>{tier.name}</TierHeader>
+        <div className="mb-2">{tier.description}</div>
         <Table>
-          {tier.items.map(item => {
-            return <TableRow color={tier.color}>
+          {items.map(item => {
+            return <TableRow color={{type: 'solid', hue: 'red'}}>
             {item.image &&
               <TableCell>
                 <img src={item.image} className="w-7"/>
