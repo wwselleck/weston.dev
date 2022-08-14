@@ -12,9 +12,11 @@ export const TieredListPage  = ({
   list,
   items
 }: TieredListPageProps) => {
-  const { description } = list;
+  const { title, description } = list;
 
   return <div>
+
+    <h1 className="text-4xl mb-7">{title} List</h1>
     {description && <p className="leading-normal mb-8">{description}</p>}
     <TieredListTable list={list} items={items}/>
   </div>
