@@ -64,6 +64,9 @@ export const TieredListTable = <ItemType extends ListItem>({ list, items, render
   return <div>
     {sortedTiers.map(tier => {
       const items = itemsByTier[tier.name];
+      if(!items ?? items.length === 0 ) {
+        return null
+      }
       return <div className="mb-14">
         <TierHeader color={tier.color} name={tier.name}/>
         <div className="mb-2">{tier.description}</div>
