@@ -71,19 +71,23 @@ document.addEventListener('mouseup', () => {
 }, false)
 
 const itemChoices = [
-  ['lollipop', '🍭'],
+  ['beer', '🍺'],
   ['bread', '🥖'],
   ['candy', '🍬'],
-  ['lemon', '🍋'],
-  ['popcorn', '🍿'],
-  ['egg', '🥚'],
-  ['spaghetti', '🍝'],
-  ['sushi', '🍣'],
-  ['ice cream', '🍦'],
-  ['doughnut', '🍩'],
-  ['juice box', '🧃'],
   ['coffee', '☕'],
-  ['pie', '🥧']
+  ['cookie', '🍪'],
+  ['doughnut', '🍩'],
+  ['ice cream', '🍦'],
+  ['juice box', '🧃'],
+  ['kiwi', '🥝'],
+  ['lollipop', '🍭'],
+  ['peach', '🍑'],
+  ['pie', '🥧'],
+  ['popcorn', '🍿'],
+  ['pretzel', '🥨'],
+  ['snowcone', '🍧'],
+  ['stack of pancakes', '🥞'],
+  ['strawberry', '🍓'],
 ]
 
 

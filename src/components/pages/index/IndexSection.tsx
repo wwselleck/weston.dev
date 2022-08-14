@@ -3,7 +3,7 @@ import React from 'react';
 const SectionHeaderColors = {
   'blue': 'bg-blue-3',
   'purple': 'bg-purple-2',
-  'pink': 'bg-pink'
+  'pink': 'bg-pink-1'
 }
 interface SectionHeaderProps {
   color: keyof typeof SectionHeaderColors;

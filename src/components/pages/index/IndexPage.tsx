@@ -19,7 +19,7 @@ export const IndexPage = ({ projects, links, commit, lists }: IndexProps) => {
       <div className="w-4/5 mx-auto my-52 max-w-5xl">
         <div className="flex mb-40">
           <div className="bg-me bg-contain rounded-full w-52 h-52 flex justify-center items-center mr-16">
-            <div className="w-56 h-56 rounded-full bg-gradient-to-tr from-blue-1 via-purple-1 to-pink -z-10 shrink-0 animate-[GradientAnimation_10s_ease_infinite] bg-[length:600%_600%]"></div>
+            <div className="w-56 h-56 rounded-full bg-gradient-to-tr from-blue-1 via-purple-1 to-pink-1 -z-10 shrink-0 animate-[GradientAnimation_10s_ease_infinite] bg-[length:600%_600%]"></div>
           </div>
           <div>
             <p className="text-2xl">
