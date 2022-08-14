@@ -17,6 +17,10 @@
         --blue-3: #4361eeff;
         --blue-2: #4895efff;
         --blue-1: #4cc9f0ff;
+        --green-1: #4cf062;
+        --yellow-1: #f0dd4c;
+        --orange-1: #f0704c;
+        --black-1: #171717;
     }
     body {
       font-family: "Mukta", sans-serif;

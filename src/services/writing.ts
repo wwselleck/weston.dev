@@ -1,7 +1,8 @@
 import path = require('path');
 import fsCb = require('fs');
 import matter from 'gray-matter';
-import { GithubApi } from '../lib/github';
+import axios from "axios";
+import type { AxiosInstance } from 'axios'
 import { Config } from '../config';
 
 const fs = fsCb.promises;
@@ -39,21 +40,27 @@ export class WritingLocalService implements WritingService {
 }
 
 
-interface WritingRemoteServiceOptions {
-  config: Config;
-  githubApi: GithubApi;
-}
-
 export class WritingRemoteService implements WritingService {
-  constructor(private options: WritingRemoteServiceOptions) {
+  config: Config;
+  client: AxiosInstance;
+
+  constructor(config: Config) {
+    this.config = config;
+    this.client = axios.create({
+      auth: {
+        username: config.github.username,
+        password: config.github.token
+      },
+      baseURL: 'https://api.github.com'
+    });
   }
 
   // A writingId is the path to the file w/o the extension
   async getWriting(writingId: string) {
     try {
 
-      const result = await this.options.githubApi.get(
-        `/repos/${this.options.config.writing.repo}/contents/${writingId}.md`
+      const result = await this.client.get(
+        `/repos/${this.config.writing.repo}/contents/${writingId}.md`
       )
       return this.fileToWriting(result.data)
     } catch (err) {

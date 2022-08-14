@@ -12,12 +12,16 @@ export interface Config {
   writing: {
     repo: string
   };
-  lists: {
+  lists2: {
     id: string;
     display: string;
     sheetId: string;
     sheetName: string;
-  }[]
+  }[];
+  lists: {
+    sheetId: string;
+    infoSheetName: string;
+  }
 }
 
 export const load = async () => {
@@ -38,7 +42,11 @@ export const load = async () => {
     writing: {
       repo: 'wwselleck/writing'
     },
-    lists: [
+    lists: {
+      sheetId: process.env.LISTS_SHEET_ID,
+      infoSheetName: 'info'
+    },
+    lists2: [
       {
         id: 'games',
         display: 'Video Games',

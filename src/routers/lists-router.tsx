@@ -1,48 +1,36 @@
 import express from "express";
 import * as React from "react";
 import {
-  GoogleSpreadsheet,
   GoogleSpreadsheetWorksheet,
 } from "google-spreadsheet";
-import { Config } from "../config";
 import { GamesPage } from "../components/GamesPage";
 import { TieredListPage } from '../components/TieredListPage';
 import { renderSecondaryPage } from "../templates/secondary-template";
+import { List } from '../services/lists';
+import { Context} from '../context';
 
 
 const GenericListPageRenderers = {
-  'tiered': async (list, worksheet) => {
+  'tiered': async (list: List, worksheet: GoogleSpreadsheetWorksheet) => {
     const rows = await worksheet.getRows();
-    const tiers = list.scale.map(({ tier, color, desc}) => {
-      return {
-        tier,
-        desc,
-        color,
-        items: []
-      }
-    })
 
+    const items = [];
     for(const r of rows) {
       let item = {
           name: r.Name,
-          tier: r.Tier,
+          rating: r.Rating,
           comment: r.Comment,
           image: r.Image
       }
-      for(const tier of tiers) {
-        if(tier.tier === item.tier) {
-          tier.items.push(item);
-          break;
-        }
-      }
+      items.push(item);
     }
 
-    return <TieredListPage tiers={tiers} description={list.description}/>
+    return <TieredListPage list={list} items={items}/>
   }
 }
 
 const CustomListPageRenderers = {
-  games: async (list, worksheet) => {
+  games: async (list: List, worksheet: GoogleSpreadsheetWorksheet) => {
     const rows = await worksheet.getRows();
     const games = rows
       .filter((r) => r.Rating)
@@ -60,13 +48,14 @@ const CustomListPageRenderers = {
           ownership: r.Ownership === 'physical'
             ? 'physical'
             : 'unowned'
-        };
+        } as const;
       });
       return <GamesPage games={games} />
   },
 }
 
-const getListPageRenderer = (list) => {
+
+const getListPageRenderer = (list: List) => {
   if(list.listType === 'custom') {
     return CustomListPageRenderers[list.id];
   } else {
@@ -74,36 +63,34 @@ const getListPageRenderer = (list) => {
   }
 }
 
-interface ListsRouterArgs {
-  config: Config;
-}
 
 export class ListsRouter {
-  static async create({ config }: ListsRouterArgs) {
+  static async create(context: Context) {
     const router = express.Router();
-    if(!config.google.serviceAccount.email) {
-      return router;
-    }
 
-    for(const list of config.lists) {
-      router.get(`/${list.id}`, async (_, res) => {
-        const doc = new GoogleSpreadsheet(list.sheetId);
-        await doc.useServiceAccountAuth({
-          client_email: config.google.serviceAccount.email,
-          private_key: config.google.serviceAccount.privateKey,
-        });
-        await doc.loadInfo();
-        const worksheet = doc.sheetsByTitle[list.sheetName];
-        const elem = await getListPageRenderer(list)(list, worksheet)
-        if(!elem) {
-          res.status(404);
-          res.send();
-          return;
-        }
-        res.header("Content-Type", "text/html");
-        res.send(renderSecondaryPage(elem));
-      })
-    }
+    router.get(`/:listId`, async (req, res) => {
+      const listId = req.params.listId;
+      const list = await context.lists.getListById(listId);
+
+      if(!list) {
+        res.status(404);
+        res.send();
+        return;
+
+      }
+
+      const listSheet = await context.lists.getListSheet(listId);
+      const elem = await getListPageRenderer(list)(list, listSheet)
+
+      if(!elem) {
+        res.status(404);
+        res.send();
+        return;
+      }
+      res.header("Content-Type", "text/html");
+      res.send(renderSecondaryPage(elem));
+    })
+
     return router;
   }
 }

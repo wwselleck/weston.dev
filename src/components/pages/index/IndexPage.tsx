@@ -1,27 +1,16 @@
 import * as React from "react";
 
-import { Config } from '../../../config';
 import * as Dates from "../../../lib/date";
+import * as Data from '../../../services/data';
+import { Commit } from '../../../services/github';
+import { List } from '../../../services/lists';
 import { Section, SectionItem } from './IndexSection';
 
 interface IndexProps {
   links: Array<{ text: string; href: string, iconUrl?: string }>;
-  projects: Array<{
-    link: string;
-    title: string;
-    description: string;
-    emoji: string;
-  }>;
-  commit?: {
-    link: string;
-    repo: {
-      name: string;
-      link: string;
-    };
-    message: string;
-    date: Date;
-  };
-  lists?: Config['lists'];
+  projects: Array<Data.Project>;
+  commit?: Commit;
+  lists?: List[];
 }
 
 export const IndexPage = ({ projects, links, commit, lists }: IndexProps) => {
@@ -51,7 +40,7 @@ export const IndexPage = ({ projects, links, commit, lists }: IndexProps) => {
           <ProjectsSection projects={projects} />
           <Section color="blue" name="Lists">
             {lists.map(list => {
-              return <SectionItem href={`./lists/${list.id}`} name={list.display}/>
+              return <SectionItem href={`./lists/${list.id}`} name={list.title}/>
             })}
           </Section>
           <Section color="purple" name="Writing">

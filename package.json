@@ -28,7 +28,7 @@
   "scripts": {
     "build": "tsc && npm run build:tailwind",
     "build:tailwind": "tailwindcss -i ./src/input.css -o ./public/output.css",
-    "build:tailwind:atch": "tailwindcss -i ./src/input.css -o ./public/output.css --watch",
+    "build:tailwind:watch": "tailwindcss -i ./src/input.css -o ./public/output.css --watch",
     "dev": "ENV=local nodemon index.ts",
     "start": "node ./dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"

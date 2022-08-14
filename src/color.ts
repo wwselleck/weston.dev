@@ -8,9 +8,14 @@ export interface AnimatedGradientColor {
   gradient: [string, string];
 }
 
-export type Color = SolidColor | AnimatedGradientColor;
+export type Color = SolidColor | AnimatedGradientColor | string;
 
 export const getColorStyle = (color: Color) => {
+  if(typeof color === 'string') {
+    return {
+      backgroundColor: `var(--${color})`
+    };
+  }
   switch(color.type) {
     case 'grad-anim': {
       let gradColorStr = ''

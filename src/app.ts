@@ -2,37 +2,39 @@ import path from "path";
 import express from "express";
 import expressPino from "express-pino-logger";
 
-import { createGithubApi } from './lib/github'
 import * as Data from "./services/data";
 import { WritingRemoteService, WritingLocalService } from "./services/writing";
+import { ListsService } from './services/lists';
+import { GithubService } from './services/github';
 import * as Config from "./config";
+import { Context } from './context';
 import { IndexRouter } from "./routers/index-router";
 import { ListsRouter } from "./routers/lists-router";
 import { WritingRouter } from "./routers/writing-router";
 
 export async function start() {
-  const data = await Data.load();
   const config = await Config.load();
 
-  const githubApi = createGithubApi(
-    config.github.username,
-    config.github.token
-  )
+  const context: Context = {
+    config: config,
+    lists: new ListsService(config),
+    github: new GithubService(config),
+    writing: process.env.ENV === 'local'
+      ? new WritingLocalService()
+      : new WritingRemoteService(config),
+    data: await Data.load()
+
+  }
 
   const app = express();
   app.use(expressPino());
   app.use("/public", express.static(path.join(".", "public")));
 
-  app.use("", IndexRouter.create({ data, config, githubApi }));
+  app.use("", IndexRouter.create(context));
 
-  app.use('/lists', await ListsRouter.create({ config }))
+  app.use('/lists', await ListsRouter.create(context))
 
-  app.use('/writing', await WritingRouter.create({
-    config,
-    writingService: process.env.ENV === 'local'
-      ? new WritingLocalService()
-      : new WritingRemoteService({ config, githubApi })
-  }))
+  app.use('/writing', await WritingRouter.create(context))
 
 
   app.listen(8080);

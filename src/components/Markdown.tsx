@@ -4,7 +4,7 @@ import MarkdownIt from 'markdown-it';
 interface MarkdownProps {
   content: string;
 }
-export const Markdown = ({ content }) => {
+export const Markdown = ({ content }: MarkdownProps) => {
   const md = new MarkdownIt({
     html: true
   })
