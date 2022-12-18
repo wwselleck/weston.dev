@@ -3,7 +3,7 @@ import * as React from "react";
 import {
   GoogleSpreadsheetWorksheet,
 } from "google-spreadsheet";
-import { GamesPage } from "../components/GamesPage";
+import { GamesPage } from "../components/GamesPage.new";
 import { TieredListPage } from '../components/TieredListPage';
 import { renderSecondaryPage } from "../templates/secondary-template";
 import { List } from '../services/lists';
@@ -40,6 +40,7 @@ const CustomListPageRenderers = {
           platform: r.Platform,
           rating: Number(r.Rating),
           added: r.Added && new Date(r.Added),
+          releaseDate: r.Year,
           completionStatus: r['100%'] === 'y'
             ? '100'
             : r['Completed'] === 'y'
