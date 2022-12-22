@@ -12,7 +12,7 @@ interface TableRowProps {
 
 export const TableRow: React.FC<TableRowProps> = ({ children, color }) => {
   return <div className="flex p-1 items-center rounded-lg border border-solid my-1 border-[#D3D3D3] overflow-hidden">
-    {color && <div className="flex p-1 items-center" style={{
+    {color && <div className="" style={{
       ...getColorStyle(color),
       padding: '0',
       width: '8px'
