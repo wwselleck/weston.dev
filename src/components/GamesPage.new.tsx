@@ -32,12 +32,12 @@ interface GameProps {
 }
 
 const Game = ({ num, game }) => {
-  const imageId = game.image ?? game.name.toLowerCase().replace(/([^a-z0-9])+/gi, " ").split(' ').join('-');
+  const imageId = game.image ?? game.name.toLowerCase().replace(/([^a-z0-9])+/gi, " ").trim().split(' ').join('-');
   return <div className="flex items-center w-full h-16 relative overflow-hidden rounded-xl bg-[#AAAAAA] z-[-100]">
       <span className="text-4xl text-white w-20 flex items-center justify-center">
         #{num}
       </span>
-      <div className="w-24 h-full bg-cover" style={{
+      <div className="w-24 h-full bg-cover bg-center" style={{
         backgroundImage: `url('/public/games/${imageId}.png')`,
       }}/>
       <div className="w-full h-full absolute z-[-10] bg-center" style={{
