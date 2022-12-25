@@ -89,7 +89,7 @@ export class ListsRouter {
         return;
       }
       res.header("Content-Type", "text/html");
-      res.send(renderSecondaryPage(elem));
+      res.send(renderSecondaryPage(elem, list.title));
     })
 
     return router;

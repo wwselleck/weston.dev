@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOMServer from "react-dom/server";
 import { renderRoot } from './root-template';
 
-export function renderSecondaryPage(el: React.ReactNode) {
+export function renderSecondaryPage(el: React.ReactNode, subtitle?: string) {
   return renderRoot(ReactDOMServer.renderToString(<SecondaryPageWrapper>
     {el}
-  </SecondaryPageWrapper>))
+  </SecondaryPageWrapper>), { subtitle })
 }
 
 const SecondaryPageWrapper: React.FC = ({children}) => {
