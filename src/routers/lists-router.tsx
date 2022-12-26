@@ -3,7 +3,7 @@ import * as React from "react";
 import {
   GoogleSpreadsheetWorksheet,
 } from "google-spreadsheet";
-import { GamesPage } from "../components/GamesPage.new";
+import { GamesPage } from "../components/GamesPage";
 import { TieredListPage } from '../components/TieredListPage';
 import { renderSecondaryPage } from "../templates/secondary-template";
 import { List } from '../services/lists';

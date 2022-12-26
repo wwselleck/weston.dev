@@ -1,92 +1,59 @@
-import * as React from "react";
-import { Table, TableRow, TableCell} from './table';
+import * as React from 'react';
 
 interface GamesPageProps {
   games: {
     name: string;
     platform: string;
     rating: number;
+    releaseDate: string;
     added?: Date | null;
     completionStatus: '100' | 'completed' | 'not-completed'
     ownership: 'physical' | 'unowned';
   }[];
 }
 
+const platformDisplayText = new Map([
+  ['switch', "Nintendo Switch"],
+  ['gb', 'Gameboy'],
+  ['gba', 'Gameboy Advance'],
+  ['n64', "Nintendo 64"],
+])
+
+const getPlatformDisplayText = (platform: string) => {
+  if(platformDisplayText.has(platform.toLowerCase())) {
+    return platformDisplayText.get(platform.toLowerCase());
+  }
+  return platform;
+}
+
+interface GameProps {
+  num: number;
+  game: GamesPageProps['games'][0];
+}
+
+const Game = ({ num, game }) => {
+  const imageId = game.image ?? game.name.toLowerCase().replace(/([^a-z0-9])+/gi, " ").trim().split(' ').join('-');
+  return <div className="flex items-center w-full h-16 relative overflow-hidden rounded-xl bg-[#AAAAAA] z-[-100]">
+      <span className="text-4xl text-white w-20 flex items-center justify-center">
+        #{num}
+      </span>
+      <div className="w-24 h-full bg-cover bg-center" style={{
+        backgroundImage: `url('/public/games/${imageId}.png')`,
+      }}/>
+      <div className="w-full h-full absolute z-[-10] bg-center" style={{
+        backgroundImage: `url('/public/games/${imageId}.png')`,
+        backgroundSize: '150%',
+        filter: 'blur(70px) saturate(3)'
+      }}/>
+      <div className="ml-4 flex flex-col text-white">
+        <div className="text-2xl">{game.name}</div>
+        <div>{[game.releaseDate, getPlatformDisplayText(game.platform)].filter(x => x).join(' • ')}</div>
+      </div>
+  </div>
+}
+
 export const GamesPage = ({ games }: GamesPageProps) => {
-  const sortedGames = [...games].sort((g1, g2) => {
-    return g2.rating - g1.rating;
-  });
-  return (
-    <div>
-      <p>
-        All of the games I've ever (thoroughly) played in order from 1-
-        {games.length}
-      </p>
-      <Table>
-        {sortedGames.map((game, i) => {
-          const gameCompleted = ['completed', '100'].includes(game.completionStatus);
-          return <TableRow>
-            <TableCell>
-              <div className="ml-2 w-4">{i+1}</div>
-            </TableCell>
-            <TableCell>
-              <PlatformImage platform={game.platform} />
-            </TableCell>
-            <TableCell>
-              <div>
-                <div>
-                  <b>{game.name}</b>
-                </div>
-                <div className="subtle-text">
-                  {game.added.toLocaleDateString(undefined, {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                  })}
-                </div>
-              </div>
-            </TableCell>
-            <TableCell align="right">
-              {gameCompleted && <Badge image="game-completed_128.png" title="Game completed"/>}
-              {game.completionStatus === '100' && <Badge image="game-100_128.png" title="Game completed to 100%"/>}
-              {game.ownership === 'physical' && <Badge image="game-owned_128.png" title="Physical copy owned"/>}
-
-            </TableCell>
-          </TableRow>
-        })}
-      </Table>
-    </div>
-  );
-};
-
-const PlatformImageMap = {
-  n64: "n64.png",
-  pc: "pc.png",
-  switch: "switch.png",
-  "xbox 360": "xbox360.png",
-  gb: "gameboy.png",
-  wii: "wii.png",
-  gamecube: "gamecube.png",
-  gba: "gba.png",
-  ds: "ds.png",
-  nes: "nes.png",
-  flash: "flash.png",
-  famicom: "famicom.png",
-  snes: "snes.jpg",
-};
-
-const getPlatformImageUrl = (platform: string) => {
-  const file = PlatformImageMap[platform.toLowerCase()]
-    return  file
-      ? `/public/${file}`
-      : null;
+  return <div className="relative grid gap-2 max-w-[900px] mx-auto"> {games.map((game, i) => {
+    return <Game num={i+1} game={game} />
+  })} </div>;
 }
-
-const PlatformImage: React.FC<{ platform: string}> = ({ platform}) => {
-  return <img className="w-9 h-9 mr-2" src={getPlatformImageUrl(platform)}/>
-}
-
-const Badge = ({image, title}) => {
-  return <img className="w-5 h-5 mr-2" title={title} src={`/public/${image}`}/>
-}
-

@@ -1,8 +1,8 @@
 interface Opts {
   scripts?: string[];
-  subtitle: string;
+  subtitle?: string;
 }
-export function renderRoot(str: string, opts?: any) {
+export function renderRoot(str: string, opts?: Opts) {
   const subtitle = opts.subtitle ? `| ${opts.subtitle}` : '';
   return `
     <!DOCTYPE html>
