@@ -1,10 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: ["./src/**/*.tsx"],
   theme: {
     colors: {
-      "white": "var(--white)",
-      "text-color": "var(--text-color)",
+      white: "var(--white)",
+      "text-color": "var(--text-dark)",
+      "text-dark": "var(--text-dark)",
+      "text-light": "var(--text-light)",
       "text-subtle": "var(--text-subtle)",
       "pink-1": "var(--pink-1)",
       "pink-2": "var(--pink-2)",
@@ -25,28 +28,28 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'me': "url(me.jpg)"
+        me: "url(me.jpg)",
       },
       keyframes: {
         GradientAnimation: {
-          '0%, 100%': {
-            backgroundPosition: '0% 0%'
+          "0%, 100%": {
+            backgroundPosition: "0% 0%",
           },
-          '25%': {
-            backgroundPosition: '100% 0%'
+          "25%": {
+            backgroundPosition: "100% 0%",
           },
-          '50%': {
-            backgroundPosition: '100% 100%'
+          "50%": {
+            backgroundPosition: "100% 100%",
           },
-          '75%': {
-            backgroundPosition: '0% 100%'
+          "75%": {
+            backgroundPosition: "0% 100%",
           },
-        }
+        },
       },
       animation: {
-        MePicBackground: 'GradientAnimation 10s ease infinite'
-      }
+        MePicBackground: "GradientAnimation 10s ease infinite",
+      },
     },
   },
   plugins: [],
-}
+};

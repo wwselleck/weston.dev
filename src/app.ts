@@ -4,13 +4,14 @@ import expressPino from "express-pino-logger";
 
 import * as Data from "./services/data";
 import { WritingRemoteService, WritingLocalService } from "./services/writing";
-import { ListsService } from './services/lists';
-import { GithubService } from './services/github';
+import { ListsService } from "./services/lists";
+import { GithubService } from "./services/github";
 import * as Config from "./config";
-import { Context } from './context';
+import { Context } from "./context";
 import { IndexRouter } from "./routers/index-router";
 import { ListsRouter } from "./routers/lists-router";
 import { WritingRouter } from "./routers/writing-router";
+import { PagesRouter } from "./routers/pages-router";
 
 export async function start() {
   const config = await Config.load();
@@ -19,12 +20,12 @@ export async function start() {
     config: config,
     lists: new ListsService(config),
     github: new GithubService(config),
-    writing: process.env.ENV === 'local'
-      ? new WritingLocalService()
-      : new WritingRemoteService(config),
-    data: await Data.load()
-
-  }
+    writing:
+      process.env.ENV === "local"
+        ? new WritingLocalService()
+        : new WritingRemoteService(config),
+    data: await Data.load(),
+  };
 
   const app = express();
   app.use(expressPino());
@@ -32,10 +33,11 @@ export async function start() {
 
   app.use("", IndexRouter.create(context));
 
-  app.use('/lists', await ListsRouter.create(context))
+  app.use("/lists", await ListsRouter.create(context));
 
-  app.use('/writing', await WritingRouter.create(context))
+  app.use("/writing", await WritingRouter.create(context));
 
+  app.use("", await PagesRouter.create(context));
 
   app.listen(8080);
   console.log("Running on port 8080");

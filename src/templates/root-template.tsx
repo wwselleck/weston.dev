@@ -1,9 +1,12 @@
+import * as React from "react";
+import ReactDOMServer from "react-dom/server";
+
 interface Opts {
   scripts?: string[];
   subtitle?: string;
 }
-export function renderRoot(str: string, opts?: Opts) {
-  const subtitle = opts.subtitle ? `| ${opts.subtitle}` : '';
+export function renderRoot(node: React.ReactNode, opts?: Opts) {
+  const subtitle = opts.subtitle ? `| ${opts.subtitle}` : "";
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -26,10 +29,22 @@ export function renderRoot(str: string, opts?: Opts) {
           gtag('config', 'G-2Q48ECMC0R');
         </script>
       </head>
-      <body>
-        ${str}
-        ${opts?.scripts?.map(scriptName => `<script async src="${scriptName}"></script>`) ?? ''}
+      <body class="dark">
+        ${ReactDOMServer.renderToString(<Root>{node}</Root>)}
+        ${
+          opts?.scripts?.map(
+            (scriptName) => `<script async src="${scriptName}"></script>`
+          ) ?? ""
+        }
       </body>
     </html>
   `;
 }
+
+export const Root = ({ children }) => {
+  return (
+    <div className="w-full absolute bg-white text-text-dar dark:text-text-light dark:bg-black-1">
+      {children}
+    </div>
+  );
+};
