@@ -26,9 +26,13 @@
     --text-light: var(--white);
     --text-subtle: #898989;
     font-family: "Mukta", sans-serif;
-    color: var(--text-color) !important;
+    color: var(--text-color);
     text-shadow: none !important;
     background: white;
+  }
+  body.dark {
+      background-color: var(--black-1);
+      color: var(--text-light);
   }
   a {
     color: var(--blue-4);
@@ -56,9 +60,6 @@
   }
   * {
     line-height: 1.5;
-  }
-  p {
-    color: var(--text-color);
   }
 
   /*

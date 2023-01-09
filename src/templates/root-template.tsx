@@ -11,7 +11,7 @@ export function renderRoot(node: React.ReactNode, opts?: Opts) {
     <!DOCTYPE html>
     <html lang="en">
       <head>
-        <title>Weston Selleck ${subtitle} </title>
+        <title>weston.dev ${subtitle} </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +43,7 @@ export function renderRoot(node: React.ReactNode, opts?: Opts) {
 
 export const Root = ({ children }) => {
   return (
-    <div className="w-full absolute bg-white text-text-dar dark:text-text-light dark:bg-black-1">
+    <div>
       {children}
     </div>
   );

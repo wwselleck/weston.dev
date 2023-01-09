@@ -14,6 +14,7 @@ const DonkeyKongGamesPage = () => {
 };
 
 export const page: Page = {
+  title: 'Every Donkey Kong game, best to worst',
   slug: "donkey-kong",
   render: () => <DonkeyKongGamesPage />,
 };
