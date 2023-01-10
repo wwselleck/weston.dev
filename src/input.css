@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-  }
   body {
     --white: #ffffff;
     --pink-1: #f72585ff;
@@ -31,8 +29,8 @@
     background: white;
   }
   body.dark {
-      background-color: var(--black-1);
-      color: var(--text-light);
+    background-color: var(--black-1);
+    color: var(--text-light);
   }
   a {
     color: var(--blue-4);
@@ -106,6 +104,15 @@
     margin: 0 auto;
     border-radius: 5px;
     line-height: 1.2;
+  }
+
+  .dark .markdown pre {
+    background: rgb(14, 13, 25);
+    background: linear-gradient(
+      0deg,
+      rgba(14, 13, 25, 1) 0%,
+      rgba(19, 28, 36, 1) 100%
+    );
   }
   .markdown ol {
     width: 80%;
