@@ -11,7 +11,7 @@ import { Page } from "../page";
 
 const getPageForFile = async (filename: string): Promise<Page> => {
   const ext = path.extname(filename);
-  if(ext === '.tsx') {
+  if(['.tsx', 'js'].includes(ext)) {
       const mod = require(`../pages/${filename}`);
       return mod.page;
   } else if (ext === '.md') {
