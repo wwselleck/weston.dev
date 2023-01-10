@@ -83,7 +83,7 @@
     font-size: 2.4rem;
   }
   .markdown h3 {
-    font-size: 1.17rem;
+    font-size: 2rem;
   }
   .markdown h4 {
     font-size: 1rem;
@@ -104,6 +104,7 @@
     margin: 0 auto;
     border-radius: 5px;
     line-height: 1.2;
+    white-space: pre-wrap;
   }
 
   .dark .markdown pre {
@@ -125,7 +126,6 @@
   }
   .markdown ul {
     width: 80%;
-    margin: 0 auto;
     list-style-type: disc;
     list-style-position: inside;
   }

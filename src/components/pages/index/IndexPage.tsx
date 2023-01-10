@@ -56,6 +56,10 @@ export const IndexPage = ({ projects, links, commit, lists }: IndexProps) => {
               href="/writing/every-pinball-game"
               name="🚧 Every Pinball Game"
             />
+            <SectionItem
+              href="/pickled-eggs"
+              name="🚧 Pickling Eggs"
+            />
           </Section>
           <div className="mt-24 mb-8 flex justify-center">
             <MostRecentCommit commit={commit} />
