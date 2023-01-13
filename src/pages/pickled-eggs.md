@@ -94,7 +94,7 @@ We tried one of each egg after 48 hours. The habanero egg had a very strong vine
 - Vinegar Intensity: 🥗🥗🥗🥗
 - Habanero Flavor Intensity: 🫑🫑
 - Spice Level: 🌶️
-- Egg quality: 🥚🥚🥚🥚
+- Egg quality: 🥚🥚🥚🥚🥚
 - Overall: ⭐⭐⭐⭐
 
 
