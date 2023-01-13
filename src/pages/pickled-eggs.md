@@ -55,22 +55,59 @@ For 6 eggs packed into a standard mason jar, this pickling brine recipe resulted
 
 ### After 24 hours
 
-- Vinegar Intensity: ⭐ (out of 5)
-- Other Flavor intensity: 0 (out of 5)
-- Egg quality: ⭐ (out of 5)
-- Overall: ⭐⭐ (out of 5)
+- Vinegar Intensity: 🥗
+- Egg quality: 🥚
+- Overall: ⭐⭐
 
 These eggs were good, but didn't taste substantially different from just a regular boiled egg. The vinegar taste wasn't very strong, and the eggs were probably a bit overcooked from my "not knowing what boiling means" issue. There also wasn't much of a salty taste.
 
 ### After 48 hours
 
-- Vinegar Intensity: ⭐⭐
-- Other Flavor Intensity: ⭐
-- Egg quality: ⭐
+- Vinegar Intensity: 🥗🥗
+- Egg quality: 🥚
 - Overall: ⭐⭐
 
 The vinegar was a bit more noticeable after an extra 24 hours, but not enough to bump up the overall rating.
 
-This is only picture I got of this batch, since I didn't decide to write anything about this until this point.
+This is only picture I got of this batch, since I didn't decide to write this until this point.
 
 ![](/public/pickled-eggs/batch_1.jpeg)
+
+
+## Batch #2
+
+I ordered habaneros and jalapenos from the grocery store, thinking I'd use them together to make my next batch, but instead decided to separate the variables first and make two separate batches. I didn't expect to really like a strong jalapeno taste much, but I just wanted to try it out to see anyway.
+
+Oh, but first the eggs. I waited until the water was _actually_ boiling this time, and did every other step the same. I don't know if I just got lucky with these eggs, but I batted 1.000 on peeling them this time. **12 for 12**. I set six aside for pickling, and left six alone for my girlfriend 👩 who prefers non-pickled eggs somehow. I got two of my mini mason jars and put three eggs in each.
+
+My brine was a little different this time. I used a 1.5/.5 cup vinegar-to-water ratio, and boiled the brine for at least 10 minutes. I don't remember exactly how long I boiled it for the first batch, but it wasn't 10 minutes. I also just eyeballed the sugar and salt, which I'm pretty sure resulted in more of each than the previous brine.
+
+In one jar I added a single habanero sliced in half, and in the other about 3/4ths of a big jalapeno sliced into...slices I guess. Circles. I had some extra brine after filling the two jars, so I threw in the rest of my habaneros and jalapenos into a separate jar and just pickled those by themselves. For fun.
+
+Here's the squad hanging out before they headed into the fridge.
+![](/public/pickled-eggs/batch_2_1.jpeg)
+
+### After 48 Hours
+
+We tried one of each egg after 48 hours. The habanero egg had a very strong vinegar taste, and a slightly less noticeable habanero taste. It also had a tiny bit of spice, but really not much. The egg was noticeably less cooked than the first batch; the center of the yolk was a teeny tiny bit gooey and darker colored, just like the person from Youtube said it should be. Overall, these were great, but a bit strong on the vinegar taste.
+
+- Vinegar Intensity: 🥗🥗🥗🥗
+- Habanero Flavor Intensity: 🫑🫑
+- Spice Level: 🌶️
+- Egg quality: 🥚🥚🥚🥚
+- Overall: ⭐⭐⭐⭐
+
+
+![](/public/pickled-eggs/batch_2_2.jpeg)
+
+The jalapeno egg had a _very_ strong jalapeno taste, which, like I predicted, I didn't enjoy all that much. Jalapenos on their own just don't have a great flavor...I guess I never really thought of that because I usually eat pickled jalapenos. The vinegar was still there, but overpowered by the jalapeno taste.
+
+- Vinegar Intensity: 🥗🥗🥗
+- Jalapeno Flavor Intensity: 🫑🫑🫑🫑🫑
+- Spice Level: 🌶️
+- Egg quality: 🥚🥚🥚🥚🥚
+- Overall: ⭐
+
+I ended up eating all of the habanero eggs two days later, which tasted just about the same as they had 48 hours prior. The jalapeno ones are still in my fridge, I'll probably eat them as a snack tomorrow, maybe I'll like them more after a second try. I also haven't eaten any of the habaneros and jalapenos that I pickled by themselves; I'll probably wait to eat those until we make something for dinner that they might go semi-well with.
+
+
