@@ -17,20 +17,16 @@ const getPageForFile = async (filename: string): Promise<Page> => {
   } else if (ext === '.md') {
     const contents = await fs.promises.readFile(path.resolve(__dirname, `../pages/${filename}`), 'utf8');
     const parsedMd = matter(contents);
-    if(!parsedMd.data.published) {
-      return null;
-    }
     if(!parsedMd.data.slug) {
       throw new Error(`Markdown page ${filename} does not have a slug set`)
-
     }
     return {
       title: parsedMd.data.title,
       slug: parsedMd.data.slug,
       render: () => {
         return <Markdown content={parsedMd.content}/>
-        }
-
+        },
+      published: parsedMd.data.published
     }
   }
 }
@@ -46,9 +42,10 @@ export class PagesRouter {
     for (const pageFile of pageFiles) {
       const page = await getPageForFile(pageFile)
 
-      if(!page) {
+      if(!page || !page.published) {
         continue;
       }
+
       console.log(page);
       router.get(`/${page.slug}`, (req, res) => {
         console.log("here");

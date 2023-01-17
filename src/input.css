@@ -19,9 +19,9 @@
     --green-1: #4cf062;
     --yellow-1: #f0dd4c;
     --orange-1: #f0704c;
-    --black-1: #202020;
+    --black-1: #1F2028;
     --text-dark: #161717;
-    --text-light: var(--white);
+    --text-light: #cecece;
     --text-subtle: #898989;
     font-family: "Mukta", sans-serif;
     color: var(--text-color);
@@ -69,7 +69,6 @@
      *
      */
   .markdown {
-    line-height: 1.85;
     font-size: 1.2rem;
   }
   .markdown img {
