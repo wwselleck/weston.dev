@@ -53,7 +53,7 @@ export const IndexPage = ({ projects, links, commit, lists }: IndexProps) => {
           </Section>
           <Section color="purple" name="Writing">
             <SectionItem
-              href="/writing/every-pinball-game"
+              href="/every-pinball-game"
               name="🚧 Every Pinball Game"
             />
             <SectionItem

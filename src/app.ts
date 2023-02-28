@@ -3,14 +3,12 @@ import express from "express";
 import expressPino from "express-pino-logger";
 
 import * as Data from "./services/data";
-import { WritingRemoteService, WritingLocalService } from "./services/writing";
 import { ListsService } from "./services/lists";
 import { GithubService } from "./services/github";
 import * as Config from "./config";
 import { Context } from "./context";
 import { IndexRouter } from "./routers/index-router";
 import { ListsRouter } from "./routers/lists-router";
-import { WritingRouter } from "./routers/writing-router";
 import { PagesRouter } from "./routers/pages-router";
 
 export async function start() {
@@ -20,10 +18,6 @@ export async function start() {
     config: config,
     lists: new ListsService(config),
     github: new GithubService(config),
-    writing:
-      process.env.ENV === "local"
-        ? new WritingLocalService()
-        : new WritingRemoteService(config),
     data: await Data.load(),
   };
 
@@ -35,7 +29,6 @@ export async function start() {
 
   app.use("/lists", await ListsRouter.create(context));
 
-  app.use("/writing", await WritingRouter.create(context));
 
   app.use("", await PagesRouter.create(context));
 
