@@ -1,19 +1,23 @@
 import * as React from "react";
 
-import * as Dates from "../../../lib/date";
-import * as Data from "../../../services/data";
-import { Commit } from "../../../services/github";
-import { List } from "../../../services/lists";
+import * as Dates from "../lib/date";
+import * as Data from "../services/data";
+import { Commit } from "../services/github";
+import { List } from "../services/lists";
 import { Section, SectionItem } from "./IndexSection";
+import { renderHomePage } from "../templates/home-template";
+import { Context } from "../context";
+import { Page } from "../services/pages";
 
 interface IndexProps {
   links: Array<{ text: string; href: string; iconUrl?: string }>;
   projects: Array<Data.Project>;
   commit?: Commit;
   lists?: List[];
+  posts: Page[];
 }
 
-export const IndexPage = ({ projects, links, commit, lists }: IndexProps) => {
+export const IndexPage = ({ projects, links, commit, lists, posts }: IndexProps) => {
   return (
     <div>
       <div className="w-4/5 mx-auto my-52 max-w-5xl">
@@ -45,21 +49,21 @@ export const IndexPage = ({ projects, links, commit, lists }: IndexProps) => {
         <div className="w-3/5 mx-auto">
           <ProjectsSection projects={projects} />
           <Section color="blue" name="Lists">
-            {lists.map((list) => {
+            {lists?.map((list) => {
               return (
                 <SectionItem href={`./lists/${list.id}`} name={list.title} />
               );
             })}
           </Section>
-          <Section color="purple" name="Writing">
-            <SectionItem
-              href="/every-pinball-game"
-              name="🚧 Every Pinball Game"
-            />
-            <SectionItem
-              href="/pickled-eggs"
-              name="🚧 Pickling Eggs"
-            />
+          <Section color="purple" name="Posts">
+            {posts.sort((p1, p2) => {
+                return p1.title.localeCompare(p2.title)
+              }).map(post => {
+              return <SectionItem
+                href={post.permalink}
+                name={post.title}
+              />
+            })}
           </Section>
           <div className="mt-24 mb-8 flex justify-center">
             <MostRecentCommit commit={commit} />
@@ -121,3 +125,18 @@ export const MostRecentCommit = ({
     </div>
   );
 };
+
+export const page = {
+  title: '',
+  published: true,
+  renderToHTML: async (context: Context) => {
+    const allPages = await context.pages.getAllPages();
+    const posts = allPages.filter(page => {
+      const excludedPermalinkPatterns = [/^\/$/, /^\/all/];
+      return !excludedPermalinkPatterns.some(rgx => rgx.test(page.permalink))
+    })
+    return renderHomePage(
+      <IndexPage projects={context.data.projects} links={context.data.links} posts={posts}/>
+    );
+  }
+}

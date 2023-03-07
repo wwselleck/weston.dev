@@ -23,7 +23,7 @@
     --text-dark: #161717;
     --text-light: #cecece;
     --text-subtle: #898989;
-    font-family: "Mukta", sans-serif;
+    font-family: "Verdana", sans-serif;
     color: var(--text-color);
     text-shadow: none !important;
     background: white;
@@ -40,14 +40,7 @@
     color: var(--blue-2);
   }
   a:hover {
-    background-image: linear-gradient(270deg, var(--purple-2), var(--pink-1));
-    background-clip: text;
-    animation: GradientAnimation 2s ease infinite;
-    text-decoration: underline;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+      color: var(--pink-1);
   }
   b,
   strong {

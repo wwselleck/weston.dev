@@ -1,6 +1,5 @@
 ---
 published: true
-slug: pickled-eggs
 title: Pickling Eggs
 ---
 
