@@ -1,9 +1,9 @@
 ---
 published: true
-title: Review - Bearaby Small Pillow Ball
+title: "Review: Bearaby Small Hugget"
 ---
 
-# Review - Bearaby Small Hugget
+# Review: Bearaby Small Hugget
 
 <img src="/public/bearaby-hugget.jpeg"/>
 

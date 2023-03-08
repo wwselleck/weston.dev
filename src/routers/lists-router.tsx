@@ -4,30 +4,10 @@ import {
   GoogleSpreadsheetWorksheet,
 } from "google-spreadsheet";
 import { GamesPage } from "../components/GamesPage";
-import { TieredListPage } from '../components/TieredListPage';
 import { renderSecondaryPage } from "../templates/secondary-template";
 import { List } from '../services/lists';
 import { Context} from '../context';
 
-
-const GenericListPageRenderers = {
-  'tiered': async (list: List, worksheet: GoogleSpreadsheetWorksheet) => {
-    const rows = await worksheet.getRows();
-
-    const items = [];
-    for(const r of rows) {
-      let item = {
-          name: r.Name,
-          rating: r.Rating,
-          comment: r.Comment,
-          image: r.Image
-      }
-      items.push(item);
-    }
-
-    return <TieredListPage list={list} items={items}/>
-  }
-}
 
 const CustomListPageRenderers = {
   games: async (list: List, worksheet: GoogleSpreadsheetWorksheet) => {
@@ -57,11 +37,7 @@ const CustomListPageRenderers = {
 
 
 const getListPageRenderer = (list: List) => {
-  if(list.listType === 'custom') {
-    return CustomListPageRenderers[list.id];
-  } else {
-    return GenericListPageRenderers[list.listType]
-  }
+  return CustomListPageRenderers[list.id];
 }
 
 

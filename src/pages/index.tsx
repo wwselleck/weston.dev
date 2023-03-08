@@ -130,13 +130,14 @@ export const page = {
   title: '',
   published: true,
   renderToHTML: async (context: Context) => {
+    const lists = await context.lists.getLists();
     const allPages = await context.pages.getAllPages();
     const posts = allPages.filter(page => {
       const excludedPermalinkPatterns = [/^\/$/, /^\/all/];
       return !excludedPermalinkPatterns.some(rgx => rgx.test(page.permalink))
     })
     return renderHomePage(
-      <IndexPage projects={context.data.projects} links={context.data.links} posts={posts}/>
+      <IndexPage projects={context.data.projects} links={context.data.links} posts={posts} lists={lists}/>
     );
   }
 }
