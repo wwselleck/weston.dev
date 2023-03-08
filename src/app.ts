@@ -29,7 +29,6 @@ export async function start() {
   pages.forEach((page) => {
     console.log('Creating GET route for ', page.permalink);
     app.get(page.permalink, async (req, res) => {
-      console.log('HERE')
       res.header("Content-Type", "text/html");
       res.send(await page.renderToHTML(context));
     })
