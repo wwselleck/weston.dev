@@ -34,9 +34,17 @@ const PageFactory = {
     }
   },
   async fromModule(relativeDirPath: string): Promise<Page|null> {
-    const tsxFilePath = path.resolve(PAGES_DIR, relativeDirPath, 'index.tsx');
-    if(fs.existsSync(tsxFilePath)) {
-      const { page } = require(tsxFilePath);
+    const exts = ['.tsx', '.js'];
+    const moduleIndexPath = exts.reduce((result, ext) => {
+      if(result) { return result; }
+      const filePath = path.resolve(PAGES_DIR, relativeDirPath, `index${ext}`);
+      if(fs.existsSync(filePath)) {
+        return filePath;
+      }
+      return null;
+    }, '')
+    if(moduleIndexPath) {
+      const { page } = require(moduleIndexPath);
       const permalink = '/' + relativeDirPath;
 
       return {
