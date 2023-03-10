@@ -28,7 +28,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        me: "url(me.jpg)",
+        me: "url(me.webp)",
       },
       keyframes: {
         GradientAnimation: {

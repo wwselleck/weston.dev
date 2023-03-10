@@ -48,13 +48,13 @@ const Game = ({ num, game }) => {
       <div
         className="w-24 h-full bg-cover bg-center"
         style={{
-          backgroundImage: `url('/public/games/${imageId}.png')`,
+          backgroundImage: `url('/public/games/${imageId}.webp')`,
         }}
       />
       <div
         className="w-full h-full absolute z-[-10] bg-center"
         style={{
-          backgroundImage: `url('/public/games/${imageId}.png')`,
+          backgroundImage: `url('/public/games/${imageId}.webp')`,
           backgroundSize: "150%",
           filter: "blur(70px) saturate(3)",
         }}

@@ -28,7 +28,6 @@ I looked up "boiling eggs" on Youtube and found [this](https://www.youtube.com/w
 - 12 minutes: Mostly cooked yolk, still a tiny bit of softness
 - 14 minutes: Fully cooekd yolk
 
-
 5. While the eggs are cooking, prepare a bowl ice/water to place the eggs into once they're finished cooking. This will cool them down quickly so they stop cooking.
 
 6. Once the eggs have been in the ice water for a few minutes, peel them while running under cold water. Crack the wider end of the egg to get started.
@@ -70,8 +69,7 @@ The vinegar was a bit more noticeable after an extra 24 hours, but not enough to
 
 This is only picture I got of this batch, since I didn't decide to write this until this point.
 
-![](/public/pickled-eggs/batch_1.jpeg)
-
+![](/public/pickled-eggs/batch_1.webp)
 
 ## Batch #2
 
@@ -84,7 +82,7 @@ My brine was a little different this time. I used a 1.5/.5 cup vinegar-to-water 
 In one jar I added a single habanero sliced in half, and in the other about 3/4ths of a big jalapeno sliced into...slices I guess. Circles. I had some extra brine after filling the two jars, so I threw in the rest of my habaneros and jalapenos into a separate jar and just pickled those by themselves. For fun.
 
 Here's the squad hanging out before they headed into the fridge.
-![](/public/pickled-eggs/batch_2_1.jpeg)
+![](/public/pickled-eggs/batch_2_1.webp)
 
 ### After 48 Hours
 
@@ -96,9 +94,7 @@ We tried one of each egg after 48 hours. The habanero egg had a very strong vine
 - Egg quality: 🥚🥚🥚🥚🥚
 - Overall: ⭐⭐⭐⭐
 
-
-![](/public/pickled-eggs/batch_2_2.jpeg)
-
+![](/public/pickled-eggs/batch_2_2.webp)
 The jalapeno egg had a _very_ strong jalapeno taste, which, like I predicted, I didn't enjoy all that much. Jalapenos on their own just don't have a great flavor...I guess I never really thought of that because I usually eat pickled jalapenos. The vinegar was still there, but overpowered by the jalapeno taste.
 
 - Vinegar Intensity: 🥗🥗🥗
@@ -108,5 +104,3 @@ The jalapeno egg had a _very_ strong jalapeno taste, which, like I predicted, I 
 - Overall: ⭐
 
 I ended up eating all of the habanero eggs two days later, which tasted just about the same as they had 48 hours prior. The jalapeno ones are still in my fridge, I'll probably eat them as a snack tomorrow, maybe I'll like them more after a second try. I also haven't eaten any of the habaneros and jalapenos that I pickled by themselves; I'll probably wait to eat those until we make something for dinner that they might go semi-well with.
-
-

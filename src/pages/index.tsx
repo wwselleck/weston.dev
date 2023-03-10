@@ -17,7 +17,13 @@ interface IndexProps {
   posts: Page[];
 }
 
-export const IndexPage = ({ projects, links, commit, lists, posts }: IndexProps) => {
+export const IndexPage = ({
+  projects,
+  links,
+  commit,
+  lists,
+  posts,
+}: IndexProps) => {
   return (
     <div>
       <div className="w-4/5 mx-auto my-52 max-w-5xl">
@@ -56,14 +62,13 @@ export const IndexPage = ({ projects, links, commit, lists, posts }: IndexProps)
             })}
           </Section>
           <Section color="purple" name="Posts">
-            {posts.sort((p1, p2) => {
-                return p1.title.localeCompare(p2.title)
-              }).map(post => {
-              return <SectionItem
-                href={post.permalink}
-                name={post.title}
-              />
-            })}
+            {posts
+              .sort((p1, p2) => {
+                return p1.title.localeCompare(p2.title);
+              })
+              .map((post) => {
+                return <SectionItem href={post.permalink} name={post.title} />;
+              })}
           </Section>
           <div className="mt-24 mb-8 flex justify-center">
             <MostRecentCommit commit={commit} />
@@ -108,7 +113,7 @@ export const MostRecentCommit = ({
 
   return (
     <div className="flex items-center text-sm">
-      <img src="./public/Git-Icon-Black.png" alt="Git logo" className="w-5" />
+      <img src="./public/Git-Icon-Black.webp" alt="Git logo" className="w-5" />
       <p className="font-medium pl-2">
         <a target="_blank" href={commit.repo.link} className="hover:underline">
           {commit.repo.name}
@@ -127,17 +132,22 @@ export const MostRecentCommit = ({
 };
 
 export const page = {
-  title: '',
+  title: "",
   published: true,
   renderToHTML: async (context: Context) => {
     const lists = await context.lists.getLists();
     const allPages = await context.pages.getAllPages();
-    const posts = allPages.filter(page => {
+    const posts = allPages.filter((page) => {
       const excludedPermalinkPatterns = [/^\/$/, /^\/all/];
-      return !excludedPermalinkPatterns.some(rgx => rgx.test(page.permalink))
-    })
+      return !excludedPermalinkPatterns.some((rgx) => rgx.test(page.permalink));
+    });
     return renderHomePage(
-      <IndexPage projects={context.data.projects} links={context.data.links} posts={posts} lists={lists}/>
+      <IndexPage
+        projects={context.data.projects}
+        links={context.data.links}
+        posts={posts}
+        lists={lists}
+      />
     );
-  }
-}
+  },
+};
