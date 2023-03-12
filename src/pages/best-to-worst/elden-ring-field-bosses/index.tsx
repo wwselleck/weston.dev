@@ -2,8 +2,19 @@ import { renderBestToWorstPage } from "../BestToWorst";
 
 const rankings = [
   {
+    name: "Tree Sentinel (Limgrave)",
+    desc: "Great music",
+  },
+  {
+    name: "Runebear",
+  },
+  {
     name: "Mad Pumpkin Head (Waypoint Ruins)",
     image: "/public/elden-ring/mad-pumpkin-head-waypoint.webp",
+  },
+  {
+    name: "Scaly Misbegotten",
+    desc: `The dungeon they're in is more difficult than the actual boss.`,
   },
   {
     name: `Erdtree Burial Watchdog (Impaler's Catacombs)`,
