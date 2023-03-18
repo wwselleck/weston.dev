@@ -34,9 +34,9 @@ export const IndexPage = ({
           <div>
             <p className="text-2xl dark:text-text-light">
               Hi, I'm <b>Weston Selleck</b>. I'm a software developer currently
-              working at <b>Atlassian</b> on Trello. Please enjoy this
-              complimentary <span id="dragItemName">lollipop</span> during your
-              stay on my website <span id="dragItem"></span>.
+              working at <b>Atlassian</b>. Please enjoy this complimentary{" "}
+              <span id="dragItemName">lollipop</span> during your stay on my
+              website <span id="dragItem"></span>.
             </p>
             <div className="flex justify-center mt-9 text-lg">
               {links.map((link) => {
