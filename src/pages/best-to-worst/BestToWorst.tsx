@@ -3,19 +3,21 @@ import { renderSecondaryPage } from "../../templates/secondary-template";
 import { Markdown } from "../../components/Markdown";
 
 interface BestToWorstProps {
-  title: string;
   items: {
     primaryText: string;
     secondaryText?: string;
     desc?: string;
     image?: string;
   }[];
+  useImageAsBackground?: boolean;
 }
 
-export const BestToWorst: React.FC<BestToWorstProps> = ({ title, items }) => {
+export const BestToWorst: React.FC<BestToWorstProps> = ({
+  items,
+  useImageAsBackground = false,
+}) => {
   return (
     <div>
-      <h1 className="mb-8">{title}</h1>
       <div className="relative grid gap-2 max-w-[900px] mx-auto">
         {items.map((item, i) => {
           return (
@@ -24,6 +26,16 @@ export const BestToWorst: React.FC<BestToWorstProps> = ({ title, items }) => {
                 <span className="text-4xl text-white w-20 flex items-center justify-center shrink-0 mx-2">
                   #{i + 1}
                 </span>
+                {useImageAsBackground && (
+                  <div
+                    className="w-full h-full absolute z-[-10] bg-center"
+                    style={{
+                      backgroundImage: `url('${item.image}')`,
+                      backgroundSize: "150%",
+                      filter: "blur(70px) saturate(3)",
+                    }}
+                  />
+                )}
                 <div
                   className="w-24 h-full bg-cover bg-center shrink-0"
                   style={{
@@ -52,5 +64,5 @@ export const renderBestToWorstPage = (
   title: string,
   items: BestToWorstProps["items"]
 ) => {
-  return renderSecondaryPage(<BestToWorst title={title} items={items} />);
+  return renderSecondaryPage(<BestToWorst items={items} />, title);
 };

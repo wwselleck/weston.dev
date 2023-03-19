@@ -1,4 +1,5 @@
 import * as React from "react";
+import { keyify } from "../lib/key";
 
 interface GamesPageProps {
   games: {
@@ -32,14 +33,7 @@ interface GameProps {
 }
 
 const Game = ({ num, game }) => {
-  const imageId =
-    game.image ??
-    game.name
-      .toLowerCase()
-      .replace(/([^a-z0-9])+/gi, " ")
-      .trim()
-      .split(" ")
-      .join("-");
+  const imageId = game.image ?? keyify(game.name);
   return (
     <div className="flex items-center w-full h-16 relative overflow-hidden rounded-xl bg-[#AAAAAA] z-[0]">
       <span className="text-4xl text-white w-20 flex items-center justify-center">
