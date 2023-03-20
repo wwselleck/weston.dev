@@ -18,11 +18,11 @@ export const BestToWorst: React.FC<BestToWorstProps> = ({
 }) => {
   return (
     <div>
-      <div className="relative grid gap-2 max-w-[900px] mx-auto">
+      <div className="max-w-[900px] mx-auto">
         {items.map((item, i) => {
           return (
             <div>
-              <div className="flex items-center w-full h-16 relative overflow-hidden rounded-xl bg-[#68647d] z-[0]">
+              <div className="flex items-center w-full h-32 md:h-16 relative overflow-hidden rounded-xl bg-[#68647d] z-[0] mb-2">
                 <span className="text-4xl text-white w-20 flex items-center justify-center shrink-0 mx-2">
                   #{i + 1}
                 </span>
@@ -42,8 +42,10 @@ export const BestToWorst: React.FC<BestToWorstProps> = ({
                     backgroundImage: `url("${item.image}")`,
                   }}
                 />
-                <div className="ml-4 flex flex-col text-white py-2">
-                  <div className="text-2xl">{item.primaryText}</div>
+                <div className="px-4 flex flex-col text-white py-2 overflow-hidden font-normal">
+                  <div className="text-2xl whitespace-nowrap text-ellipsis overflow-hidden">
+                    {item.primaryText}
+                  </div>
                   <div>{item.secondaryText}</div>
                 </div>
               </div>

@@ -19,11 +19,12 @@
     --green-1: #4cf062;
     --yellow-1: #f0dd4c;
     --orange-1: #f0704c;
-    --black-1: #1F2028;
+    --black-1: #1f2028;
     --text-dark: #161717;
     --text-light: #cecece;
     --text-subtle: #898989;
-    font-family: "Verdana", sans-serif;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 300;
     color: var(--text-color);
     text-shadow: none !important;
     background: white;
@@ -40,7 +41,7 @@
     color: var(--blue-2);
   }
   a:hover {
-      color: var(--pink-1);
+    color: var(--pink-1);
   }
   b,
   strong {
@@ -54,13 +55,16 @@
   }
 
   h1 {
-    font-size: 3.2rem;
+    font-size: 2rem;
+    font-weight: bold;
   }
   h2 {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
+    font-weight: bold;
   }
   h3 {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    font-weight: bold;
   }
 
   /*
@@ -77,15 +81,6 @@
   .markdown img {
     margin: 44px auto;
     max-width: 50%;
-  }
-  .markdown h1 {
-    font-size: 3.2rem;
-  }
-  .markdown h2 {
-    font-size: 2.4rem;
-  }
-  .markdown h3 {
-    font-size: 2rem;
   }
   .markdown h4 {
     font-size: 1rem;

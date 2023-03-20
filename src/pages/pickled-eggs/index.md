@@ -3,8 +3,6 @@ published: true
 title: Pickling Eggs
 ---
 
-# Pickling Eggs
-
 A [restaurant in Austin](https://www.haymakeraustin.com/) has habanero pickled eggs on the menu, and let me tell you they are _yummy_. So I want to start pickling eggs myself, and I'm going to document my progress here.
 
 ## Batch #1

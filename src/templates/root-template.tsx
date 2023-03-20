@@ -16,7 +16,7 @@ export function renderRoot(node: React.ReactNode, opts?: Opts) {
         <link rel="icon" type="image/png" href="/public/favicon.png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700&display=swap">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;700&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="/public/reset.css" type="text/css" />
         <link rel="stylesheet" href="/public/output.css" type="text/css" />
@@ -43,9 +43,5 @@ export function renderRoot(node: React.ReactNode, opts?: Opts) {
 }
 
 export const Root = ({ children }) => {
-  return (
-    <div>
-      {children}
-    </div>
-  );
+  return <div>{children}</div>;
 };

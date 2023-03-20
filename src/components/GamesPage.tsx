@@ -53,7 +53,7 @@ const Game = ({ num, game }) => {
           filter: "blur(70px) saturate(3)",
         }}
       />
-      <div className="ml-4 flex flex-col text-white">
+      <div className="ml-4 flex flex-col text-white font-normal">
         <div className="text-2xl">{game.name}</div>
         <div>
           {[game.releaseDate, getPlatformDisplayText(game.platform)]
