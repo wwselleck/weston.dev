@@ -5,17 +5,17 @@
 @layer base {
   body {
     --white: #ffffff;
-    --pink-1: #f72585ff;
+    --pink-1: #f76f8e;
     --pink-2: #fc0362;
-    --purple-1: #b5179eff;
-    --purple-2: #7209b7ff;
-    --purple-3: #560badff;
-    --purple-4: #480ca8ff;
-    --blue-5: #3a0ca3ff;
-    --blue-4: #3f37c9ff;
-    --blue-3: #4361eeff;
-    --blue-2: #4895efff;
-    --blue-1: #4cc9f0ff;
+    --purple-1: #b5179e;
+    --purple-2: #7209b7;
+    --purple-3: #560bad;
+    --purple-4: #480ca8;
+    --blue-5: #3a0ca3;
+    --blue-4: #3f37c9;
+    --blue-3: #4361ee;
+    --blue-2: #4895ef;
+    --blue-1: #4cc9f0;
     --green-1: #4cf062;
     --yellow-1: #f0dd4c;
     --orange-1: #f0704c;
@@ -30,14 +30,14 @@
     background: white;
   }
   body.dark {
-    background-color: var(--black-1);
+    background-color: #070a10;
     color: var(--text-light);
   }
   a {
     color: var(--blue-4);
     text-decoration: none;
   }
-  .dark a {
+  .dark a:not(.ignore-a-styles, :hover) {
     color: var(--blue-2);
   }
   a:hover {

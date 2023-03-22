@@ -1,5 +1,6 @@
 import * as React from "react";
 import ReactDOMServer from "react-dom/server";
+import { PageWrapper } from "../components/PageWrapper";
 
 interface Opts {
   scripts?: string[];
@@ -43,5 +44,5 @@ export function renderRoot(node: React.ReactNode, opts?: Opts) {
 }
 
 export const Root = ({ children }) => {
-  return <div>{children}</div>;
+  return <PageWrapper>{children}</PageWrapper>;
 };
