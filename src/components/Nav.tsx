@@ -1,5 +1,69 @@
 import * as React from "react";
 
+const LinkedInIcon = ({ size, fill }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill={fill}
+      version="1.1"
+      width={size}
+      height={size}
+      viewBox="0 0 512 512"
+    >
+      <g id="7935ec95c421cee6d86eb22ecd125aef">
+        <path d="M116.504,500.219V170.654H6.975v329.564H116.504   L116.504,500.219z M61.751,125.674c38.183,0,61.968-25.328,61.968-56.953c-0.722-32.328-23.785-56.941-61.252-56.941   C24.994,11.781,0.5,36.394,0.5,68.722c0,31.625,23.772,56.953,60.53,56.953H61.751L61.751,125.674z M177.124,500.219   c0,0,1.437-298.643,0-329.564H286.67v47.794h-0.727c14.404-22.49,40.354-55.533,99.44-55.533   c72.085,0,126.116,47.103,126.116,148.333v188.971H401.971V323.912c0-44.301-15.848-74.531-55.497-74.531   c-30.254,0-48.284,20.38-56.202,40.08c-2.897,7.012-3.602,16.861-3.602,26.711v184.047H177.124L177.124,500.219z"></path>
+      </g>
+    </svg>
+  );
+};
+const ResumeIcon = ({ size, fill }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill={fill}
+    >
+      <path
+        d="M6 22H18C19.1046 22 20 21.1046 20 20V9.82843C20 9.29799 19.7893 8.78929 19.4142 8.41421L13.5858 2.58579C13.2107 2.21071 12.702 2 12.1716 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22Z"
+        // Stroking this as the fill color instead of black so it doesn't blend in with background
+        stroke={fill}
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M13 2.5V9H19"
+        stroke="#000000"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M8 17H15"
+        stroke="#000000"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M8 13H15"
+        stroke="#000000"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M8 9H9"
+        stroke="#000000"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
 const TwitterIcon = ({ size, fill }) => {
   return (
     <svg
@@ -39,11 +103,17 @@ export const Nav: React.FC = () => {
         weston.dev
       </a>
       <div className="flex items-center justify-center">
-        <a href="https://github.com/wwselleck" className="mr-4">
+        <a href="https://github.com/wwselleck" className="mr-4 icon">
           <GithubIcon size={32} fill={"#05E5EC"} />
         </a>
-        <a href="https://twitter.com/weston________">
+        <a href="https://twitter.com/weston________" className="mr-4 icon">
           <TwitterIcon size={32} fill={"#F76F8E"} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/weston-selleck-358b7942/"
+          className="icon"
+        >
+          <LinkedInIcon size={32} fill={"#6665DD"} />
         </a>
       </div>
     </div>
