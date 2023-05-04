@@ -83,3 +83,15 @@ Alright, it's been a full week of only using this keyboard. Since my last update
 I'm pretty happy with that, and I can feel myself getting better. It almost feels natural to hit c with my middle finger now, and I'm hitting SPACE correctly most of the time. However, as I am typing this, I initially input the "y" in "correctly" as "]" because I'm used to having to stretch my index finger two keys over to get to "y". I'm using my right hand for it now, which is correct, but the muscle memory of having to stretch my finger over an extra key seems to have transferred to the new hand. And overall, I'm still just really clunky when typing. Hitting each individual key on its own is becoming easy, but actually typing _fast_ is not. I'm improving, but it still feels like getting back to 100+ WPM will take months, not weeks or days.
 
 An unfortunate, but probably expected, side-effect of a week of using this keyboard is that my typing speed on my laptop keyboard and phone keyboard has taken a major hit. I haven't done any tests on them yet, but I'm definitely making way more mistakes than I used to, the biggest one being hitting a or CAPSLOCK instead of BACKSPACE since I'm now used to BACKSPACE being on the left side of the keyboard. And I'm not sure how to describe this, but the "clunkiness" of typing on the new keyboard has also transferred to the regular keyboard, maybe to a lesser degree though.
+
+# May 4, 2023
+
+A little over a month now, let's see where I'm at:
+
+![](/public/typing/test-may-4.webp)
+
+Well, not much of an improvement over last time, and it does feel that way while typing. I am at the point where I don't feel like my productivity is being negatively affected by the keyboard, which is honestly what is most important to me. Hopefully I'll get back to looking super cool with my 100+ WPM at some point, but for now I'm happy with just being able to keep my same level of producivity as on a regular keyboard.
+
+![](/public/typing/may-4-layer-2.webp)
+
+The only significant change I've made to my layout since my last update is the arrow keys. I mapped the arrow keys to hjkl, which corresponds with left-down-up-right movement in Vim, and this feels way more natural than in the upside-down T layout they were previously in. Now, I can just hit the Layer-2 key that my right thumb naturally sits on, and hjkl turn into arrow keys. I imagine this layout wouldn't be very easy to use in some cases, like playing a web game, but I'll cross that bridge if it ever comes.
