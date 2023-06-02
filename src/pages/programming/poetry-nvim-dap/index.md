@@ -49,7 +49,7 @@ And now after hitting `,dr`, I can see some output. Unfortunately, it wasn't suc
 
 `ModuleNotFoundError: No module named '[redacted]'`
 
-Ah right, I set up my project using [`poetry`]() because...uh...well because a [blog post](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/) told me to. I get the use of poetry and more or less how it works, but something I'm confused is why
+Ah right, I set up my project using [`poetry`]() because...uh...well because a [blog post](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/) told me to. I get the use of poetry and more or less how it works, but something I'm confused about is why
 
 ```
 poetry run python src/redacted/main.py
