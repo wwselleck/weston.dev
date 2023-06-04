@@ -7,8 +7,7 @@ import { Context } from "../context";
 
 interface IndexProps {
   projects: Array<Data.Project>;
-  posts: Page[];
-  tidbits: Page[];
+  pages: Page[];
 }
 
 interface ProjectsSectionProps {
@@ -28,7 +27,24 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
   );
 };
 
-const IndexPage: React.FC<IndexProps> = ({ projects, posts, tidbits }) => {
+const IndexPage: React.FC<IndexProps> = ({ projects, pages }) => {
+  const programming = pages.filter((page) => {
+    return /programming/.test(page.permalink);
+  });
+
+  const tidbits = pages.filter((page) => {
+    return /tidbit/.test(page.permalink);
+  });
+
+  const posts = pages.filter((page) => {
+    const excludedPermalinkPatterns = [
+      /^\/$/,
+      /^\/all/,
+      /^\/tidbit/,
+      /^\/programming/,
+    ];
+    return !excludedPermalinkPatterns.some((rgx) => rgx.test(page.permalink));
+  });
   return (
     <div>
       <div className="flex mb-40 items-center">
@@ -58,7 +74,16 @@ const IndexPage: React.FC<IndexProps> = ({ projects, posts, tidbits }) => {
       </div>
       <div className="w-3/5 mx-auto">
         <ProjectsSection projects={projects} />
-        <Section color="purple" name="Posts">
+        <Section color="purple" name="Programming">
+          {programming
+            .sort((p1, p2) => {
+              return p1.title.localeCompare(p2.title);
+            })
+            .map((post) => {
+              return <SectionItem href={post.permalink} name={post.title} />;
+            })}
+        </Section>
+        <Section color="blue" name="Nonsense">
           {posts
             .sort((p1, p2) => {
               return p1.title.localeCompare(p2.title);
@@ -90,19 +115,8 @@ export const page = {
   published: true,
   renderToHTML: async (context: Context) => {
     const allPages = await context.pages.getAllPages();
-    const posts = allPages.filter((page) => {
-      const excludedPermalinkPatterns = [/^\/$/, /^\/all/, /^\/tidbit/];
-      return !excludedPermalinkPatterns.some((rgx) => rgx.test(page.permalink));
-    });
-    const tidbits = allPages.filter((page) => {
-      return /tidbit/.test(page.permalink);
-    });
     return renderHomePage(
-      <IndexPage
-        posts={posts}
-        projects={context.data.projects}
-        tidbits={tidbits}
-      />
+      <IndexPage pages={allPages} projects={context.data.projects} />
     );
   },
 };

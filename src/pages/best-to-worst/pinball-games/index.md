@@ -1,12 +1,8 @@
 ---
 published: true
-slug: every-pinball-game
-title: Every Pinball Game
+slug: pinball-games
+title: "Best To Worst: Pinball Games"
 ---
-
-# Every pinball video game, ranked
-
-This page will hopefully one day include a ranking for every pinball video game ever, or at least all of the games I can play without excessive effort.
 
 ## 1. Pokemon Pinball: Ruby & Sapphire (GBA)
 
