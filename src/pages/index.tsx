@@ -10,6 +10,7 @@ interface IndexProps {
   projects: Array<Data.Project>;
   lists?: List[];
   posts: Page[];
+  tidbits: Page[];
 }
 
 interface ProjectsSectionProps {
@@ -29,7 +30,12 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
   );
 };
 
-const IndexPage: React.FC<IndexProps> = ({ projects, lists, posts }) => {
+const IndexPage: React.FC<IndexProps> = ({
+  projects,
+  lists,
+  posts,
+  tidbits,
+}) => {
   return (
     <div>
       <div className="flex mb-40 items-center">
@@ -75,6 +81,19 @@ const IndexPage: React.FC<IndexProps> = ({ projects, lists, posts }) => {
               return <SectionItem href={post.permalink} name={post.title} />;
             })}
         </Section>
+        <Section color="yellow" name="Tidbits">
+          <div>
+            These are little micro notes to myself that I think are worth
+            publishing, but aren't "full" posts.
+          </div>
+          {tidbits
+            .sort((p1, p2) => {
+              return p1.title.localeCompare(p2.title);
+            })
+            .map((post) => {
+              return <SectionItem href={post.permalink} name={post.title} />;
+            })}
+        </Section>
       </div>
     </div>
   );
@@ -87,11 +106,19 @@ export const page = {
     const lists = await context.lists.getLists();
     const allPages = await context.pages.getAllPages();
     const posts = allPages.filter((page) => {
-      const excludedPermalinkPatterns = [/^\/$/, /^\/all/];
+      const excludedPermalinkPatterns = [/^\/$/, /^\/all/, /^\/tidbit/];
       return !excludedPermalinkPatterns.some((rgx) => rgx.test(page.permalink));
     });
+    const tidbits = allPages.filter((page) => {
+      return /tidbit/.test(page.permalink);
+    });
     return renderHomePage(
-      <IndexPage lists={lists} posts={posts} projects={context.data.projects} />
+      <IndexPage
+        lists={lists}
+        posts={posts}
+        projects={context.data.projects}
+        tidbits={tidbits}
+      />
     );
   },
 };

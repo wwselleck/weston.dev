@@ -30,8 +30,10 @@
     background: white;
   }
   body.dark {
-    background-color: #04020e;
+    background-color: #020212;
     color: var(--text-light);
+    background-image: radial-gradient(#ffffff17 1px, transparent 0);
+    background-size: 30px 30px;
   }
   a {
     color: var(--blue-4);
@@ -145,4 +147,7 @@
 #dragItem,
 #dragItemClone {
   cursor: pointer;
+}
+body {
+  background: white;
 }
