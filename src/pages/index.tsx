@@ -1,14 +1,12 @@
 import * as React from "react";
 import { renderHomePage } from "../templates/home-template";
 import * as Data from "../services/data";
-import { List } from "../services/lists";
 import { Section, SectionItem } from "./IndexSection";
 import { Page } from "../services/pages";
 import { Context } from "../context";
 
 interface IndexProps {
   projects: Array<Data.Project>;
-  lists?: List[];
   posts: Page[];
   tidbits: Page[];
 }
@@ -30,12 +28,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
   );
 };
 
-const IndexPage: React.FC<IndexProps> = ({
-  projects,
-  lists,
-  posts,
-  tidbits,
-}) => {
+const IndexPage: React.FC<IndexProps> = ({ projects, posts, tidbits }) => {
   return (
     <div>
       <div className="flex mb-40 items-center">
@@ -65,13 +58,6 @@ const IndexPage: React.FC<IndexProps> = ({
       </div>
       <div className="w-3/5 mx-auto">
         <ProjectsSection projects={projects} />
-        <Section color="blue" name="Lists">
-          {lists?.map((list) => {
-            return (
-              <SectionItem href={`./lists/${list.id}`} name={list.title} />
-            );
-          })}
-        </Section>
         <Section color="purple" name="Posts">
           {posts
             .sort((p1, p2) => {
@@ -103,7 +89,6 @@ export const page = {
   title: "",
   published: true,
   renderToHTML: async (context: Context) => {
-    const lists = await context.lists.getLists();
     const allPages = await context.pages.getAllPages();
     const posts = allPages.filter((page) => {
       const excludedPermalinkPatterns = [/^\/$/, /^\/all/, /^\/tidbit/];
@@ -114,7 +99,6 @@ export const page = {
     });
     return renderHomePage(
       <IndexPage
-        lists={lists}
         posts={posts}
         projects={context.data.projects}
         tidbits={tidbits}

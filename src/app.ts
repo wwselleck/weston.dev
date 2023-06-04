@@ -3,11 +3,9 @@ import express from "express";
 import expressPino from "express-pino-logger";
 
 import * as Data from "./services/data";
-import { ListsService } from "./services/lists";
 import { GithubService } from "./services/github";
 import * as Config from "./config";
 import { Context } from "./context";
-import { ListsRouter } from "./routers/lists-router";
 import { PagesService } from "./services/pages";
 
 export async function start() {
@@ -15,10 +13,9 @@ export async function start() {
 
   const context: Context = {
     config: config,
-    lists: new ListsService(config),
     github: new GithubService(config),
     data: await Data.load(),
-    pages: new PagesService
+    pages: new PagesService(),
   };
 
   const app = express();
@@ -27,17 +24,12 @@ export async function start() {
 
   const pages = await context.pages.getAllPages();
   pages.forEach((page) => {
-    console.log('Creating GET route for ', page.permalink);
+    console.log("Creating GET route for ", page.permalink);
     app.get(page.permalink, async (req, res) => {
       res.header("Content-Type", "text/html");
       res.send(await page.renderToHTML(context));
-    })
-  })
-
-
-  app.use("/lists", await ListsRouter.create(context));
-
-
+    });
+  });
 
   app.listen(8080);
   console.log("Running on port 8080");

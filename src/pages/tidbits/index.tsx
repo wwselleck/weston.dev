@@ -21,7 +21,7 @@ export const page = {
         title: parsed.data.title,
         permalink: "/" + file.split(".")[0],
         published: parsed.data.published,
-        tags: parsed.data.tags.split(","),
+        tags: parsed.data.tags?.split(",") ?? [],
         renderToHTML() {
           return renderSecondaryPage(
             <Markdown content={parsed.content} />,
