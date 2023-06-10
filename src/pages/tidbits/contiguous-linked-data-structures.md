@@ -1,5 +1,5 @@
 ---
-title: Contiguous vs. Linked Data Structures
+title: Contiguous vs. linked data structures
 published: true
 ---
 

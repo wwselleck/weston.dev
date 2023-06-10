@@ -92,19 +92,6 @@ const IndexPage: React.FC<IndexProps> = ({ projects, pages }) => {
               return <SectionItem href={post.permalink} name={post.title} />;
             })}
         </Section>
-        <Section color="yellow" name="Tidbits">
-          <div>
-            These are little micro notes to myself that I think are worth
-            publishing, but aren't "full" posts.
-          </div>
-          {tidbits
-            .sort((p1, p2) => {
-              return p1.title.localeCompare(p2.title);
-            })
-            .map((post) => {
-              return <SectionItem href={post.permalink} name={post.title} />;
-            })}
-        </Section>
       </div>
     </div>
   );
