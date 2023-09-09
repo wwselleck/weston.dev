@@ -32,19 +32,16 @@ const IndexPage: React.FC<IndexProps> = ({ projects, pages }) => {
     return /programming/.test(page.permalink);
   });
 
-  const tidbits = pages.filter((page) => {
-    return /tidbit/.test(page.permalink);
-  });
 
   const posts = pages.filter((page) => {
     const excludedPermalinkPatterns = [
       /^\/$/,
       /^\/all/,
-      /^\/tidbit/,
       /^\/programming/,
     ];
     return !excludedPermalinkPatterns.some((rgx) => rgx.test(page.permalink));
   });
+
   return (
     <div>
       <div className="flex mb-40 items-center">

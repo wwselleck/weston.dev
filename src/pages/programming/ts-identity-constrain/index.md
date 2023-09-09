@@ -1,6 +1,6 @@
 ---
 published: true
-title: "Typescript: Use an identity function to constrain a type"
+title: "Use an identity function to constrain a Typescript type"
 ---
 
 Say you have an object like this
