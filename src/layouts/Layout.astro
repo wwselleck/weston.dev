@@ -1,0 +1,119 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="weston.dev" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.webp" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div id="page-wrapper">
+			<a id="root-link" href="/"><h1>weston.dev</h1></a>
+			<nav>
+				<a href="/nonsense">Nonsense</a>
+				 |
+				<a href="/posts">Blog</a>
+			</nav>
+			<main>
+				<slot />
+			</main>
+		</div>
+	</body>
+</html>
+<style is:global>
+	body {
+		margin: 3rem;
+		font-family: sans-serif;
+		font-size: 16px;
+		background-color: #021212;
+		background-image: radial-gradient(#ffffff17 1px, transparent 0);
+		background-size: 30px 30px;
+		--text-color: rgb(214, 214, 214);
+		--link-color: rgb(17, 255, 164);
+		--link-color-hover: rgb(63, 109, 99);
+		color: var(--text-color);
+		line-height: 1.5;
+	}
+	a {
+		color: var(--link-color);
+		text-decoration: none;
+	}
+	a:hover {
+		color: var(--link-color-hover);
+	}
+	blockquote {
+		background-color: #a5a5a5;
+		padding: 0.5rem;
+	}
+	blockquote::before {
+		content: "Quote:";
+	}
+	h1 {
+		font-size: 2rem;
+		font-weight: bold;
+	}
+	h2 {
+		font-size: 1.8rem;
+		font-weight: bold;
+	}
+	h3 {
+		font-size: 1.6rem;
+		font-weight: bold;
+	}
+	img {
+		margin: 44px auto;
+		max-width: 80%;
+		border-style: dashed;
+		border-width: 2px;
+		border-color: color-mix(in srgb, var(--link-color), transparent 50%);
+		padding: 2rem;
+	}
+
+	pre {
+		background: rgb(14, 13, 25);
+		padding: 1rem;
+		width: 80%;
+		margin: 1rem auto;
+		border-radius: 5px;
+		line-height: 1.2;
+		white-space: pre-wrap;
+	}
+
+	ol {
+		width: 80%;
+		margin: 0 auto;
+		list-style-type: decimal;
+		list-style-position: inside;
+	}
+	ul {
+		width: 80%;
+		list-style-type: disc;
+		list-style-position: outside;
+	}
+	li {
+		padding: 0.3rem 0;
+	}
+</style>
+<style>
+	#root-link {
+		color: var(--x);
+	}
+
+	#root-link:visited {
+		color: white;
+	}
+	#page-wrapper {
+		width: 80%;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+</style>

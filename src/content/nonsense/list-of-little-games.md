@@ -1,0 +1,23 @@
+---
+title: List of little games
+---
+- General Knowledge
+    - [New York Times Mini Crossword](https://www.nytimes.com/crosswords/game/mini)
+    - [Connections](https://www.nytimes.com/games/connections)
+- Geography & History
+    - [Worldle](https://worldle.teuteuf.fr/)
+    - [Wikitrivia](https://wikitrivia.tomjwatson.com/)
+    - [Tradle](https://oec.world/en/tradle/)
+- Movies
+    - [Framed](https://framed.wtf/)
+- Sports
+    - [Poeltl](https://poeltl.dunk.town/)
+    - [HoopGrips](https://www.hoopgrids.com/)
+- Video Games
+    - [Mario Heardle](https://mario-heardle.glitch.me/)
+    - [Pokemon Heardle](https://pkmn-heardle.glitch.me/)
+    - [Pokedoku](https://pokedoku.com/)
+    - [Sudokemon](https://sudokemon.pythonanywhere.com/sudokemon/)
+- Words
+    - [Octorlde](https://octordle.com/)
+    - [Wordle](https://www.nytimes.com/games/wordle/index.html)

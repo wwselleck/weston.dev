@@ -5,4 +5,4 @@ data/certbot
 
 node_modules
 dist
-public/output.css
+.astro

@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+const nonsense = await getCollection("nonsense");
+const nonsenseSorted = nonsense.sort((a, b) => {
+    return a.data.title.localeCompare(b.data.title);
+});
+---
+
+<Layout title="Nonsense">
+    <h2>Nonsense</h2>
+    <ul>
+        {
+            nonsenseSorted.map((nonsense) => (
+                <li>
+                    <a href={`/nonsense/${nonsense.slug}`}>
+                        <b>{nonsense.data.title}</b>{" "}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</Layout>
