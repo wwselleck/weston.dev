@@ -32,6 +32,10 @@ I believe that I might've taken this photo at the Domain in Austin, TX, on some 
 ## Raptor with a basketball (friend's sweater, April 2023)
 ![](https://i.imgur.com/ZvXYUgv.jpg)
 
+## Bird Statue (own photo, May 2023)
+
+![](https://i.imgur.com/LC8d1jQ.png)
+
 ## Armadillo (own photo, Austin airport, August 2023)
 ![](https://i.imgur.com/RqLeiIB.png)
 
