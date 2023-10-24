@@ -10,6 +10,10 @@ Characters that make me go "hey, look at that little fella".
 ## Rock Lizard (Dark Souls 3)
 ![](https://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/rock-lizard-enemies-dark-souls-3-wiki-guide.jpg)
 
+## Datadog Logo
+
+![](https://i.imgur.com/pkdTQah.png)
+
 ## Drawing of what I believe is some kind of lotion (own photo, 2017)
 
 I believe that I might've taken this photo at the Domain in Austin, TX, on some sort of advertisement. Not sure though.
