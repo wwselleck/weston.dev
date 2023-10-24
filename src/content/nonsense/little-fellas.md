@@ -28,6 +28,9 @@ Photo taken by me
 ## Twinkie the Kid (own photo, Feburary 2023)
 ![](https://i.imgur.com/NAfrlPk.png)
 
+## Raptor with a basketball (friend's sweater, April 2023)
+![](https://i.imgur.com/ZvXYUgv.jpg)
+
 ## Armadillo (own photo, Austin airport, August 2023)
 ![](https://i.imgur.com/RqLeiIB.png)
 
