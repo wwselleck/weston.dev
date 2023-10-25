@@ -29,9 +29,13 @@ import Card from "../components/Card.astro";
 	#dragItemClone {
 		cursor: pointer;
 	}
+	* {
+		font-size: 1.2rem;
+	}
 </style>
 <script>
-	"use strict";
+	import { AchievementsBus } from "../lib/achievements";
+
 	let dragged = false;
 	let dragActive = false;
 	let currentX;
@@ -77,6 +81,11 @@ import Card from "../components/Card.astro";
 				const clone = createClonedDragItem();
 				clone.style.top = toPx(e.clientY);
 				clone.style.left = toPx(e.clientX);
+				AchievementsBus.sendAchievement({
+					key: "drag-treat",
+					name: "drag-treat",
+					description: "Click and drag your homepage treat around.",
+				});
 			}
 			dragActive = true;
 		}
