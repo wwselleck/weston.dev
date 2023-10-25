@@ -23,6 +23,7 @@ import Card from "../components/Card.astro";
 			</li>
 		</ul>
 	</p>
+	<div id="trash">🗑️</div>
 </Layout>
 <style>
 	#dragItem,
@@ -31,6 +32,12 @@ import Card from "../components/Card.astro";
 	}
 	* {
 		font-size: 1.2rem;
+	}
+	#trash {
+		position: absolute;
+		bottom: 2rem;
+		left: 2rem;
+		font-size: 2rem;
 	}
 </style>
 <script>
@@ -101,8 +108,30 @@ import Card from "../components/Card.astro";
 
 				const el = getActiveElement();
 				window.requestAnimationFrame(() => {
-					el.style.top = toPx(e.pageY);
-					el.style.left = toPx(e.pageX);
+					if (el) {
+						el.style.top = toPx(e.pageY);
+						el.style.left = toPx(e.pageX);
+
+						const elRect = el.getBoundingClientRect();
+						const trashRect = document
+							.querySelector("#trash")
+							.getBoundingClientRect();
+
+						const overlap =
+							elRect.left < trashRect.right &&
+							elRect.right > trashRect.left &&
+							elRect.top < trashRect.bottom &&
+							elRect.bottom > trashRect.top;
+						if (overlap) {
+							AchievementsBus.sendAchievement({
+								key: "trash-treat",
+								name: "trash-treat",
+								description:
+									"Drag your homepage treat into the trash.",
+							});
+							el?.remove();
+						}
+					}
 				});
 			}
 		},
