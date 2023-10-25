@@ -29,7 +29,7 @@ const Achievement = ({achievement}: AchievementProps) => {
     );
 }
 
-let sfx = new Audio('/public/achieve.mp3');
+let sfx = new Audio('/achieve.mp3');
 sfx.volume = .3;
 
 export const Achievements = () => {
