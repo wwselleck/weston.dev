@@ -100,7 +100,6 @@ import Card from "../components/Card.astro";
 
 	document.addEventListener("mousedown", onDragStart, false);
 
-	const sfx = new Audio("/toss.mp3");
 	document.addEventListener(
 		"mousemove",
 		(e) => {
@@ -131,6 +130,7 @@ import Card from "../components/Card.astro";
 									"Drag your homepage treat into the trash.",
 							});
 							el?.remove();
+							const sfx = new Audio("/toss.mp3");
 							sfx.volume = 0.5;
 							sfx.play();
 						}
