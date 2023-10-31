@@ -1,0 +1,21 @@
+---
+
+---
+
+<script>
+    import { AchievementsBus } from "../lib/achievements";
+    document.addEventListener("keydown", (event) => {
+        if (event.ctrlKey && event.shiftKey && event.key === "V") {
+            AchievementsBus.sendAchievement({
+                key: `test-achievement-${Date.now()}`,
+                name: "Test Achievement",
+                description:
+                    "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+            });
+        }
+        if (event.ctrlKey && event.shiftKey && event.key === "C") {
+            AchievementsBus.clearAchievements();
+            console.log("Achievements cleared");
+        }
+    });
+</script>

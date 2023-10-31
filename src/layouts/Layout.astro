@@ -1,5 +1,6 @@
 ---
 import { Achievements } from "../components/Achievements.tsx";
+import AchievementsDebug from "../components/AchievementsDebug.astro";
 interface Props {
 	title: string;
 }
@@ -29,6 +30,7 @@ const { title } = Astro.props;
 			</main>
 		</div>
 		<Achievements client:only />
+		<AchievementsDebug client:only />
 	</body>
 </html>
 <style is:global>

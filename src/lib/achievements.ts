@@ -9,21 +9,6 @@ export interface Achievement extends AchievementInput {
     date: Date;
 }
 
-const AchievementEvent = new CustomEvent('achievement')
-document.addEventListener('keydown', (event) => {
-    if (event.ctrlKey && event.shiftKey && event.key === 'V') {
-        AchievementsBus.sendAchievement({
-            key: `test-achievement-${Date.now()}`,
-            name: 'Test Achievement',
-            description: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-        })
-    }
-    if (event.ctrlKey && event.shiftKey && event.key === 'C') {
-        AchievementsStore.clearAchievements();
-        console.log('Achievements cleared')
-    }
-});
-
 class AchievementsStore {
     static getAchievements() {
         return JSON.parse(localStorage.getItem('achievements') ?? '{}');
@@ -53,6 +38,10 @@ export class AchievementsBus {
         AchievementsStore.setAchievement(achievement.key);
         const event = new CustomEvent(this.EVENT_TYPE, { detail: { ...achievement, date: new Date(), icon: achievement.icon ?? '🏆' } });
         document.dispatchEvent(event);
+    }
+
+    static clearAchievements() {
+        AchievementsStore.clearAchievements();
     }
 
     static onAchievement(cb: (achievement: Achievement) => void) {
