@@ -34,8 +34,19 @@ But in _this_ card, things get tricky. Snorlax is lying against a tree with its 
 
 |                                                                                                                                    | Pokemon              | Set                        | Card Number | Owned? |
 |------------                                                                                                                        |----------------      |------                      |-------------|------  |
+| ![](https://static.tcgcollector.com/content/images/a6/23/27/a62327280d999b9ece345c01578805857f2eeae4aabf00ad16eee4f68b5f5920.jpg)  | Snorlax              | Wizards Black Star Promos | 49      | ❌    |
+| ![](https://static.tcgcollector.com/content/images/45/91/9c/45919ce6892c186f7def5bf14c08406d15611bede400dff89850a52ad7b4bdb3.jpg)  | Slowpoke              | Team Rocket | 67/82      | ✅    |
+| ![](https://static.tcgcollector.com/content/images/05/a4/15/05a4157940eb909c0a660a707bc901959f042cef6b38804f84c98f0e57f3a156.jpg)  | Snorlax              | Team Rocket | 79/82      | ❌    |
+| ![](https://static.tcgcollector.com/content/images/4d/cf/61/4dcf614a9078d7ebaabdc62e3b97c90441639eea7f57082cdfc9600845fd8a59.jpg)  | Snorlax              | Gym Heroes | 33/132      | ❌    |
+| ![](https://static.tcgcollector.com/content/images/bd/f2/51/bdf2513a4e64b4e70843c890b394e4750bfa247ce932592c473420701e1f491e.jpg)  | Clefairy              | Gym Challenge | 40/132      | ❌    |
+| ![](https://static.tcgcollector.com/content/images/63/67/f9/6367f92e268a217b23e2763b40e4e1dce65facc48d41ee672f1b005aba15e21d.jpg)  | Abra              | Gym Challenge | 94/132      | ❌    |
 | ![](https://static.tcgcollector.com/content/images/c1/cc/56/c1cc560beb35b81126bf88a0512e6c285d77d464be78b9a335622e32f34eece4.jpg)  | Chansey              | EX Fire Red & Leaf Green | 19/112      | ❌    |
 | ![](https://static.tcgcollector.com/content/images/2e/1a/6b/2e1a6bfaf0e02ab79209d7fd99230814d9f41f74b1d3c35fa0aef8f02be3ef9f.jpg)  | Wigglytuff           | Fates Collide            | 19/112      | ✅    |
 | ![](https://static.tcgcollector.com/content/images/0f/d3/44/0fd344d12927470f1024fb1fcb173487d2f1ba5c5ef3d68b2fa82557f0254ef6.jpg)  | Snorlax              | Hidden Fates             | 50/68        | ❌    |
 | ![](https://static.tcgcollector.com/content/images/d8/e5/5b/d8e55b44dfdda226972ff2f355c6bdb4b93e3637040340ef24b8e578efac2c8d.jpg)  | Numel                | Pokemon Go                 | 13/78       | ✅     |
 | ![](https://static.tcgcollector.com/content/images/c2/a3/d5/c2a3d50f155049585976f8a2593e0ea2443673bfe7a176a6e7a12615dd653e07.jpg)  | Chansey              | Pokemon Go               | 51/78       | ✅    |
+
+### Excluded Cards
+|                                                                                                                                    | Pokemon              | Set                        | Card Number | Notes |
+|------------                                                                                                                        |----------------      |------                      |-------------|------  |
+| ![](https://static.tcgcollector.com/content/images/e8/b6/cc/e8b6cc858799cb368c5a5052f2a5afa6924c4bc48704af7783380902f5b89efd.jpg)  | Abra              | Gym Challenge| 93/132      | No back support, head position might indicate it's looking at something    |
