@@ -105,6 +105,28 @@ const { title } = Astro.props;
 	li {
 		padding: 0.3rem 0;
 	}
+	table {
+		min-width: 80%;
+		margin: 0 auto;
+	}
+	table img {
+		width: 200px;
+		padding: 0;
+		border: none;
+	}
+	table,
+	th,
+	td {
+		border-collapse: collapse;
+		border-style: dashed;
+		border-width: 2px;
+		border-color: color-mix(in srgb, var(--link-color), transparent 50%);
+	}
+	td,
+	th {
+		padding: 1rem;
+		text-align: center;
+	}
 </style>
 <style>
 	#root-link {
@@ -116,7 +138,7 @@ const { title } = Astro.props;
 	}
 	#page-wrapper {
 		width: 80%;
-		max-width: 800px;
+		max-width: 1200px;
 		margin: 0 auto;
 	}
 </style>
