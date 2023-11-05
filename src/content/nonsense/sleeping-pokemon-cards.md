@@ -40,6 +40,13 @@ But in _this_ card, things get tricky. Snorlax is lying against a tree with its 
 | ![](https://static.tcgcollector.com/content/images/4d/cf/61/4dcf614a9078d7ebaabdc62e3b97c90441639eea7f57082cdfc9600845fd8a59.jpg)  | Snorlax              | Gym Heroes | 33/132      | ❌    |
 | ![](https://static.tcgcollector.com/content/images/bd/f2/51/bdf2513a4e64b4e70843c890b394e4750bfa247ce932592c473420701e1f491e.jpg)  | Clefairy              | Gym Challenge | 40/132      | ❌    |
 | ![](https://static.tcgcollector.com/content/images/63/67/f9/6367f92e268a217b23e2763b40e4e1dce65facc48d41ee672f1b005aba15e21d.jpg)  | Abra              | Gym Challenge | 94/132      | ❌    |
+| ![](https://static.tcgcollector.com/content/images/f9/4e/32/f94e328bdbea3a04f89d7f84812926fdb8da5fc85c08f271454388746bfffdcb.jpg)  | Phanpy              | Neo Destiny | 76/105      | ❌    |
+| ![](https://static.tcgcollector.com/content/images/a2/36/38/a2363854fd1fb56be22764c450df2e9ddeabc8345d165f39d7f089fe13c1fd2b.jpg)  | Swinub              | Neo Destiny | 84/105      | ❌    |
+| ![](https://static.tcgcollector.com/content/images/3c/d4/d7/3cd4d7ff3678b9064c517e6e617f55adbc2b85f46aa3193a6aa6e142f0360d8d.jpg)  | Vulpix              | Neo Destiny | 91/105      | ❌    |
+| ![](https://static.tcgcollector.com/content/images/17/f6/c4/17f6c4c61eaf0763b351016d1759b485ea69b101203c808837f25b19eb2c0694.jpg)  | Corsola              | Expedition Base Set | 102/165      | ❌    |
+| ![](https://static.tcgcollector.com/content/images/ac/e2/d1/ace2d1246013f4bf2d67b92f6fc518f82a52ee5b1950d836442181cf2de50b13.jpg)  | Gloom              | Aquapolis | 49/147      | ❌    |
+| ![](https://static.tcgcollector.com/content/images/3f/0d/3e/3f0d3e001186ee9202ea722680ca50dc60f4ead1d3acf7e068aa9310f93ce5e3.jpg)  | Drowzee              | Aquapolis | 74a/147      | ❌    |
+| ![](https://static.tcgcollector.com/content/images/9c/c8/40/9cc840f73651354ea4deeb0f4a751c868dc49c09bc70584479f0d367cbbeaa10.jpg)  | Drowzee              | Aquapolis | 74b/147      | ❌    |
 | ![](https://static.tcgcollector.com/content/images/c1/cc/56/c1cc560beb35b81126bf88a0512e6c285d77d464be78b9a335622e32f34eece4.jpg)  | Chansey              | EX Fire Red & Leaf Green | 19/112      | ❌    |
 | ![](https://static.tcgcollector.com/content/images/2e/1a/6b/2e1a6bfaf0e02ab79209d7fd99230814d9f41f74b1d3c35fa0aef8f02be3ef9f.jpg)  | Wigglytuff           | Fates Collide            | 19/112      | ✅    |
 | ![](https://static.tcgcollector.com/content/images/0f/d3/44/0fd344d12927470f1024fb1fcb173487d2f1ba5c5ef3d68b2fa82557f0254ef6.jpg)  | Snorlax              | Hidden Fates             | 50/68        | ❌    |
