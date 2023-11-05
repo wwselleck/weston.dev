@@ -21,7 +21,9 @@ In this card, Snorlax is lying down with its eyes closed, but is clearly not asl
 
 ![](https://static.tcgcollector.com/content/images/b9/5b/d0/b95bd0d9945999f3d3038ac22f77d3dcdff29b2c1b5873a38bdee184446e5784.jpg)
 
-But in _this_ card, things get tricky. Snorlax is lying against a tree with its eyes closed, but it's also smiling, blushing, and the Pokemon around it are clearly awake. I don't think I can definitively say either way that Snorlax is or isn't sleeping here. ![](https://static.tcgcollector.com/content/images/4c/cb/4e/4ccb4e53509b32434cc467ab4c68317a4c9c6dafd80f0162a142b0fb195f2bab.jpg)
+But in _this_ card, things get tricky. Snorlax is lying against a tree with its eyes closed, but it's also smiling, blushing, and the Pokemon around it are clearly awake. I don't think I can definitively say either way that Snorlax is or isn't sleeping here.
+
+ ![](https://static.tcgcollector.com/content/images/4c/cb/4e/4ccb4e53509b32434cc467ab4c68317a4c9c6dafd80f0162a142b0fb195f2bab.jpg)
 
 > And in case you noticed the "Sleeping Pokemon" text on the card, this doesn't actually mean that Snorlax is sleeping. "Sleeping Pokemon" is just its category, this same text shows on cards where Snorlax is clearly not sleeping.
 >
