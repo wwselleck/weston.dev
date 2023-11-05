@@ -14,6 +14,7 @@ title: Video Game Rankings
 1. **Overwatch** [PC]
 1. **Celeste** [Switch]
 1. **Dark Souls 3** [PC]
+1. **Super Mario Wonder** [Switch]
 1. **Gears of War** [Xbox 360]
 1. **The Legend of Zelda: Breath of the Wild** [Switch]
 1. **Grand Theft Auto: San Andreas** [PC]
