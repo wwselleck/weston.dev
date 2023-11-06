@@ -3,7 +3,7 @@ title: Video Game Rankings
 ---
 1. **Super Mario 64** [Nintendo 64]
 1. **Bioshock** [Xbox 360]
-1. Pokemon Red/Blue [Gameboy]
+1. **Pokemon Red/Blue** [Gameboy]
 1. **Dark Souls** [PC]
 1. **Sekiro: Shadows Die Twice** [PC]
 1. **Donkey Kong 64** [N64]
