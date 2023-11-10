@@ -1,0 +1,104 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const data = [
+  {
+    game: "Dark Souls",
+    achievements: [
+        ["Beat the game (Any %)", true],
+        ["Defeat all area bosses", true],
+        ["Defeat all DLC bosses", false]
+    ],
+  },
+  {
+    game: "Dark Souls 2",
+    achievements: [
+        ["Beat the game (Any %)", true],
+        ["Defeat all area bosses", false, "Just missing Executioner's Chariot"],
+        ["Defeat all DLC bosses", false]
+    ],
+  },
+  {
+    game: "Dark Souls 3",
+    achievements: [
+        ["Beat the game (Any %)", true],
+        ["Defeat all area bosses", true],
+        ["Defeat all DLC bosses", true]
+    ],
+  },
+  {
+    game: "Elden Ring",
+    achievements: [
+        ["Beat the game (Any %)", false],
+        ["Defeat all bosses", false]
+    ],
+  },
+  {
+    game: "Super Mario 3D World",
+    achievements: [
+        ["Beat the game (Any %)", true],
+        ["Get all 380 green stars", true],
+        ["Get all 85 stamps", true],
+        ["Finish every level at the top of the flagpole", true],
+        ["Finish all levels with all characters", false, "I'm not doing this shit"],
+    ],
+  },
+  {
+    game: "Super Mario 64",
+    achievements: [
+        ["Beat the game (Any %)", true],
+        ["Get all 120 stars", true],
+        ["Finish a 16 star speed run in under 20 minutes", true],
+        ["Finish a 16 star run in under 19 minutes", false]
+    ],
+  },
+];
+---
+
+<Layout title="Video Game Achievements">
+  <ul>
+    {
+      data.map(({ game, achievements }) => (
+        <li>
+          <b>{game}</b>
+          <div class="achievements dashed-border">
+            {achievements.map(([name, achieved, notes]) => (
+              <div class={achieved ? "active" : ""}>
+                <div>{achieved ? "🏆 " : "🕓 "}</div>
+                <div>
+                    <div>{name}</div>
+                    {notes && <div class="notes">{notes}</div>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
+<style>
+  .achievements {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  .achievements>div {
+    display: flex;
+    margin: 4px 0;
+  }
+  .achievements>div>div:first-child {
+    margin-right: 6px;
+  }
+  .achievements>div:not(.active) {
+      opacity: 0.5;
+  }
+  .notes {
+    opacity: 0.5;
+  }
+
+
+  }
+</style>
