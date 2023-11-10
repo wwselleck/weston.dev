@@ -2,6 +2,19 @@
 import Layout from "../../layouts/Layout.astro";
 
 const data = [
+    {
+        game: "Celeste",
+        achievements: [
+            ["Beat the game (Any %)", true],
+            ["Obtain all Strawberries", false, null, '🍓']
+        ]
+    },
+    {
+        game: "Cuphead",
+        achievements: [
+            ["Beat the game (Any %)", true, null, '☕']
+        ]
+    },
   {
     game: "Dark Souls",
     achievements: [
@@ -27,6 +40,14 @@ const data = [
     ],
   },
   {
+    game: "Diddy Kong Racing",
+    achievements: [
+        ["Beat the game (Any %)", true],
+        ["Obtain all 47 Golden Balloons", true],
+        ["Defeat all DLC bosses", true]
+    ],
+  },
+  {
     game: "Elden Ring",
     achievements: [
         ["Beat the game (Any %)", false],
@@ -34,20 +55,44 @@ const data = [
     ],
   },
   {
+    game: "League of Legends",
+    achievements: [
+        ["Reach Bronze rank in Ranked Solo queue", true],
+        ["Reach Silver rank in Ranked Solo queue", false],
+        ["Reach Gold rank in Ranked Solo queue", false, "No chance this ever happens tbh"],
+    ],
+  },
+  {
     game: "Mario Kart 8 Deluxe",
     achievements: [
-        ["Get gold in all cups (150cc)", true],
+        ["Get gold in all cups (150cc)", true, null, '🥇'],
         ["Get 3 stars in all cups (150cc)", false],
-        ["Get gold in all cups (200cc)", false]
+        ["Get gold in all cups (200cc)", false, null, '🥇']
+    ],
+  },
+  {
+    game: "Rocket League",
+    achievements: [
+        ["Reach Bronze rank in Ranked 2v2 queue", true],
+        ["Reach Silver rank in Ranked 2v2 queue", true],
+        ["Reach Gold rank in Ranked 2v2 queue", true],
+        ["Reach Platinum rank in Ranked 2v2 queue", false],
+    ],
+  },
+  {
+    game: "Sekiro: Shadows Die Twice",
+    achievements: [
+        ["Beat the game (Any %)", true],
+        ["Defeat all bosses", false, 'Missing Owl (Father), Isshin Ashina'],
     ],
   },
   {
     game: "Super Mario 3D World",
     achievements: [
         ["Beat the game (Any %)", true],
-        ["Obtain all 380 Green Stars", true],
+        ["Obtain all 380 Green Stars", true, null, '⭐'],
         ["Obtain all 85 Stamps", true],
-        ["Finish every level at the top of the flagpole", true],
+        ["Finish every level at the top of the flagpole", true, null, '🚩'],
         ["Finish all levels with all characters", false, "I'm not doing this shit"],
     ],
   },
@@ -55,9 +100,9 @@ const data = [
     game: "Super Mario 64",
     achievements: [
         ["Beat the game (Any %)", true],
-        ["Obtain all 120 Stars", true],
-        ["Finish a 16 Star speed run in under 20 minutes", true],
-        ["Finish a 16 Star speed run in under 19 minutes", false]
+        ["Obtain all 120 Stars", true, null, '⭐'],
+        ["Finish a 16 Star speed run in under 20 minutes", true, null, '⏳'],
+        ["Finish a 16 Star speed run in under 19 minutes", false, null, '⏳']
     ],
   },
   {
@@ -68,7 +113,14 @@ const data = [
         ["Obtain all 144 standees", false],
         ["Obtain all 303 10-Flower Coins", false],
         ["Obtain all 24 Badges", false],
-        ["Finish every level at the top of the flagpole", false],
+        ["Finish every level at the top of the flagpole", false, null, '🚩'],
+    ],
+  },
+  {
+    game: "Tetris 99",
+    achievements: [
+        ["Win a game", true],
+        ["Win a game in Invictus mode ", false],
     ],
   },
 ];
@@ -82,9 +134,9 @@ const data = [
         <li>
           <b>{game}</b>
           <div class="achievements dashed-border">
-            {achievements.map(([name, achieved, notes]) => (
+            {achievements.map(([name, achieved, notes, icon ]) => (
               <div class={achieved ? "active" : ""}>
-                <div>{achieved ? "🏆 " : "🕓 "}</div>
+                <div>{achieved ? `${icon ?? '🏆' } ` : `${icon ?? '🕓 ' } `}</div>
                 <div>
                     <div>{name}</div>
                     {notes && <div class="notes">{notes}</div>}
