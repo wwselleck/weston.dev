@@ -6,13 +6,13 @@ const data = [
         game: "Celeste",
         achievements: [
             ["Beat the game (Any %)", true],
-            ["Obtain all Strawberries", false, null, '🍓']
+            ["Obtain all Strawberries", false]
         ]
     },
     {
         game: "Cuphead",
         achievements: [
-            ["Beat the game (Any %)", true, null, '☕']
+            ["Beat the game (Any %)", true]
         ]
     },
   {
@@ -65,9 +65,9 @@ const data = [
   {
     game: "Mario Kart 8 Deluxe",
     achievements: [
-        ["Get gold in all cups (150cc)", true, null, '🥇'],
+        ["Get gold in all cups (150cc)", true],
         ["Get 3 stars in all cups (150cc)", false],
-        ["Get gold in all cups (200cc)", false, null, '🥇']
+        ["Get gold in all cups (200cc)", false]
     ],
   },
   {
@@ -90,9 +90,9 @@ const data = [
     game: "Super Mario 3D World",
     achievements: [
         ["Beat the game (Any %)", true],
-        ["Obtain all 380 Green Stars", true, null, '⭐'],
+        ["Obtain all 380 Green Stars", true],
         ["Obtain all 85 Stamps", true],
-        ["Finish every level at the top of the flagpole", true, null, '🚩'],
+        ["Finish every level at the top of the flagpole", true],
         ["Finish all levels with all characters", false, "I'm not doing this shit"],
     ],
   },
@@ -100,9 +100,9 @@ const data = [
     game: "Super Mario 64",
     achievements: [
         ["Beat the game (Any %)", true],
-        ["Obtain all 120 Stars", true, null, '⭐'],
-        ["Finish a 16 Star speed run in under 20 minutes", true, null, '⏳'],
-        ["Finish a 16 Star speed run in under 19 minutes", false, null, '⏳']
+        ["Obtain all 120 Stars", true],
+        ["Finish a 16 Star speed run in under 20 minutes", true],
+        ["Finish a 16 Star speed run in under 19 minutes", false]
     ],
   },
   {
@@ -113,7 +113,7 @@ const data = [
         ["Obtain all 144 standees", false],
         ["Obtain all 303 10-Flower Coins", false],
         ["Obtain all 24 Badges", false],
-        ["Finish every level at the top of the flagpole", false, null, '🚩'],
+        ["Finish every level at the top of the flagpole", false],
     ],
   },
   {
@@ -136,7 +136,7 @@ const data = [
           <div class="achievements dashed-border">
             {achievements.map(([name, achieved, notes, icon ]) => (
               <div class={achieved ? "active" : ""}>
-                <div>{achieved ? `${icon ?? '🏆' } ` : `${icon ?? '🕓 ' } `}</div>
+                <div>{achieved ? '🏆' : '🔒 ' }</div>
                 <div>
                     <div>{name}</div>
                     {notes && <div class="notes">{notes}</div>}
