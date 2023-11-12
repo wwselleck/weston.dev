@@ -50,9 +50,15 @@ But in _this_ card, things get tricky. Snorlax is lying against a tree with its 
 | ![](https://static.tcgcollector.com/content/images/c1/cc/56/c1cc560beb35b81126bf88a0512e6c285d77d464be78b9a335622e32f34eece4.jpg)  | Chansey              | EX Fire Red & Leaf Green | 19/112      | ❌    |
 | ![](https://static.tcgcollector.com/content/images/2e/1a/6b/2e1a6bfaf0e02ab79209d7fd99230814d9f41f74b1d3c35fa0aef8f02be3ef9f.jpg)  | Wigglytuff           | Fates Collide            | 19/112      | ✅    |
 | ![](https://static.tcgcollector.com/content/images/0f/d3/44/0fd344d12927470f1024fb1fcb173487d2f1ba5c5ef3d68b2fa82557f0254ef6.jpg)  | Snorlax              | Hidden Fates             | 50/68        | ❌    |
+| ![](https://static.tcgcollector.com/content/images/cf/90/5c/cf905c93c6b810d470e73c4960c5648e19618ae7559350d59a8bf723cab9e0cf.jpg)  | Dedenne                | Vivid Voltage               | 77/185       | ✅     |
 | ![](https://static.tcgcollector.com/content/images/d8/e5/5b/d8e55b44dfdda226972ff2f355c6bdb4b93e3637040340ef24b8e578efac2c8d.jpg)  | Numel                | Pokemon Go                 | 13/78       | ✅     |
 | ![](https://static.tcgcollector.com/content/images/c2/a3/d5/c2a3d50f155049585976f8a2593e0ea2443673bfe7a176a6e7a12615dd653e07.jpg)  | Chansey              | Pokemon Go               | 51/78       | ✅    |
 | ![](https://static.tcgcollector.com/content/images/c6/f2/1f/c6f21f738d3afb0e1d43b305b410aba95b061ae69219fa647e8eeceeef027049.jpg)  | Feebas            | Silver Tempest         | 39/195       | ✅    |
+| ![](https://static.tcgcollector.com/content/images/a7/3d/14/a73d149715c8554dc4848896e62e9a8427cc2bdd40bd61f4009a510138102f80.jpg)  | Stonjourner            | Silver Tempest         | 101/195       | ✅    |
+| ![](https://static.tcgcollector.com/content/images/de/0c/3e/de0c3e1149372e8d311c324bed129efdfd92495d4f689d531eb988d0aca3b0dc.jpg)  | Snorlax            | Scarlet & Violet Promos        | 051  | ✅    |
+| ![](https://static.tcgcollector.com/content/images/de/0c/3e/de0c3e1149372e8d311c324bed129efdfd92495d4f689d531eb988d0aca3b0dc.jpg)  | Smoliv            | Obsidian Flames       | 19/197  | ✅    |
+| ![](https://static.tcgcollector.com/content/images/5a/94/43/5a9443fe94442b8ada746992e4fc599415b509d088fa2efa700f27cfcc1d2a69.jpg)  | Abra            | 151        | 63/165  | ✅    |
+| ![](https://static.tcgcollector.com/content/images/9f/4c/ee/9f4ceec1b78e903a860891fc678081b78baf5431b6bd2e1d399cf8bd2398ee3e.jpg)  | Snorlax            | 151        | 143/165  | ✅    |
 | ![](https://static.tcgcollector.com/content/content/images/09/f6/4b/09f64ba0d2e27d016c0a194d2cc61056206311c279aa54e0af75f49a38a4318c.jpg)  | Yamper              | Paradox Rift               | 196/182       | ✅    |
 
 ### Excluded Cards
