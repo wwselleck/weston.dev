@@ -36,7 +36,7 @@ But in _this_ card, things get tricky. Snorlax is lying against a tree with its 
 |------------                                                                                                                        |----------------      |------                      |-------------|------  |
 | ![](https://static.tcgcollector.com/content/images/a6/23/27/a62327280d999b9ece345c01578805857f2eeae4aabf00ad16eee4f68b5f5920.jpg)  | Snorlax              | Wizards Black Star Promos | 49      | ❌    |
 | ![](https://static.tcgcollector.com/content/images/45/91/9c/45919ce6892c186f7def5bf14c08406d15611bede400dff89850a52ad7b4bdb3.jpg)  | Slowpoke              | Team Rocket | 67/82      | ✅    |
-| ![](https://static.tcgcollector.com/content/images/05/a4/15/05a4157940eb909c0a660a707bc901959f042cef6b38804f84c98f0e57f3a156.jpg)  | Snorlax              | Team Rocket | 79/82      | ❌    |
+| ![](https://static.tcgcollector.com/content/images/05/a4/15/05a4157940eb909c0a660a707bc901959f042cef6b38804f84c98f0e57f3a156.jpg)  | Snorlax              | Team Rocket | 79/82      | ✅    |
 | ![](https://static.tcgcollector.com/content/images/4d/cf/61/4dcf614a9078d7ebaabdc62e3b97c90441639eea7f57082cdfc9600845fd8a59.jpg)  | Snorlax              | Gym Heroes | 33/132      | ❌    |
 | ![](https://static.tcgcollector.com/content/images/bd/f2/51/bdf2513a4e64b4e70843c890b394e4750bfa247ce932592c473420701e1f491e.jpg)  | Clefairy              | Gym Challenge | 40/132      | ❌    |
 | ![](https://static.tcgcollector.com/content/images/63/67/f9/6367f92e268a217b23e2763b40e4e1dce65facc48d41ee672f1b005aba15e21d.jpg)  | Abra              | Gym Challenge | 94/132      | ❌    |
