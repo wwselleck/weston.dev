@@ -1,138 +1,34 @@
 ---
+//import fs module as es module
+import fs from "fs";
+import { parse } from 'yaml';
 import Layout from "../../layouts/Layout.astro";
 
-const data = [
-    {
-        game: "Celeste",
-        achievements: [
-            ["Beat the game (Any %)", true],
-            ["Obtain all Strawberries", false]
-        ]
-    },
-    {
-        game: "Cuphead",
-        achievements: [
-            ["Beat the game (Any %)", true]
-        ]
-    },
-  {
-    game: "Dark Souls",
-    achievements: [
-        ["Beat the game (Any %)", true],
-        ["Defeat all area bosses", true],
-        ["Defeat all DLC bosses", false]
-    ],
-  },
-  {
-    game: "Dark Souls 2",
-    achievements: [
-        ["Beat the game (Any %)", true],
-        ["Defeat all area bosses", false, "Just missing Executioner's Chariot"],
-        ["Defeat all DLC bosses", false]
-    ],
-  },
-  {
-    game: "Dark Souls 3",
-    achievements: [
-        ["Beat the game (Any %)", true],
-        ["Defeat all area bosses", true],
-        ["Defeat all DLC bosses", true]
-    ],
-  },
-  {
-    game: "Diddy Kong Racing",
-    achievements: [
-        ["Beat the game (Any %)", true],
-        ["Obtain all 47 Golden Balloons", true],
-        ["Defeat all DLC bosses", true]
-    ],
-  },
-  {
-    game: "Elden Ring",
-    achievements: [
-        ["Beat the game (Any %)", false],
-        ["Defeat all bosses", false]
-    ],
-  },
-  {
-    game: "League of Legends",
-    achievements: [
-        ["Reach Bronze rank in Ranked Solo queue", true],
-        ["Reach Silver rank in Ranked Solo queue", false],
-        ["Reach Gold rank in Ranked Solo queue", false, "No chance this ever happens tbh"],
-    ],
-  },
-  {
-    game: "Mario Kart 8 Deluxe",
-    achievements: [
-        ["Get gold in all cups (150cc)", true],
-        ["Get 3 stars in all cups (150cc)", false],
-        ["Get gold in all cups (200cc)", false]
-    ],
-  },
-  {
-    game: "Rocket League",
-    achievements: [
-        ["Reach Bronze rank in Ranked 2v2 queue", true],
-        ["Reach Silver rank in Ranked 2v2 queue", true],
-        ["Reach Gold rank in Ranked 2v2 queue", true],
-        ["Reach Platinum rank in Ranked 2v2 queue", false],
-    ],
-  },
-  {
-    game: "Sekiro: Shadows Die Twice",
-    achievements: [
-        ["Beat the game (Any %)", true],
-        ["Defeat all bosses", false, 'Missing Owl (Father), Isshin Ashina'],
-    ],
-  },
-  {
-    game: "Super Mario 3D World",
-    achievements: [
-        ["Beat the game (Any %)", true],
-        ["Obtain all 380 Green Stars", true],
-        ["Obtain all 85 Stamps", true],
-        ["Finish every level at the top of the flagpole", true],
-        ["Finish all levels with all characters", false, "I'm not doing this shit"],
-    ],
-  },
-  {
-    game: "Super Mario 64",
-    achievements: [
-        ["Beat the game (Any %)", true],
-        ["Obtain all 120 Stars", true],
-        ["Finish a 16 Star speed run in under 20 minutes", true],
-        ["Finish a 16 Star speed run in under 19 minutes", false]
-    ],
-  },
-  {
-    game: "Super Mario Bros. Wonder",
-    achievements: [
-        ["Beat the game (Any %)", true],
-        ["Obtain all 225 Wonder Seeds", false],
-        ["Obtain all 144 standees", false],
-        ["Obtain all 303 10-Flower Coins", false],
-        ["Obtain all 24 Badges", false],
-        ["Finish every level at the top of the flagpole", false],
-    ],
-  },
-  {
-    game: "Tetris 99",
-    achievements: [
-        ["Win a game", true],
-        ["Win a game in Invictus mode ", false],
-    ],
-  },
-];
+const yml = fs.readFileSync("src/pages/nonsense/video-game-achievements.yaml", "utf8");
+const parsed = parse(yml);
 
+const parseYmlAchievement = (nameAndNotes) => {
+    const [ name, notes] = nameAndNotes.split(';;').map(s => s.trim());
+    return [name, notes]
+};
+const data = parsed.games.map(({ name, achieved = [], missing = [] }) => ({
+    game: name,
+    achievements: [
+        ...achieved.map(parseYmlAchievement).map(([name, notes]) => [name, true, notes]), 
+        ...missing.map(parseYmlAchievement).map(([name, notes]) => [name, false, notes]), 
+    ] 
+}));
 ---
 
 <Layout title="Video Game Achievements">
-  <ul>
+    <h1>Video Game Achievements</h1>
+    <p>
+        These are video game achievements I've come up with for myself.
+    </p>
+  <div>
     {
       data.map(({ game, achievements }) => (
-        <li>
-          <b>{game}</b>
+          <div class="game-label">{game}</div>
           <div class="achievements dashed-border">
             {achievements.map(([name, achieved, notes, icon ]) => (
               <div class={achieved ? "active" : ""}>
@@ -144,10 +40,9 @@ const data = [
               </div>
             ))}
           </div>
-        </li>
       ))
     }
-  </ul>
+  </div>
 </Layout>
 <style>
   .achievements {
@@ -155,7 +50,8 @@ const data = [
     flex-direction: column;
     background: rgba(0, 0, 0, 0.4);
     padding: 1rem;
-    margin: 1rem 0;
+    margin-top: .8rem;
+    margin-bottom: 2.5rem;
   }
   .achievements>div {
     display: flex;
@@ -169,6 +65,10 @@ const data = [
   }
   .notes {
     opacity: 0.5;
+  }
+  .game-label {
+    font-size: 1.3rem;
+    font-weight: bold;
   }
 
 

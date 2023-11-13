@@ -1,0 +1,180 @@
+games:
+  - name: Castlevania
+    achieved:
+      - Beat the game (Any %)
+
+  - name: Celeste
+    achieved:
+      - Beat the game (Any %)
+    missing: 
+      - Collect all Strawberries
+  
+  - name: Crash Bandicoot
+    achieved:
+      - Beat the game (Any %)
+
+  - name: Cuphead
+    achieved: 
+      - Beat the game (Any %)
+
+  - name: Dark Souls
+    achieved:
+      - Beat the game (Any %)
+      - Defeat all area bosses
+    missing:
+      - Defeat all DLC bosses
+
+  - name: Dark Souls 2
+    achieved:
+      - Beat the game (Any %) 
+    missing:
+      - Defeat all area bosses ;; Just missing Executioner's Chariot
+      - Defeat all DLC bosses 
+    
+  - name: Dark Souls 3
+    achieved:
+      - Beat the game (Any %) 
+      - Defeat all area bosses 
+      - Defeat all DLC bosses 
+    
+  - name: Diddy Kong Racing
+    achieved:
+      - Beat the game (Any %) 
+      - Collect all 47 Golden Balloons 
+
+  - name: Donkey Kong 64
+    achieved:
+      - Beat the game (Any %)
+    missing:
+      - Collect all 201 Golden Bananas
+      - Collect all 3500 colored bananas
+      - Collect all 40 Banana Medals
+      - Collect all 20 Banana Fairies
+      - Collect all 40 Blueprints
+      - Collect all 10 Battle Crowns
+      - Collect all 20 Banana Coins
+
+  - name: Donkey Kong Country
+    achieved:
+      - Beat the game (Any %)
+
+  - name: Donkey Kong Country 2
+    missing:
+      - Beat the game (Any %)
+  
+
+  - name: Elden Ring
+    missing:
+      - Beat the game (Any %) 
+      - Defeat all bosses 
+
+  - name: Fortnite
+    achieved:
+      - Win a game
+
+  - name: Hades
+    achieved:
+      - Beat the game (Any %)
+
+  - name: Half-Life
+    achieved: 
+      - Beat the game (Any %)
+
+  - name: "Halo: Combat Evolved"
+    achieved: 
+      - Beat the game (Any %)
+    
+  - name: League of Legends
+    achieved:
+      - Reach Bronze rank in Ranked Solo queue 
+    missing:
+      - Reach Silver rank in Ranked Solo queue 
+      - Reach Gold rank in Ranked Solo queue  ;; No chance this ever happens tbh
+    
+  - name: Mario Kart 8 Deluxe
+    achieved:
+      - Get gold in all cups (150cc) 
+    missing:
+      - Get 3 stars in all cups (150cc) 
+      - Get gold in all cups (200cc) 
+      - Get 3 stars in all cups (200cc) 
+
+  - name: "Mario Kart: Double Dash"
+    achieved:
+      - Unlock Pete Piranha and King Boo
+      
+  - name: Portal
+    achieved:
+      - Beat the game (Any %) 
+    
+  - name: Rocket League
+    achieved:
+      - Reach Bronze rank in Ranked 2v2 queue 
+      - Reach Silver rank in Ranked 2v2 queue 
+      - Reach Gold rank in Ranked 2v2 queue 
+    missing:
+      - Reach Platinum rank in Ranked 2v2 queue 
+    
+  - name: "Sekiro: Shadows Die Twice"
+    achieved:
+      - Beat the game (Any %) 
+      - Defeat all bosses  'Missing Owl (Father) Isshin Ashina'
+
+  - name: Shovel Knight 
+    achieved:
+      - Beat the game (Any %) 
+    
+  - name: Super Mario 3D World
+    achieved:
+      - Beat the game (Any %) 
+      - Collect all 380 Green Stars 
+      - Collect all 85 Stamps 
+      - Finish every level at the top of the flagpole 
+    missing:
+      - Finish all levels with all characters ;; I'm not doing this shit
+    
+  - name: Super Mario 64
+    achieved:
+      - Beat the game (Any %) 
+      - Collect all 120 Stars 
+      - Finish a 16 Star speed run in under 20 minutes 
+    missing:
+      - Finish a 16 Star speed run in under 19 minutes 
+
+  - name: Super Mario Bros. 2 (JP)
+    achieved:
+      - Beat the game (Warpless) ;; *Used save states, but only to emulate the game behavior if the console was left on
+
+  - name: Super Mario Bros. Wonder
+    achieved:
+      - Beat the game (Any %) 
+    missing:
+      - Collect all 225 Wonder Seeds 
+      - Collect all 144 standees 
+      - Collect all 303 10-Flower Coins 
+      - Collect all 24 Badges 
+      - Finish every level at the top of the flagpole 
+
+  - name: Super Mario Galaxy
+    achieved:
+      - Beat the game (Any %) 
+    missing:
+      - Collect all 120 Stars 
+
+  - name: Super Mario Odyssey
+    achieved:
+      - Beat the game (Any %) 
+    missing:
+      - Collect all 880 unique Moons 
+  
+  - name: Undertale
+    achieved:
+      - Beat the game (Any %)
+    
+  - name: Tetris 99
+    achieved:
+      - Win a game 
+    missing:
+      - Win a game in Invictus mode  
+  
+

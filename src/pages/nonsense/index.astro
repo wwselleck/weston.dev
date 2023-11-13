@@ -3,30 +3,31 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 
 const nonsense = await getCollection("nonsense");
-const pages = [...nonsense, {
+const pages = [
+  ...nonsense,
+  {
     data: {
-        title: "Video Game Achievements",
+      title: "Video Game Achievements",
     },
     slug: "video-game-achievements",
-}];
+  },
+];
 const pagesSorted = pages.sort((a, b) => {
-    return a.data.title.localeCompare(b.data.title);
+  return a.data.title.localeCompare(b.data.title);
 });
-
 ---
 
 <Layout title="Nonsense">
-    <h2>Nonsense</h2>
-    <ul>
-        <li><a href="/nonsense/video-game-achievements">Video Game Achievements</a></li>
-        {
-            pagesSorted.map((nonsense) => (
-                <li>
-                    <a href={`/nonsense/${nonsense.slug}`}>
-                        <b>{nonsense.data.title}</b>{" "}
-                    </a>
-                </li>
-            ))
-        }
-    </ul>
+  <h2>Nonsense</h2>
+  <ul>
+    {
+      pagesSorted.map((nonsense) => (
+        <li>
+          <a href={`/nonsense/${nonsense.slug}`}>
+            <b>{nonsense.data.title}</b>{" "}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </Layout>
