@@ -1,4 +1,7 @@
 games:
+  - name: Bloons Tower Defense 6
+    achieved: 
+      - Get all medals on any map ;; Done on Resort
   - name: Castlevania
     achieved:
       - Beat the game (Any %)
