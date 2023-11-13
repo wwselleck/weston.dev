@@ -64,6 +64,13 @@ games:
   - name: Donkey Kong Country 2
     missing:
       - Beat the game (Any %)
+
+  - name: Donkey Kong Country Tropical Freeze
+    achieved:
+      - Beat the game as Funky Kong (Any %)
+    missing:
+      - Beat the game as Donkey Kong (Any %)
+      - 100% the game as Donkey Kong 
   
 
   - name: Elden Ring
@@ -84,6 +91,10 @@ games:
       - Beat the game (Any %)
 
   - name: "Halo: Combat Evolved"
+    achieved: 
+      - Beat the game (Any %)
+
+  - name: Kirby's Adventure 
     achieved: 
       - Beat the game (Any %)
     
@@ -163,6 +174,11 @@ games:
       - Beat the game (Any %) 
     missing:
       - Collect all 120 Stars 
+
+  - name: Super Mario Land 2
+    achieved:
+      - Beat the game (Any %) 
+
 
   - name: Super Mario Odyssey
     achieved:
