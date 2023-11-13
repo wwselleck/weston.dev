@@ -1,0 +1,94 @@
+games:
+  - name: Celeste
+    achieved:
+      - Beat the game (Any %)
+    missing: 
+      - Obtain all Strawberries
+  - name: Cuphead
+    achieved: 
+      - Beat the game (Any %)
+        {
+  - name: Dark Souls
+    achieved:
+        Beat the game (Any %)
+        Defeat all area bosses
+    missing:
+        Defeat all DLC bosses
+  - name: Dark Souls 2
+    achieved:
+        Beat the game (Any %) true,
+    missing:
+        Defeat all area bosses false, Just missing Executioner's Chariot,
+        Defeat all DLC bosses false
+    
+  - name: Dark Souls 3
+    achievements: 
+        Beat the game (Any %) true,
+        Defeat all area bosses true,
+        Defeat all DLC bosses true
+    
+  - name: Diddy Kong Racing
+    achievements: 
+        Beat the game (Any %) true,
+        Obtain all 47 Golden Balloons true,
+        Defeat all DLC bosses true
+    
+  - game: Elden Ring
+    achievements: 
+        Beat the game (Any %) false,
+        Defeat all bosses false
+    
+  - game: League of Legends
+    achievements: 
+        Reach Bronze rank in Ranked Solo queue true,
+        Reach Silver rank in Ranked Solo queue false,
+        Reach Gold rank in Ranked Solo queue false, No chance this ever happens tbh,
+    
+  - game: Mario Kart 8 Deluxe
+    achievements: 
+        Get gold in all cups (150cc) true,
+        Get 3 stars in all cups (150cc) false,
+        Get gold in all cups (200cc) false
+    
+  - game: Rocket League
+    achievements: 
+        Reach Bronze rank in Ranked 2v2 queue true,
+        Reach Silver rank in Ranked 2v2 queue true,
+        Reach Gold rank in Ranked 2v2 queue true,
+        Reach Platinum rank in Ranked 2v2 queue false,
+    
+  - game: Sekiro: Shadows Die Twice
+    achievements: 
+        Beat the game (Any %) true,
+        Defeat all bosses false, 'Missing Owl (Father), Isshin Ashina',
+    
+  - game: Super Mario 3D World
+    achievements: 
+        Beat the game (Any %) true,
+        Obtain all 380 Green Stars true,
+        Obtain all 85 Stamps true,
+        Finish every level at the top of the flagpole true,
+        Finish all levels with all characters false, I'm not doing this shit,
+    
+  - game: Super Mario 64
+    achievements: 
+        Beat the game (Any %) true,
+        Obtain all 120 Stars true,
+        Finish a 16 Star speed run in under 20 minutes true,
+        Finish a 16 Star speed run in under 19 minutes false
+    
+  - game: Super Mario Bros. Wonder
+    achievements: 
+        Beat the game (Any %) true,
+        Obtain all 225 Wonder Seeds false,
+        Obtain all 144 standees false,
+        Obtain all 303 10-Flower Coins false,
+        Obtain all 24 Badges false,
+        Finish every level at the top of the flagpole false,
+    
+  - game: Tetris 99
+    achievements: 
+        Win a game true,
+        Win a game in Invictus mode  false,
+    
+  }

@@ -1,6 +1,17 @@
 ---
+//import fs module as es module
+import fs from "fs";
+import { parse } from 'yaml';
 import Layout from "../../layouts/Layout.astro";
 
+const yml = fs.readFileSync("src/pages/nonsense/video-game-achievements.yaml", "utf8");
+const parsed = parse(yml);
+const data = parsed.games.map(({ name, achieved = [], missing = [] }) => ({
+    game: name,
+    achievements: [...achieved.map(a => [a, true]), ...missing.map(a => [a, false])] 
+}));
+
+/*
 const data = [
     {
         game: "Celeste",
@@ -124,6 +135,7 @@ const data = [
     ],
   },
 ];
+*/
 
 ---
 
