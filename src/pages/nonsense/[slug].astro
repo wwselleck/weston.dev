@@ -2,17 +2,18 @@
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import Prose from "../../components/Prose.astro";
 
 export const getStaticPaths = (async () => {
-    const nonsense = await getCollection("nonsense");
-    return nonsense.map((entry) => {
-        return {
-            params: {
-                slug: entry.slug,
-            },
-            props: { entry },
-        };
-    });
+  const nonsense = await getCollection("nonsense");
+  return nonsense.map((entry) => {
+    return {
+      params: {
+        slug: entry.slug,
+      },
+      props: { entry },
+    };
+  });
 }) satisfies GetStaticPaths;
 
 const { entry } = Astro.props;
@@ -20,6 +21,6 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title}>
-    <h2>{entry.data.title}</h2>
-    <Content />
+  <h2>{entry.data.title}</h2>
+  <Prose><Content /></Prose>
 </Layout>
