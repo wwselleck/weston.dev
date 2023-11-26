@@ -185,6 +185,10 @@ games:
       - Beat the game (Any %) 
     missing:
       - Collect all 880 unique Moons 
+
+  - name: Tiny Wings
+    achieved: 
+      - "High Score: 167,134"
   
   - name: Undertale
     achieved:
