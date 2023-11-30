@@ -66,7 +66,7 @@ But in _this_ card, things get tricky. Snorlax is lying against a tree with its 
 | ![](https://static.tcgcollector.com/content/images/c2/a3/d5/c2a3d50f155049585976f8a2593e0ea2443673bfe7a176a6e7a12615dd653e07.jpg)  | Chansey              | Pokemon Go               | 51/78       | ✅    |
 | ![](https://static.tcgcollector.com/content/images/c6/f2/1f/c6f21f738d3afb0e1d43b305b410aba95b061ae69219fa647e8eeceeef027049.jpg)  | Feebas            | Silver Tempest         | 39/195       | ✅    |
 | ![](https://static.tcgcollector.com/content/images/a7/3d/14/a73d149715c8554dc4848896e62e9a8427cc2bdd40bd61f4009a510138102f80.jpg)  | Stonjourner            | Silver Tempest         | 101/195       | ✅    |
-| ![](https://static.tcgcollector.com/content/images/2e/37/e3/2e37e32ffa4bc272558d93f231212fef1211bc7ea7c897d97219fa34f4a60cd2.jpg) | Zeraora VMAX | Crown Zenith | GG42/GG70 | ✅  |
+| ![](https://static.tcgcollector.com/content/images/2e/37/e3/2e37e32ffa4bc272558d93f231212fef1211bc7ea7c897d97219fa34f4a60cd2.jpg) | Pachirisu | Crown Zenith | GG42/GG70 | ✅  |
 | ![](https://static.tcgcollector.com/content/images/77/be/19/77be19941c79eed7feb12f294fe0751bfb91c1ece850e252553087008621b00a.jpg)  | Pelipper            | Scarlet & Violet Promos        | 022  | ✅    |
 | ![](https://static.tcgcollector.com/content/images/de/0c/3e/de0c3e1149372e8d311c324bed129efdfd92495d4f689d531eb988d0aca3b0dc.jpg)  | Snorlax            | Scarlet & Violet Promos        | 051  | ✅    |
 | ![](https://static.tcgcollector.com/content/images/14/74/86/14748688e3921968a8c1c31d655d9da630bd834a73ad9f351791a29bbc0da706.jpg)  | Smoliv            | Obsidian Flames       | 19/197  | ✅    |
