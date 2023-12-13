@@ -89,6 +89,7 @@ title: Video Game Rankings
 1. **Bowman** [Flash]
 1. **Kirby's Pinball Land** [GB]
 1. **Pokemon Pinball** [GB]
+1. **Overwatch 2** [PC]
 1. **Donkey Kong Jr.** [Arcade]
 1. **Excitebike** [NES]
 1. **Donkey Kong Jr. Math** [NES]
