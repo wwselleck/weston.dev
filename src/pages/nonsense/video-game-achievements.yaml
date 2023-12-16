@@ -23,6 +23,7 @@ games:
   - name: Cuphead
     achieved: 
       - Beat the game
+    missing:
       - Beat "The Delicious Last Course" DLC
 
   - name: Dark Souls
