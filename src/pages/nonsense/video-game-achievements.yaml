@@ -7,10 +7,16 @@ games:
       - Beat the game (Any %)
 
   - name: Celeste
+    anypercent: 
+      complete: true
     achieved:
       - Beat the game (Any %)
     missing: 
-      - Collect all Strawberries
+      - Collect all 175 red berries
+      - Collect all 24 crystal hearts
+      - Collect the moon berry
+      - Collect all 25 golden berries
+      - Collect the winged golden berry
   
   - name: Crash Bandicoot
     achieved:
@@ -115,7 +121,7 @@ games:
 
   - name: "Mario Kart: Double Dash"
     achieved:
-      - Unlock Pete Piranha and King Boo
+      - Unlock Petey Piranha and King Boo
       
   - name: Portal
     achieved:
