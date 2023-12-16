@@ -4,13 +4,11 @@ games:
       - Get all medals on any map ;; Done on Resort
   - name: Castlevania
     achieved:
-      - Beat the game (Any %)
+      - Beat the game
 
   - name: Celeste
-    anypercent: 
-      complete: true
     achieved:
-      - Beat the game (Any %)
+      - Beat the game
     missing: 
       - Collect all 175 red berries
       - Collect all 24 crystal hearts
@@ -20,40 +18,41 @@ games:
   
   - name: Crash Bandicoot
     achieved:
-      - Beat the game (Any %)
+      - Beat the game
 
   - name: Cuphead
     achieved: 
-      - Beat the game (Any %)
+      - Beat the game
+      - Beat "The Delicious Last Course" DLC
 
   - name: Dark Souls
     achieved:
-      - Beat the game (Any %)
+      - Beat the game
       - Defeat all area bosses
     missing:
       - Defeat all DLC bosses
 
   - name: Dark Souls 2
     achieved:
-      - Beat the game (Any %) 
+      - Beat the game
     missing:
       - Defeat all area bosses ;; Just missing Executioner's Chariot
       - Defeat all DLC bosses 
     
   - name: Dark Souls 3
     achieved:
-      - Beat the game (Any %) 
+      - Beat the game
       - Defeat all area bosses 
       - Defeat all DLC bosses 
     
   - name: Diddy Kong Racing
     achieved:
-      - Beat the game (Any %) 
+      - Beat the game
       - Collect all 47 Golden Balloons 
 
   - name: Donkey Kong 64
     achieved:
-      - Beat the game (Any %)
+      - Beat the game
     missing:
       - Collect all 201 Golden Bananas
       - Collect all 3500 colored bananas
@@ -65,23 +64,23 @@ games:
 
   - name: Donkey Kong Country
     achieved:
-      - Beat the game (Any %)
+      - Beat the game
 
   - name: Donkey Kong Country 2
     missing:
-      - Beat the game (Any %)
+      - Beat the game
 
   - name: Donkey Kong Country Tropical Freeze
     achieved:
-      - Beat the game as Funky Kong (Any %)
+      - Beat the game as Funky Kong
     missing:
-      - Beat the game as Donkey Kong (Any %)
+      - Beat the game as Donkey Kong
       - 100% the game as Donkey Kong 
   
 
   - name: Elden Ring
     missing:
-      - Beat the game (Any %) 
+      - Beat the game
       - Defeat all bosses 
 
   - name: Fortnite
@@ -90,19 +89,19 @@ games:
 
   - name: Hades
     achieved:
-      - Beat the game (Any %)
+      - Beat the game
 
   - name: Half-Life
     achieved: 
-      - Beat the game (Any %)
+      - Beat the game
 
   - name: "Halo: Combat Evolved"
     achieved: 
-      - Beat the game (Any %)
+      - Beat the game
 
   - name: Kirby's Adventure 
     achieved: 
-      - Beat the game (Any %)
+      - Beat the game
     
   - name: League of Legends
     achieved:
@@ -125,7 +124,7 @@ games:
       
   - name: Portal
     achieved:
-      - Beat the game (Any %) 
+      - Beat the game
     
   - name: Rocket League
     achieved:
@@ -137,25 +136,23 @@ games:
     
   - name: "Sekiro: Shadows Die Twice"
     achieved:
-      - Beat the game (Any %) 
+      - Beat the game
       - Defeat all bosses  'Missing Owl (Father) Isshin Ashina'
 
   - name: Shovel Knight 
     achieved:
-      - Beat the game (Any %) 
+      - Beat the game
     
   - name: Super Mario 3D World
     achieved:
-      - Beat the game (Any %) 
+      - Beat the game
       - Collect all 380 Green Stars 
       - Collect all 85 Stamps 
       - Finish every level at the top of the flagpole 
-    missing:
-      - Finish all levels with all characters ;; I'm not doing this shit
     
   - name: Super Mario 64
     achieved:
-      - Beat the game (Any %) 
+      - Beat the game
       - Collect all 120 Stars 
       - Finish a 16 Star speed run in under 20 minutes 
     missing:
@@ -167,7 +164,7 @@ games:
 
   - name: Super Mario Bros. Wonder
     achieved:
-      - Beat the game (Any %) 
+      - Beat the game
       - Collect all 225 Wonder Seeds 
       - Collect all 144 standees 
       - Collect all 303 10-Flower Coins 
@@ -177,18 +174,18 @@ games:
 
   - name: Super Mario Galaxy
     achieved:
-      - Beat the game (Any %) 
+      - Beat the game
     missing:
       - Collect all 120 Stars 
 
   - name: Super Mario Land 2
     achieved:
-      - Beat the game (Any %) 
+      - Beat the game
 
 
   - name: Super Mario Odyssey
     achieved:
-      - Beat the game (Any %) 
+      - Beat the game
     missing:
       - Collect all 880 unique Moons 
 
@@ -198,7 +195,7 @@ games:
   
   - name: Undertale
     achieved:
-      - Beat the game (Any %)
+      - Beat the game
     
   - name: Tetris 99
     achieved:
