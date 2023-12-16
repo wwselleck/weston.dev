@@ -162,12 +162,12 @@ games:
   - name: Super Mario Bros. Wonder
     achieved:
       - Beat the game (Any %) 
-    missing:
       - Collect all 225 Wonder Seeds 
       - Collect all 144 standees 
       - Collect all 303 10-Flower Coins 
       - Collect all 24 Badges 
       - Finish every level at the top of the flagpole 
+
 
   - name: Super Mario Galaxy
     achieved:
