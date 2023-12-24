@@ -15,6 +15,11 @@ games:
           - 16 Star: 19m 13s 36ms
   - name: "Bioshock [Xbox 360]"
   - name: "Pokemon Red/Blue [Gameboy]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, true]
   - name: "Dark Souls [PC]"
     panels:
       - type: checklist

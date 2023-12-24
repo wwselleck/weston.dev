@@ -29,16 +29,26 @@ const games = parsed.games;
             {panels.length > 0 ? (
               <details>
                 <summary>{name}</summary>
-                {panels.map((panel) => {
-                  switch (panel.type) {
-                    case "checklist":
-                      return <ChecklistPanel {...panel} />;
-                    case "markdown":
-                      return <MarkdownPanel {...panel} />;
-                    default:
-                      return <div>Unknown panel type: {panel.type}</div>;
-                  }
-                })}
+                <div class="panels">
+                  {panels.map((panel) => {
+                    switch (panel.type) {
+                      case "checklist":
+                        return (
+                          <div class="panel">
+                            <ChecklistPanel {...panel} />
+                          </div>
+                        );
+                      case "markdown":
+                        return (
+                          <div class="panel">
+                            <MarkdownPanel {...panel} />
+                          </div>
+                        );
+                      default:
+                        return <div>Unknown panel type: {panel.type}</div>;
+                    }
+                  })}
+                </div>
               </details>
             ) : (
               name
@@ -56,6 +66,15 @@ const games = parsed.games;
     flex-grow: 1;
   }
 
+  details .panels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  details .panel {
+    min-width: 300px;
+  }
   .panel-header {
     font-size: 1.2rem;
     font-weight: bold;
