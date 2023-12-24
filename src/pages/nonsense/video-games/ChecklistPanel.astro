@@ -9,7 +9,7 @@ const CROSS = "❌";
 <ContentBox>
   <div class="panel-header">{title}</div>
   {
-    items.map(([name, checked]) => (
+    items?.map(([name, checked]) => (
       <div class:list={["check-item", { checked }]}>
         <div>{checked ? CHECK : CROSS}</div>
         <div>{name}</div>

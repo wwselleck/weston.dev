@@ -2,7 +2,7 @@
 import { classnames } from "../../../lib/classnames";
 import ContentBox from "../../../components/ContentBox.astro";
 import { marked } from "marked";
-const { title, content } = Astro.props;
+const { title, content = "" } = Astro.props;
 const CHECK = "✅";
 const CROSS = "❌";
 
