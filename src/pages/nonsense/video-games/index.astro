@@ -1,0 +1,113 @@
+---
+//import fs module as es module
+import fs from "fs";
+import { parse } from "yaml";
+import Layout from "../../../layouts/Layout.astro";
+import ContentBox from "../../../components/ContentBox.astro";
+import { classnames } from "../../../lib/classnames";
+import ChecklistPanel from "./ChecklistPanel.astro";
+import MarkdownPanel from "./MarkdownPanel.astro";
+
+const TROPHY = "🏆";
+
+const yml = fs.readFileSync(
+  "src/pages/nonsense/video-games/video-games.yaml",
+  "utf8",
+);
+const parsed = parse(yml);
+const games = parsed.games;
+---
+
+<Layout title="Video Games">
+  <h1>Video Games</h1>
+  <p>These are video game achievements I've come up with for myself.</p>
+  <ol>
+    {
+      games.map(({ name, panels = [] }) => {
+        return (
+          <li>
+            {panels.length > 0 ? (
+              <details>
+                <summary>{name}</summary>
+                {panels.map((panel) => {
+                  switch (panel.type) {
+                    case "checklist":
+                      return <ChecklistPanel {...panel} />;
+                    case "markdown":
+                      return <MarkdownPanel {...panel} />;
+                    default:
+                      return <div>Unknown panel type: {panel.type}</div>;
+                  }
+                })}
+              </details>
+            ) : (
+              name
+            )}
+          </li>
+        );
+      })
+    }
+  </ol>
+</Layout>
+<style>
+  details {
+    display: inline-block;
+    vertical-align: top;
+    flex-grow: 1;
+  }
+
+  .panel-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .achievements {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+    margin-top: 0.8rem;
+    margin-bottom: 2.5rem;
+  }
+  .achievements > div {
+    display: flex;
+    margin: 4px 0;
+  }
+  .achievements > div > div:first-child {
+    margin-right: 6px;
+  }
+  .achievements > div:not(.active) {
+    opacity: 0.5;
+  }
+  .achievements.gold-border {
+    border-color: gold;
+  }
+  .notes {
+    opacity: 0.5;
+  }
+  .game-label {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  /**
+    Setting an <li> to display: flex causes the 
+    number marker to disappear. This is a workaround, which 
+    manually adds the number marker back in using a pseudo-element.
+   */
+  ol {
+    list-style: none;
+    counter-reset: list-counter;
+  }
+
+  li {
+    counter-increment: list-counter;
+    display: flex;
+  }
+
+  li::before {
+    content: counter(list-counter) ". ";
+    margin-right: 10px;
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+const { title, items } = Astro.props;
+import { classnames } from "../../../lib/classnames";
+import ContentBox from "../../../components/ContentBox.astro";
+const CHECK = "✅";
+const CROSS = "❌";
+---
+
+<ContentBox>
+  <div class="panel-header">{title}</div>
+  {
+    items.map(([name, checked]) => (
+      <div class:list={["check-item", { checked }]}>
+        <div>{checked ? CHECK : CROSS}</div>
+        <div>{name}</div>
+      </div>
+    ))
+  }
+</ContentBox>
+<style>
+  details {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .panel-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+  }
+
+  .check-item {
+    display: flex;
+    margin: 4px 0;
+  }
+  .check-item div:first-child {
+    margin-right: 6px;
+  }
+  .check-item:not(.checked) {
+    opacity: 0.5;
+  }
+</style>

@@ -1,0 +1,423 @@
+games:
+  - name: "Super Mario 64 [Nintendo 64]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, true]
+      - type: checklist
+        title: 100% Checklist
+        items: 
+          - [Collect all 120 Stars, true]
+      - type: markdown
+        title: Speedrun Times
+        content: |
+          - 16 Star: 19m 13s 36ms
+  - name: "Bioshock [Xbox 360]"
+  - name: "Pokemon Red/Blue [Gameboy]"
+  - name: "Dark Souls [PC]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, true]
+      - type: checklist
+        title: Bosses Checklist 
+        items:
+          - [Artorias of the Abyss, false]
+          - [Asylum Demon, true]
+          - [Bell Gargoyle, true]
+          - [Black Dragon Kalameet, false]
+          - [Capra Demon, true]
+          - [Ceaseless Discharge, true]
+          - [Centipede Demon, true]
+          - [Chaos Witch Quelaag, true]
+          - [Crossbreed Priscilla, false]
+          - [Dark Sun Gwyndolin, false]
+          - [Demon Firesage, true]
+          - [Four Kings, true]
+          - [Gaping Dragon, true]
+          - [Great Grey Wolf Sif, true]
+          - [Gwyn, Lord of Cinder, true]
+          - [Iron Golem, true]
+          - [Manus, Father of the Abyss, false]
+          - [Moonlight Butterfly, true]
+          - [Nito, true]
+          - [Ornstein and Smough, true]
+          - [Pinwheel, true]
+          - [Sanctuary Guardian, false]
+          - [Seath the Scaleless, true]
+          - [Stray Demon, true]
+          - [Taurus Demon, true]
+          - [The Bed of Chaos, true]
+  - name: "Sekiro: Shadows Die Twice [PC]"
+    panels:
+      - type: checklist
+        title: Bosses Checklist
+        items:
+          - [Gyoubo Masataka Oniwa, true]
+          - [Lady Butterfly, true]
+          - [Genichiro Ashina, true]
+          - [Folding Screen Monkeys, true]
+          - [Guardian Ape, true]
+          - [Headless Ape, true]
+          - [Corrupted Monk, true]
+          - [Isshin Ashina, false]
+          - [Great Shinobi Owl, true]
+          - [True Corrupted Monk, true]
+          - [Divine Dragon, true]
+          - [Owl (Father), false]
+          - [Demon of Hatred, true]
+          - [Isshin, the Sword Saint, true]
+          - [Inner Father, false]
+          - [Inner Genichiro, false]
+          - [Inner Isshin, false]
+
+  - name: "Donkey Kong 64 [N64]"
+    panels: 
+      - type: checklist
+        title: Achievements
+        items: 
+          - [Beat the game, false]
+      - type: checklist
+        title: Collectibles Checklist
+        items: 
+          - [Collect all 201 Golden Bananas, false]
+          - [Collect all 3500 colored bananas, false]
+          - [Collect all 40 Banana Medals, false]
+          - [Collect all 20 Banana Fairies, false]
+          - [Collect all 40 Blueprints, false]
+          - [Collect all 10 Battle Crowns, false]
+          - [Collect all 20 Banana Coins, false]
+  - name: "Counter Strike: Global Offensive [PC]"
+  - name: "Pokemon Fire Red/Leaf Green [GBA]"
+  - name: "Super Mario Galaxy [Wii]"
+    panels: 
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, true]
+      - type: checklist
+        title: 100% Checklist
+        items:
+          - [Collect all 120 Stars, false]
+  - name: "League of Legends [PC]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Reach Bronze rank in Ranked Solo/Duo queue, true]
+          - [Reach Silver rank in Ranked Solo/Duo queue, false]
+          - [Reach Gold rank in Ranked Solo/Duo queue, false]
+  - name: "Overwatch [PC]"
+  - name: "Celeste [Switch]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, true]
+          - [Collect all strawberries, false]
+  - name: "Dark Souls 3 [PC]"
+    panels:
+      - type: checklist
+        title: Bosses Checklist
+        items: 
+          - [Abyss Watchers, true]
+          - [Aldrich, Devourer of Gods, true]
+          - [Ancient Wyvern, true]
+          - [Champion Gundyr, true]
+          - [Champion's Gravetender and Gravetender Greatwolf, true]
+          - [Crystal Sage, true]
+          - [Curse-Rotted Greatwood, true]
+          - [Dancer of the Boreal Valley, true]
+          - [Darkeater Midir, true]
+          - [Deacons of the Deep, true]
+          - [Demon Prince, true]
+          - [Dragonslayer Armour, true]
+          - [Halflight, Spear of the Church, true]
+          - [High Lord Wolnir, true]
+          - [Iudex Gundyr, true]
+          - [Lothric, Younger Prince, true]
+          - [Nameless King, true]
+          - [Oceiros, the Consumed King, true]
+          - [Old Demon King, true]
+          - [Pontiff Sulyvahn, true]
+          - [Sister Friede, true]
+          - [Slave Knight Gael, true]
+          - [Soul of Cinder, true]
+          - [Vordt of the Boreal Valley, true]
+          - [Yhorm the Giant, true]
+
+  - name: "Super Mario Wonder [Switch]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, true]
+      - type: checklist
+        title: 100% Checklist
+        items:
+          - [Collect all 225 Wonder Seeds, true]
+          - [Collect all 144 standees, true]
+          - [Collect all 303 10-Flower Coins, true]
+          - [Collect all 24 Badges, true]
+          - [Finish every level at the top of the flagpole, true]
+  - name: "Gears of War [Xbox 360]"
+  - name: "The Legend of Zelda: Breath of the Wild [Switch]"
+  - name: "Grand Theft Auto: San Andreas [PC]"
+  - name: "Cuphead [Switch]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, true]
+  - name: "Super Smash Bros Ultimate [Switch]"
+  - name: "Super Mario Maker 2 [Switch]"
+  - name: "Super Mario Odyssey [Switch]"
+    panels: 
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, true]
+      - type: checklist
+        title: 100% Checklist
+        items:
+          - [Collect all 880 unique Moons, false]
+  - name: "Diddy Kong Racing [N64]"
+    panels: 
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, true]
+      - type: checklist
+        # Need to check these
+        title: Collectibles Checklist
+        items:
+          - [Collect all 47 balloons, true]
+          - [Collect all 4 keys, true]
+          - [Collect all 8 silver coins, true]
+          - [Unlock T.T., false]
+          - [Unlock Drumstick, false]
+  - name: "Super Mario 3D World [Switch]"
+    panels: 
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, true]
+      - type: checklist
+        title: 100% Checklist
+        items:
+          - [Collect all 380 Green Stars, true]
+          - [Collect all 85 Stamps, true]
+          - [Finish every level at the top of the flagpole, true]
+  - name: "Dark Souls 2 [PC]"
+    panels:
+      - type: checklist
+        title: Bosses Checklist
+        items:
+          - [Aava, the King's Pet, false]
+          - [Afflicted Graverobber, Ancient Soldier Varg, and Cerah the Old Explorer, false]
+          - [Aldia, Scholar of the First Sin, false]
+          - [Ancient Dragon, true]
+          - [Belfry Gargoyles, true]
+          - [Burnt Ivory King, false]
+          - [Coverous Demon, true]
+          - [Darklurker, false]
+          - [Demon of Song, true]
+          - [Dragonrider, true]
+          - [Elana, the Squalid Queen, false]
+          - [Executioner's Chariot, false]
+          - [Flexile Sentry, true]
+          - [Fume Knight, false]
+          - [Giant Lord, true]
+          - [Guardian Dragon, true]
+          - [Looking Glass Knight, true]
+          - [Lost Sinner, true]
+          - [Lud and Zallen, the King's Pets, false]
+          - [Mytha, the Baneful Queen, true]
+          - [Nashandra, true]
+          - [Old Dragonslayer, true]
+          - [Old Iron King, true]
+          - [Prowling Magus and Congregation, true]
+          - [Royal Rat Authority, true]
+          - [Royal Rat Vanguard, true]
+          - [Ruin Sentinels, true]
+          - [Scorpioness Najka, true]
+          - [Sinh, the Slumbering Dragon, false]
+          - [Sir Alonne, false]
+          - [Smelter Demon (Blue), false]
+          - [Smelter Demon, true]
+          - [The Duke's Dear Freja, true]
+          - [The Last Giant, true]
+          - [The Pursuer, true] 
+          - [The Rotten, true]
+          - [The Skeleton Lords, true]
+          - [Throne Watcher and Throne Defender, true]
+          - [Twin Dragonriders, true]
+          - [Velstadt, the Royal Aegis, true]
+          - [Vendrick, true]
+  - name: "Pokemon Platinum [DS]"
+  - name: "Animal Crossing: New Horizons [Switch]"
+  - name: "The Witcher 3 [PC]"
+  - name: "Awesomenauts [PC]"
+  - name: "Rocket League [PC]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Reach Bronze rank in Ranked 2v2 queue, true]
+          - [Reach Silver rank in Ranked 2v2 queue, true]
+          - [Reach Gold rank in Ranked 2v2 queue, true]
+          - [Reach Platinum rank in Ranked 2v2 queue, false]
+  - name: "Donkey Kong Country Tropical Freeze [Switch]"
+  - name: "OSU! [PC]"
+  - name: "Pokemon Black/White [DS]"
+  - name: "Donkey Kong Country 2: Diddy's Kong Quest [SNES]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, false]
+  - name: "Mario Kart 8 Deluxe [Switch]"
+    panels: 
+      - type: checklist
+        title: Achievements
+        items:
+          - [Get gold in all cups (150cc), true]
+          - [Get 3 stars in all cups (150cc), false]
+          - [Get gold in all cups (200cc), false]
+          - [Get 3 stars in all cups (200cc), false]
+  - name: "Donkey Kong Country [SNES]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, true]
+  - name: "Half-Life [PC]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, true]
+  - name: "Playerunknown's Battlegrounds [PC]"
+  - name: "Undertale [PC]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, true]
+  - name: "Shovel Knight [Switch]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, true]
+  - name: "Mario Party [N64]"
+  - name: "Hades [PC]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat Hades once, true]
+  - name: "Halo: Combat Evolved [PC]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, true]
+  - name: "Bloons Tower Defense 6 [PC]"
+  - name: "Kirby's Adventure [NES]"
+  - name: "Super Mario Bros. 2 (Japan) [Famicom]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game (Warpless), true]
+  - name: "Portal [PC]"
+    panels: 
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, true]
+  - name: "Tetris 99 [Switch]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Win a game, true]
+          - [Win a game in Invictus mode, false]
+  - name: "Luigi's Mansion [Gamecube]"
+  - name: "Fall Guys [PC]"
+  - name: "Mini Motorways [PC]"
+  - name: "Mini Metro [PC]"
+  - name: "Mario Kart: Double Dash [Gamecube]"
+    panels:
+      - type: checklist
+        title: Collectibles Checklist
+        items:
+          - [Unlock Pete Piranha and King Boo, true]
+  - name: "Pokemon Legends: Arceus [Switch]"
+  - name: "WarioWare, Inc.: Mega Microgame$! [GBA]"
+  - name: "Aladdin [SNES]"
+  - name: "Super Mario Land 2 [GB]"
+  - name: "Castlevania [NES]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, true]
+  - name: "Ultimate Chicken Horse [Switch]"
+  - name: Fortnite
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Win a game, true]
+  - name: "Crash Bandicoot [PS1]"
+    panels:
+      - type: checklist
+        title: Achievements
+        items:
+          - [Beat the game, true]
+  - name: "Mario Tennis Aces [Switch]"
+  - name: "Mario Golf: Super Rush [Switch]"
+  - name: "Pokemon Unite [Switch]"
+  - name: "Tekken 2 [PS1]"
+  - name: "WarioWare™: Get It Together! [Switch]"
+  - name: "Bowser's Fury [Switch]"
+  - name: "Super Mario Bros. [NES]"
+  - name: "VVVVVV [PC]"
+  - name: "Downwell [Switch]"
+  - name: "Mike Tyson's Punch-Out [NES]"
+  - name: "Kirby's Dream Land [GB]"
+  - name: "Super Mario Kart [SNES]"
+  - name: "Pokemon Puzzle League [N64]"
+  - name: "Mario Strikers: Battle League [Switch]"
+  - name: "Bloons [Flash]"
+  - name: "Donkey Kong [Arcade]"
+  - name: "DK Jungle Climber [DS]"
+  - name: "Tekken [PS1]"
+  - name: "Donkey Kong 3 [Arcade]"
+  - name: "Big Brain Academy: Brain vs. Brain [Switch]"
+  - name: "Contra [NES]"
+  - name: "Super Mario Land [GB]"
+  - name: "Tricky Towers [Switch]"
+  - name: "Super Hexagon [PC]"
+  - name: "Pokemon Pinball: Ruby & Sapphire [GBA]"
+  - name: "3D Pinball Space Cadet [PC]"
+  - name: "Bowman [Flash]"
+  - name: "Kirby's Pinball Land [GB]"
+  - name: "Pokemon Pinball [GB]"
+  - name: "Overwatch 2 [PC]"
+  - name: "Donkey Kong Jr. [Arcade]"
+  - name: "Excitebike [NES]"
+  - name: "Donkey Kong Jr. Math [NES]"
+  - name: "Bloons Tower Defense [Flash]"
+  - name: "Family Feud [Switch]"
+  - name: "MoshJarcus' 10 Trials [Flash]"
+  - name: "Broken Picture Phone [PC]"
+  - name: "High Hell [PC]"
+  - name: "Pinball [NES]"
+  - name: "Pokemon Dash [DS]"
+  - name: "Frogger [SNES]"
+  - name: "Nintendo World Cup [NES]"

@@ -1,0 +1,22 @@
+---
+import { classnames } from "../../../lib/classnames";
+import ContentBox from "../../../components/ContentBox.astro";
+import { marked } from "marked";
+const { title, content } = Astro.props;
+const CHECK = "✅";
+const CROSS = "❌";
+
+const html = marked.parse(content);
+---
+
+<ContentBox>
+  <div class="panel-header">{title}</div>
+  <div set:html={html} />
+</ContentBox>
+<style>
+  .panel-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+  }
+</style>
