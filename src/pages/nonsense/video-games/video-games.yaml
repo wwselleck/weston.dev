@@ -77,7 +77,7 @@ games:
           - [Inner Father, false]
           - [Inner Genichiro, false]
           - [Inner Isshin, false]
-
+  - name: "Elden Ring [PC]"
   - name: "Donkey Kong 64 [N64]"
     panels: 
       - type: checklist
