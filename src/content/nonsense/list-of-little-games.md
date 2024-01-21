@@ -1,5 +1,5 @@
 ---
-title: List of little games
+title: List of little web games
 ---
 - General Knowledge
     - [New York Times Mini Crossword](https://www.nytimes.com/crosswords/game/mini)
