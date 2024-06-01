@@ -52,6 +52,7 @@ I want to catalogue and collect every Pokemon card featuring a sleeping Pokemon.
 | ![](https://static.tcgcollector.com/content/images/5a/94/43/5a9443fe94442b8ada746992e4fc599415b509d088fa2efa700f27cfcc1d2a69.jpg)  | Abra            | 151        | 63/165  | ✅    |
 | ![](https://static.tcgcollector.com/content/images/9f/4c/ee/9f4ceec1b78e903a860891fc678081b78baf5431b6bd2e1d399cf8bd2398ee3e.jpg)  | Snorlax            | 151        | 143/165  | ✅    |
 | ![](https://static.tcgcollector.com/content/content/images/09/f6/4b/09f64ba0d2e27d016c0a194d2cc61056206311c279aa54e0af75f49a38a4318c.jpg)  | Yamper              | Paradox Rift               | 196/182       | ✅    |
+| ![](https://static.tcgcollector.com/content/content/images/05/0e/ce/050ece3d920164cfe27a5a6d0d1bafd6351fa6c57da5f075e453217a3246e4e4.jpg)  | Raichu              | Temporal Forces | 052/162       | ✅    |
 
 ### Excluded Cards
 |                                                                                                                                    | Pokemon              | Set                        | Card Number | Notes |
