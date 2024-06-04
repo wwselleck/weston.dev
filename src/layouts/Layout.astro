@@ -31,11 +31,6 @@ const { title } = Astro.props;
   <body>
     <div id="page-wrapper">
       <a id="root-link" href="/"><h1>weston.dev</h1></a>
-      <nav>
-        <a href="/nonsense">Nonsense</a>
-         |
-        <a href="/posts">Blog</a>
-      </nav>
       <main>
         <slot />
       </main>
@@ -66,11 +61,12 @@ const { title } = Astro.props;
     color: var(--link-color-hover);
   }
   blockquote {
-    background-color: #a5a5a5;
-    padding: 0.5rem;
-  }
-  blockquote::before {
-    content: "Quote:";
+    max-width: 80%;
+    border-style: dashed;
+    border-width: 2px;
+    border-color: color-mix(in srgb, var(--link-color), transparent 50%);
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
   }
   h1 {
     margin: 0;
@@ -109,6 +105,8 @@ const { title } = Astro.props;
   ul {
     padding-left: 1em;
     margin-left: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
   ol {
     width: 80%;
@@ -165,6 +163,9 @@ const { title } = Astro.props;
     margin: 0 auto;
     max-width: 1200px;
     box-sizing: border-box;
+  }
+  main {
+    margin-top: 1rem;
   }
   /* Media query for small screens*/
   @media screen and (max-width: 800px) {

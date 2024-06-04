@@ -5,8 +5,9 @@ import Layout from "../../layouts/Layout.astro";
 import Prose from "../../components/Prose.astro";
 
 export const getStaticPaths = (async () => {
+  const nonsense = await getCollection("nonsense");
   const blogposts = await getCollection("blogposts");
-  return blogposts.map((entry) => {
+  return [...nonsense, ...blogposts].map((entry) => {
     return {
       params: {
         slug: entry.slug,

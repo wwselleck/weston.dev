@@ -3,7 +3,6 @@
 import fs from "fs";
 import { parse } from "yaml";
 import Layout from "../../../layouts/Layout.astro";
-import ContentBox from "../../../components/ContentBox.astro";
 import { classnames } from "../../../lib/classnames";
 import ChecklistPanel from "./ChecklistPanel.astro";
 import MarkdownPanel from "./MarkdownPanel.astro";
@@ -11,8 +10,8 @@ import MarkdownPanel from "./MarkdownPanel.astro";
 const TROPHY = "🏆";
 
 const yml = fs.readFileSync(
-  "src/pages/nonsense/video-games/video-games.yaml",
-  "utf8",
+  "src/pages/posts/video-games/video-games.yaml",
+  "utf8"
 );
 const parsed = parse(yml);
 const games = parsed.games;

@@ -1,173 +1,218 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+
+const pages = [
+  ...(await getCollection("blogposts")),
+  ...(await getCollection("nonsense")),
+  {
+    data: {
+      title: "Video Games",
+    },
+    slug: "video-games",
+  },
+].sort((a, b) => {
+  return a.data.title.localeCompare(b.data.title);
+});
 ---
 
 <Layout title="weston.dev">
-	<p>
-		Hi, my name is <b>Weston Selleck</b>. I'm a software developer from
-		Austin, TX. Please enjoy this complimentary{" "}
-		<span id="dragItemName"></span> during your stay on my website <span
-			id="dragItem"></span>.
-	</p>
-	<p>
-		You can find me on...
-		<ul>
-			<li>
-				<a href="https://github.com/wwselleck">Github</a>
-			</li>
-			<li>
-				<a href="https://www.linkedin.com/in/weston-selleck-358b7942/"
-					>LinkedIn</a
-				>
-			</li>
-		</ul>
-	</p>
-	<div id="trash">🗑️</div>
+  <p class="about">
+    Hi, my name is <b>Weston Selleck</b>. I'm a software developer from Austin,
+    TX. Please enjoy this complimentary{" "}
+    <span id="dragItemName"></span> during your stay on my website <span
+      id="dragItem"></span>.
+  </p>
+
+  <h3>Projects</h3>
+  <ul>
+    <li>
+      <a target="_blank" href="https://playdisorderly.com/">Disorderly</a> - Daily
+      trivia web application with 50,000+ plays
+    </li>
+    <li>
+      <a target="_blank" href="https://github.com/wwselleck/solaire-discord"
+        >solaire-discord</a
+      >
+      - Lightweight framework for creating Discord bots with Node
+    </li>
+  </ul>
+
+  <h3>Posts</h3>
+  <ul>
+    {
+      pages.map((page) => (
+        <li>
+          <a href={`/posts/${page.slug}`}>{page.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h3>Find me</h3>
+  <ul>
+    <li>
+      <a target="_blank" href="https://github.com/wwselleck">Github</a>
+    </li>
+    <li>
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/weston-selleck-358b7942/">LinkedIn</a
+      >
+    </li>
+  </ul>
+  <div id="trash">🗑️</div>
 </Layout>
 <style>
-	#dragItem,
-	#dragItemClone {
-		cursor: pointer;
-	}
-	#trash {
-		position: absolute;
-		bottom: 2rem;
-		left: 2rem;
-		font-size: 2rem;
-	}
+  .about {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  #dragItem,
+  #dragItemClone {
+    cursor: pointer;
+  }
+  #trash {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    font-size: 2rem;
+  }
+
+  h3 {
+    margin-top: 1.5rem;
+  }
 </style>
 <script>
-	import { AchievementsBus } from "../lib/achievements";
+  import { AchievementsBus } from "../lib/achievements";
 
-	let dragged = false;
-	let dragActive = false;
-	let currentX;
-	let currentY;
+  let dragged = false;
+  let dragActive = false;
+  let currentX;
+  let currentY;
 
-	const getOriginalDragItem = () => {
-		return document.querySelector("#dragItem");
-	};
+  const getOriginalDragItem = () => {
+    return document.querySelector("#dragItem");
+  };
 
-	const getClonedDragItem = () => {
-		return document.querySelector("#dragItemClone");
-	};
+  const getClonedDragItem = () => {
+    return document.querySelector("#dragItemClone");
+  };
 
-	const getActiveElement = () => {
-		if (dragged) {
-			return getClonedDragItem();
-		}
-		return getOriginalDragItem();
-	};
+  const getActiveElement = () => {
+    if (dragged) {
+      return getClonedDragItem();
+    }
+    return getOriginalDragItem();
+  };
 
-	const toPx = (num) => {
-		return `${num}px`;
-	};
+  const toPx = (num) => {
+    return `${num}px`;
+  };
 
-	const createClonedDragItem = () => {
-		const originalDragItem = getOriginalDragItem();
-		const clone = originalDragItem.cloneNode(true);
-		clone.style.fontSize =
-			window.getComputedStyle(originalDragItem).fontSize;
-		clone.style.position = "absolute";
-		clone.id = "dragItemClone";
+  const createClonedDragItem = () => {
+    const originalDragItem = getOriginalDragItem();
+    const clone = originalDragItem.cloneNode(true);
+    clone.style.fontSize = window.getComputedStyle(originalDragItem).fontSize;
+    clone.style.position = "absolute";
+    clone.id = "dragItemClone";
 
-		originalDragItem.style.visibility = "hidden";
-		document.body.appendChild(clone);
-		return clone;
-	};
+    originalDragItem.style.visibility = "hidden";
+    document.body.appendChild(clone);
+    return clone;
+  };
 
-	const onDragStart = (e) => {
-		const el = getActiveElement();
-		if (e.target === el) {
-			if (!dragged) {
-				dragged = true;
-				const clone = createClonedDragItem();
-				clone.style.top = toPx(e.clientY);
-				clone.style.left = toPx(e.clientX);
-				AchievementsBus.sendAchievement({
-					key: "drag-treat",
-					name: "drag-treat",
-					description: "Click and drag your homepage treat around.",
-				});
-			}
-			dragActive = true;
-		}
-	};
+  const onDragStart = (e) => {
+    const el = getActiveElement();
+    if (e.target === el) {
+      if (!dragged) {
+        dragged = true;
+        const clone = createClonedDragItem();
+        clone.style.top = toPx(e.clientY);
+        clone.style.left = toPx(e.clientX);
+        AchievementsBus.sendAchievement({
+          key: "drag-treat",
+          name: "drag-treat",
+          description: "Click and drag your homepage treat around.",
+        });
+      }
+      dragActive = true;
+    }
+  };
 
-	document.addEventListener("mousedown", onDragStart, false);
+  document.addEventListener("mousedown", onDragStart, false);
 
-	document.addEventListener(
-		"mousemove",
-		(e) => {
-			if (dragActive) {
-				e.preventDefault();
+  document.addEventListener(
+    "mousemove",
+    (e) => {
+      if (dragActive) {
+        e.preventDefault();
 
-				const el = getActiveElement();
-				window.requestAnimationFrame(() => {
-					if (el) {
-						el.style.top = toPx(e.pageY);
-						el.style.left = toPx(e.pageX);
+        const el = getActiveElement();
+        window.requestAnimationFrame(() => {
+          if (el) {
+            el.style.top = toPx(e.pageY);
+            el.style.left = toPx(e.pageX);
 
-						const elRect = el.getBoundingClientRect();
-						const trashRect = document
-							.querySelector("#trash")
-							.getBoundingClientRect();
+            const elRect = el.getBoundingClientRect();
+            const trashRect = document
+              .querySelector("#trash")
+              .getBoundingClientRect();
 
-						const overlap =
-							elRect.left < trashRect.right &&
-							elRect.right > trashRect.left &&
-							elRect.top < trashRect.bottom &&
-							elRect.bottom > trashRect.top;
-						if (overlap) {
-							AchievementsBus.sendAchievement({
-								key: "trash-treat",
-								name: "trash-treat",
-								description:
-									"Drag your homepage treat into the trash.",
-							});
-							el?.remove();
-							const sfx = new Audio("/toss.mp3");
-							sfx.volume = 0.5;
-							sfx.play();
-						}
-					}
-				});
-			}
-		},
-		false,
-	);
+            const overlap =
+              elRect.left < trashRect.right &&
+              elRect.right > trashRect.left &&
+              elRect.top < trashRect.bottom &&
+              elRect.bottom > trashRect.top;
+            if (overlap) {
+              AchievementsBus.sendAchievement({
+                key: "trash-treat",
+                name: "trash-treat",
+                description: "Drag your homepage treat into the trash.",
+              });
+              el?.remove();
+              const sfx = new Audio("/toss.mp3");
+              sfx.volume = 0.5;
+              sfx.play();
+            }
+          }
+        });
+      }
+    },
+    false
+  );
 
-	document.addEventListener(
-		"mouseup",
-		() => {
-			dragActive = false;
-		},
-		false,
-	);
+  document.addEventListener(
+    "mouseup",
+    () => {
+      dragActive = false;
+    },
+    false
+  );
 
-	const itemChoices = [
-		["beer", "🍺"],
-		["bread", "🥖"],
-		["candy", "🍬"],
-		["coffee", "☕"],
-		["cookie", "🍪"],
-		["doughnut", "🍩"],
-		["ice cream", "🍦"],
-		["juice box", "🧃"],
-		["kiwi", "🥝"],
-		["lollipop", "🍭"],
-		["peach", "🍑"],
-		["pie", "🥧"],
-		["popcorn", "🍿"],
-		["pretzel", "🥨"],
-		["snowcone", "🍧"],
-		["stack of pancakes", "🥞"],
-		["strawberry", "🍓"],
-	];
+  const itemChoices = [
+    ["beer", "🍺"],
+    ["bread", "🥖"],
+    ["candy", "🍬"],
+    ["coffee", "☕"],
+    ["cookie", "🍪"],
+    ["doughnut", "🍩"],
+    ["ice cream", "🍦"],
+    ["juice box", "🧃"],
+    ["kiwi", "🥝"],
+    ["lollipop", "🍭"],
+    ["peach", "🍑"],
+    ["pie", "🥧"],
+    ["popcorn", "🍿"],
+    ["pretzel", "🥨"],
+    ["snowcone", "🍧"],
+    ["stack of pancakes", "🥞"],
+    ["strawberry", "🍓"],
+  ];
 
-	const itemIndex = Math.floor(Math.random() * itemChoices.length);
-	const item = itemChoices[itemIndex];
-	document.querySelector("#dragItemName").textContent = item[0];
-	document.querySelector("#dragItem").textContent = item[1];
+  const itemIndex = Math.floor(Math.random() * itemChoices.length);
+  const item = itemChoices[itemIndex];
+  document.querySelector("#dragItemName").textContent = item[0];
+  document.querySelector("#dragItem").textContent = item[1];
 </script>
